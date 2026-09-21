@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Events &amp; Key Tracker - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="events-mouse.html" class="nav-btn">⬅ Prev</a>
+        <a href="form-student-registration.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Keyboard Events &amp; Key Tracker</h1>
+            <p class="card-subtitle">Captures keydown and keyup events to display the active key, keyCode, modifier keys (Shift, Ctrl, Alt), and keypress count.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            JavaScript Events
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: center;">
+        <h3 style="color: #0f172a; margin-bottom: 12px;">Keyboard Event Inspector</h3>
+        <input type="text" id="kbInput" onkeydown="handleKeyDown(event)" placeholder="Click here and press any key..." style="width: 100%; padding: 12px; border: 2px solid #2563eb; border-radius: 8px; font-size: 15px; margin-bottom: 16px; text-align: center;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; padding: 14px; border-radius: 6px;">
+            <div style="font-size: 12px; color: #1e40af;">Key Pressed</div>
+            <div id="kbKey" style="font-size: 24px; font-weight: bold; color: #1d4ed8;">None</div>
+          </div>
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 14px; border-radius: 6px;">
+            <div style="font-size: 12px; color: #166534;">Key Code</div>
+            <div id="kbCode" style="font-size: 24px; font-weight: bold; color: #15803d;">None</div>
+          </div>
+        </div>
+        <div id="kbModifiers" style="font-size: 13px; color: #64748b;">Modifiers: Shift: No | Ctrl: No | Alt: No</div>
+        <script>
+          function handleKeyDown(e) {
+            document.getElementById('kbKey').innerText = e.key === ' ' ? 'Space' : e.key;
+            document.getElementById('kbCode').innerText = e.code;
+            document.getElementById('kbModifiers').innerText = 'Modifiers: Shift: ' + (e.shiftKey ? 'Yes' : 'No') + ' | Ctrl: ' + (e.ctrlKey ? 'Yes' : 'No') + ' | Alt: ' + (e.altKey ? 'Yes' : 'No');
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: events-keyboard.html</span>
+              <button class="copy-btn" data-target="code_js-events-keyboard">Copy Code</button>
+            </div>
+            <pre id="code_js-events-keyboard"><code>&lt;div style=&quot;max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: center;&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 12px;&quot;&gt;Keyboard Event Inspector&lt;/h3&gt;
+        &lt;input type=&quot;text&quot; id=&quot;kbInput&quot; onkeydown=&quot;handleKeyDown(event)&quot; placeholder=&quot;Click here and press any key...&quot; style=&quot;width: 100%; padding: 12px; border: 2px solid #2563eb; border-radius: 8px; font-size: 15px; margin-bottom: 16px; text-align: center;&quot;&gt;
+        &lt;div style=&quot;display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;&quot;&gt;
+          &lt;div style=&quot;background: #eff6ff; border: 1px solid #bfdbfe; padding: 14px; border-radius: 6px;&quot;&gt;
+            &lt;div style=&quot;font-size: 12px; color: #1e40af;&quot;&gt;Key Pressed&lt;/div&gt;
+            &lt;div id=&quot;kbKey&quot; style=&quot;font-size: 24px; font-weight: bold; color: #1d4ed8;&quot;&gt;None&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div style=&quot;background: #f0fdf4; border: 1px solid #bbf7d0; padding: 14px; border-radius: 6px;&quot;&gt;
+            &lt;div style=&quot;font-size: 12px; color: #166534;&quot;&gt;Key Code&lt;/div&gt;
+            &lt;div id=&quot;kbCode&quot; style=&quot;font-size: 24px; font-weight: bold; color: #15803d;&quot;&gt;None&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;kbModifiers&quot; style=&quot;font-size: 13px; color: #64748b;&quot;&gt;Modifiers: Shift: No | Ctrl: No | Alt: No&lt;/div&gt;
+        &lt;script&gt;
+          function handleKeyDown(e) {
+            document.getElementById(&#039;kbKey&#039;).innerText = e.key === &#039; &#039; ? &#039;Space&#039; : e.key;
+            document.getElementById(&#039;kbCode&#039;).innerText = e.code;
+            document.getElementById(&#039;kbModifiers&#039;).innerText = &#039;Modifiers: Shift: &#039; + (e.shiftKey ? &#039;Yes&#039; : &#039;No&#039;) + &#039; | Ctrl: &#039; + (e.ctrlKey ? &#039;Yes&#039; : &#039;No&#039;) + &#039; | Alt: &#039; + (e.altKey ? &#039;Yes&#039; : &#039;No&#039;);
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

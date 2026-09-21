@@ -1,0 +1,183 @@
+// scripts/parse-all-syllabi.js
+import fs from 'fs';
+
+export const mysqlQuestions = [
+  // Database Fundamentals
+  { id: "mysql-01", title: "Create a Database using MySQL", category: "Database Fundamentals", desc: "CREATE DATABASE commands with character sets (utf8mb4) and collation settings." },
+  { id: "mysql-02", title: "Create and Delete Tables using MySQL", category: "Database Fundamentals", desc: "CREATE TABLE with schema definition and DROP TABLE IF EXISTS." },
+  { id: "mysql-03", title: "Demonstrate MySQL Data Types", category: "Database Fundamentals", desc: "INT, BIGINT, DECIMAL, VARCHAR, TEXT, DATE, TIMESTAMP, ENUM, and BOOLEAN types." },
+  { id: "mysql-04", title: "Demonstrate Primary Key and Foreign Key", category: "Database Fundamentals", desc: "PRIMARY KEY constraint and FOREIGN KEY REFERENCES with referential integrity." },
+  { id: "mysql-05", title: "NOT NULL, UNIQUE, DEFAULT, and CHECK Constraints", category: "Database Fundamentals", desc: "Data validation constraints on table columns during schema initialization." },
+  { id: "mysql-06", title: "Alter Table Structure using ALTER TABLE", category: "Database Fundamentals", desc: "ADD column, MODIFY datatype, DROP column, and RENAME COLUMN." },
+  { id: "mysql-07", title: "Rename and Truncate Tables", category: "Database Fundamentals", desc: "RENAME TABLE and TRUNCATE TABLE for high-speed table resetting." },
+
+  // SQL Commands
+  { id: "mysql-08", title: "Insert Records using INSERT", category: "SQL Commands", desc: "INSERT INTO single row and batch multi-row tuple insertion." },
+  { id: "mysql-09", title: "Retrieve Records using SELECT", category: "SQL Commands", desc: "SELECT column projection, aliases (AS), and table querying." },
+  { id: "mysql-10", title: "Update Records using UPDATE", category: "SQL Commands", desc: "UPDATE table SET column = value WHERE condition with safe update guards." },
+  { id: "mysql-11", title: "Delete Records using DELETE", category: "SQL Commands", desc: "DELETE FROM table WHERE condition to remove specific tuples." },
+  { id: "mysql-12", title: "WHERE Clause for Filtering Records", category: "SQL Commands", desc: "Filtering records with comparison operators (=, !=, <, >, <=, >=)." },
+  { id: "mysql-13", title: "ORDER BY for Sorting Records", category: "SQL Commands", desc: "Sort records ascending (ASC) and descending (DESC) across multiple keys." },
+  { id: "mysql-14", title: "DISTINCT to Retrieve Unique Values", category: "SQL Commands", desc: "Eliminate duplicate result records from query projections." },
+  { id: "mysql-15", title: "LIMIT to Restrict Query Results", category: "SQL Commands", desc: "Pagination using LIMIT count OFFSET offset." },
+
+  // SQL Operators and Functions
+  { id: "mysql-16", title: "Arithmetic Operators in SQL", category: "SQL Operators & Functions", desc: "+, -, *, /, and % operations on numeric table columns." },
+  { id: "mysql-17", title: "Comparison and Logical Operators (AND, OR, NOT)", category: "SQL Operators & Functions", desc: "Compound boolean condition filters in WHERE clauses." },
+  { id: "mysql-18", title: "LIKE, IN, and BETWEEN Operators", category: "SQL Operators & Functions", desc: "Pattern matching with wildcards (%, _), value sets (IN), and ranges (BETWEEN)." },
+  { id: "mysql-19", title: "Aggregate Functions: COUNT, SUM, AVG, MIN, MAX", category: "SQL Operators & Functions", desc: "Compute statistical metrics across record sets." },
+  { id: "mysql-20", title: "String Functions in SQL", category: "SQL Operators & Functions", desc: "CONCAT, UPPER, LOWER, LENGTH, SUBSTRING, and TRIM." },
+  { id: "mysql-21", title: "Date and Time Functions in SQL", category: "SQL Operators & Functions", desc: "NOW(), CURDATE(), DATEDIFF(), DATE_ADD(), and DATE_FORMAT()." },
+  { id: "mysql-22", title: "GROUP BY and HAVING Clauses", category: "SQL Operators & Functions", desc: "Aggregate grouping by categorical columns and post-aggregation filtering with HAVING." },
+
+  // Joins
+  { id: "mysql-23", title: "INNER JOIN Implementation", category: "Table Joins", desc: "Retrieve matching tuples between two related relational tables." },
+  { id: "mysql-24", title: "LEFT OUTER JOIN Implementation", category: "Table Joins", desc: "Preserve all records from the left table matched against optional right records." },
+  { id: "mysql-25", title: "RIGHT OUTER JOIN Implementation", category: "Table Joins", desc: "Preserve all records from the right table matched against optional left records." },
+  { id: "mysql-26", title: "Self Join Implementation", category: "Table Joins", desc: "Join a table to itself using table aliasing (e.g. employee-manager hierarchy)." },
+  { id: "mysql-27", title: "Multiple-Table Joins (3+ Tables)", category: "Table Joins", desc: "Join Students, Courses, and Enrollments across foreign key chains." },
+
+  // Subqueries
+  { id: "mysql-28", title: "Single-Row Subqueries", category: "Subqueries", desc: "Subqueries returning a scalar value used in comparison predicates." },
+  { id: "mysql-29", title: "Multiple-Row Subqueries (IN, ANY, ALL)", category: "Subqueries", desc: "Subqueries returning a vector of values evaluated against outer query." },
+  { id: "mysql-30", title: "Subqueries with IN Operator", category: "Subqueries", desc: "Filter records whose foreign key exists in an inner query result set." },
+  { id: "mysql-31", title: "Correlated Subqueries", category: "Subqueries", desc: "Subqueries referencing columns from the outer query executed per outer row." },
+
+  // Views and Indexes
+  { id: "mysql-32", title: "Create and Query Database Views", category: "Views & Indexes", desc: "CREATE VIEW virtual table abstractions over complex multi-table queries." },
+  { id: "mysql-33", title: "Update and Drop Views", category: "Views & Indexes", desc: "CREATE OR REPLACE VIEW and DROP VIEW commands." },
+  { id: "mysql-34", title: "Create Indexes on Tables (B-Tree)", category: "Views & Indexes", desc: "CREATE INDEX to accelerate query lookup performance on frequently searched columns." },
+  { id: "mysql-35", title: "Demonstrate Unique Indexes", category: "Views & Indexes", desc: "CREATE UNIQUE INDEX to enforce unique integrity constraints." },
+  { id: "mysql-36", title: "Drop Indexes using DROP INDEX", category: "Views & Indexes", desc: "Remove unused index overhead from table metadata." },
+
+  // Stored Procedures and Functions
+  { id: "mysql-37", title: "Create and Execute Stored Procedures", category: "Stored Procedures & Functions", desc: "CREATE PROCEDURE with DELIMITER, BEGIN, and END blocks." },
+  { id: "mysql-38", title: "Stored Procedures with IN, OUT, and INOUT Parameters", category: "Stored Procedures & Functions", desc: "Parameter passing and return value extraction from stored routines." },
+  { id: "mysql-39", title: "Create and Execute Stored Functions", category: "Stored Procedures & Functions", desc: "CREATE FUNCTION returning deterministic scalar values." },
+  { id: "mysql-40", title: "Conditional IF-THEN-ELSE in Stored Procedures", category: "Stored Procedures & Functions", desc: "Procedural branching logic inside SQL server routines." },
+  { id: "mysql-41", title: "Loops in Stored Procedures (WHILE / LOOP)", category: "Stored Procedures & Functions", desc: "Iterative cursor loops and row processing in stored routines." },
+
+  // Triggers
+  { id: "mysql-42", title: "BEFORE INSERT Trigger", category: "Triggers & Auditing", desc: "Data validation and timestamp population before row write." },
+  { id: "mysql-43", title: "AFTER INSERT Trigger", category: "Triggers & Auditing", desc: "Automated counter increments or notification logging upon insertion." },
+  { id: "mysql-44", title: "BEFORE UPDATE Trigger", category: "Triggers & Auditing", desc: "Intercept column updates and maintain modified_at audit metadata." },
+  { id: "mysql-45", title: "AFTER DELETE Trigger", category: "Triggers & Auditing", desc: "Record deleted entity archive logs into historical audit tables." },
+  { id: "mysql-46", title: "Audit Log System using Triggers", category: "Triggers & Auditing", desc: "Comprehensive change-data-capture audit log recording old and new row states." },
+
+  // Transactions
+  { id: "mysql-47", title: "ACID Transactions in MySQL", category: "Transactions", desc: "Atomicity, Consistency, Isolation, and Durability guarantees in InnoDB." },
+  { id: "mysql-48", title: "COMMIT Implementation", category: "Transactions", desc: "START TRANSACTION and permanent persistence with COMMIT." },
+  { id: "mysql-49", title: "ROLLBACK Implementation", category: "Transactions", desc: "Roll back uncommitted DML changes upon constraint violation or error." },
+  { id: "mysql-50", title: "SAVEPOINT Implementation", category: "Transactions", desc: "Partial rollbacks to designated intermediate checkpoints." },
+  { id: "mysql-51", title: "Multi-Operation Financial Transfer Transaction", category: "Transactions", desc: "Debit account A and credit account B atomically with consistency verification." },
+
+  // Database Design & CRUD Projects
+  { id: "mysql-52", title: "Student Management Database Design", category: "Database Design & CRUD", desc: "Complete 3NF schema for Students, Departments, Courses, and Grades." },
+  { id: "mysql-53", title: "User & Role Management Database Schema", category: "Database Design & CRUD", desc: "Users, Roles, and User_Roles join table with RBAC permissions." },
+  { id: "mysql-54", title: "E-Commerce Product & Order Management Database", category: "Database Design & CRUD", desc: "Products, Categories, Customers, Orders, and Order_Items schema." },
+  { id: "mysql-55", title: "Library Management Database Schema", category: "Database Design & CRUD", desc: "Books, Authors, Members, and Book_Loans tracking system." },
+  { id: "mysql-56", title: "Database Normalization (1NF, 2NF, 3NF)", category: "Database Design & CRUD", desc: "Eliminating repeating groups, partial dependencies, and transitive dependencies." }
+];
+
+export const nodejsQuestions = [
+  // Server-Side Architecture
+  { id: "nodejs-01", title: "Client-Server Architecture with Node.js", category: "Architecture & Fundamentals", desc: "Client-Server request-response lifecycle with HTTP verbs and MIME types." },
+  { id: "nodejs-02", title: "Basic HTTP Server using http module", category: "Architecture & Fundamentals", desc: "http.createServer() handling req.url, req.method, and res.writeHead." },
+  { id: "nodejs-03", title: "Request-Response Cycle Demonstration", category: "Architecture & Fundamentals", desc: "Inspecting headers, payloads, status codes, and streaming responses." },
+  { id: "nodejs-04", title: "Built-in Modules (fs, path, os, events)", category: "Architecture & Fundamentals", desc: "Using Node.js standard library core modules without external dependencies." },
+  { id: "nodejs-05", title: "File System (fs) Operations", category: "Architecture & Fundamentals", desc: "readFile, writeFile, appendFile, unlink, and directory traversal." },
+  { id: "nodejs-06", title: "Path Module (path.join, path.resolve)", category: "Architecture & Fundamentals", desc: "Cross-platform filesystem path normalization and extensions." },
+  { id: "nodejs-07", title: "Custom Modules (CommonJS & ES Modules)", category: "Architecture & Fundamentals", desc: "module.exports vs export / import syntax patterns." },
+  { id: "nodejs-08", title: "NPM Package Management & package.json", category: "Architecture & Fundamentals", desc: "Dependencies, devDependencies, scripts, and semantic versioning." },
+  { id: "nodejs-09", title: "Asynchronous Node.js: Callbacks, Promises, Async/Await", category: "Architecture & Fundamentals", desc: "Event loop concurrency, non-blocking I/O, and async error handling." },
+  { id: "nodejs-10", title: "Global Error Handling & Process Listeners", category: "Architecture & Fundamentals", desc: "uncaughtException, unhandledRejection, and graceful shutdown." },
+
+  // Express Framework & Routing
+  { id: "nodejs-11", title: "Basic Express.js Application", category: "Express Framework", desc: "express(), app.listen(), and routing boilerplate." },
+  { id: "nodejs-12", title: "Handle GET and POST Requests", category: "Express Framework", desc: "URL parsing, req.query, and req.body with express.json()." },
+  { id: "nodejs-13", title: "Static File Serving with express.static", category: "Express Framework", desc: "Serving HTML, CSS, images, and client bundles from public folder." },
+  { id: "nodejs-14", title: "HTML and JSON API Responses", category: "Express Framework", desc: "res.send(), res.json(), res.sendFile(), and status chaining." },
+  { id: "nodejs-15", title: "Modular Express Project Architecture", category: "Express Framework", desc: "Separation into routes/, controllers/, models/, and middleware/." },
+  { id: "nodejs-16", title: "Route Parameters and Query Strings", category: "Routing", desc: "Extracting req.params (e.g. /users/:id) and req.query." },
+  { id: "nodejs-17", title: "Modular Routing with Express Router", category: "Routing", desc: "express.Router() mounted on /api/v1/students and /api/v1/products." },
+  { id: "nodejs-18", title: "404 Not Found & Fallback Route Handler", category: "Routing", desc: "Catch-all 404 middleware returning standardized JSON error envelopes." },
+
+  // Middleware & Sessions
+  { id: "nodejs-19", title: "Custom Middleware Implementation", category: "Middleware & Security", desc: "Writing (req, res, next) functions to inspect and augment requests." },
+  { id: "nodejs-20", title: "Logging Middleware (Morgan clone)", category: "Middleware & Security", desc: "HTTP request logging with timestamps, status, latency, and client IP." },
+  { id: "nodejs-21", title: "Request Validation Middleware", category: "Middleware & Security", desc: "Validating incoming JSON schemas and returning 422 Unprocessable Entity." },
+  { id: "nodejs-22", title: "Authentication Middleware & Token Guard", category: "Middleware & Security", desc: "Inspecting Authorization: Bearer token headers before route dispatch." },
+  { id: "nodejs-23", title: "Centralized Error-Handling Middleware", category: "Middleware & Security", desc: "Four-argument (err, req, res, next) centralized error boundary." },
+  { id: "nodejs-24", title: "Cookie Management in Express", category: "Sessions & Cookies", desc: "Setting HttpOnly, Secure, SameSite cookies and clearing cookies." },
+  { id: "nodejs-25", title: "Session Management in Express", category: "Sessions & Cookies", desc: "Session store, session IDs, user persistence across requests." },
+  { id: "nodejs-26", title: "Protected Routes with Session Auth", category: "Sessions & Cookies", desc: "Redirecting unauthenticated requests to login view." },
+
+  // Database Connectivity & CRUD
+  { id: "nodejs-27", title: "Database Connectivity in Node.js", category: "Database & CRUD", desc: "Connection pool setup with retry logic and health check ping." },
+  { id: "nodejs-28", title: "Student Management CRUD with Database", category: "Database & CRUD", desc: "Create, Read, Update, and Delete endpoints for student records." },
+  { id: "nodejs-29", title: "Product Catalog Management CRUD", category: "Database & CRUD", desc: "E-Commerce inventory API with filtering, sorting, and pagination." },
+  { id: "nodejs-30", title: "User Profile Management API", category: "Database & CRUD", desc: "User entity lifecycle with field updates and audit timestamps." },
+
+  // Authentication & Authorization
+  { id: "nodejs-31", title: "User Registration with Password Hashing", category: "Authentication & Security", desc: "Salt generation and bcrypt hashing before database storage." },
+  { id: "nodejs-32", title: "User Login & Password Verification", category: "Authentication & Security", desc: "Comparing plaintext credentials against hashed database records." },
+  { id: "nodejs-33", title: "JWT (JSON Web Token) Authentication", category: "Authentication & Security", desc: "Signing, verifying, and decoding HMAC-SHA256 JWT tokens." },
+  { id: "nodejs-34", title: "Role-Based Access Control (RBAC)", category: "Authentication & Security", desc: "Restricting Admin, Manager, and User endpoints via role middleware." },
+
+  // RESTful API Development
+  { id: "nodejs-35", title: "RESTful API Design & HTTP Status Codes", category: "REST APIs", desc: "REST conventions (200, 201, 204, 400, 401, 403, 404, 500)." },
+  { id: "nodejs-36", title: "GET REST API with Filtering & Pagination", category: "REST APIs", desc: "Cursor and page-based pagination with limit and offset query params." },
+  { id: "nodejs-37", title: "POST REST API with Payload Validation", category: "REST APIs", desc: "Creating resources and returning 201 Created with Location header." },
+  { id: "nodejs-38", title: "PUT and PATCH REST APIs", category: "REST APIs", desc: "Full entity replacement (PUT) vs partial attribute update (PATCH)." },
+  { id: "nodejs-39", title: "DELETE REST API with Soft Deletion", category: "REST APIs", desc: "Removing entities and supporting deleted_at soft deletion flags." },
+  { id: "nodejs-40", title: "Complete Production Student REST API", category: "REST APIs", desc: "Full-stack API suite with validation, database persistence, and documentation." }
+];
+
+export const supabaseQuestions = [
+  // Supabase Fundamentals
+  { id: "supabase-01", title: "Supabase Architecture & Project Setup", category: "Fundamentals & Client", desc: "Understanding the open-source Firebase alternative: PostgreSQL, PostgREST, GoTrue, and Realtime." },
+  { id: "supabase-02", title: "Supabase Client Initialization", category: "Fundamentals & Client", desc: "createClient(supabaseUrl, supabaseKey) and client singleton configuration." },
+  { id: "supabase-03", title: "Supabase Table Editor & Schema Explorer", category: "Fundamentals & Client", desc: "GUI data table management, column configuration, and data inspection." },
+  { id: "supabase-04", title: "Supabase SQL Editor & Migration Queries", category: "Fundamentals & Client", desc: "Running raw SQL commands, DDL schema scripts, and query profiling." },
+
+  // Database and Tables
+  { id: "supabase-05", title: "Table Creation & PostgreSQL Types in Supabase", category: "PostgreSQL Database", desc: "uuid primary keys, timestamptz, jsonb, text, and numeric types." },
+  { id: "supabase-06", title: "Foreign Keys & Relationships in Supabase", category: "PostgreSQL Database", desc: "Creating 1-to-many and many-to-many relational constraints in Postgres." },
+  { id: "supabase-07", title: "Constraints: NOT NULL, UNIQUE, DEFAULT, CHECK", category: "PostgreSQL Database", desc: "Enforcing business constraints at the database engine level." },
+
+  // Supabase CRUD & Query Builder
+  { id: "supabase-08", title: "Insert Records with Supabase Client", category: "Supabase CRUD", desc: "supabase.from('table').insert([{ ... }]) with single and batch inserts." },
+  { id: "supabase-09", title: "Select & Filter Records with Supabase", category: "Supabase CRUD", desc: "supabase.from('table').select('*').eq('status', 'active').order('created_at')." },
+  { id: "supabase-10", title: "Update Records with Supabase Client", category: "Supabase CRUD", desc: "supabase.from('table').update({ ... }).match({ id: ... })." },
+  { id: "supabase-11", title: "Delete Records with Supabase Client", category: "Supabase CRUD", desc: "supabase.from('table').delete().match({ id: ... })." },
+  { id: "supabase-12", title: "Relational Queries with Joined Foreign Tables", category: "Supabase CRUD", desc: "select('*, profiles(username, avatar_url), comments(*)') nested queries." },
+  { id: "supabase-13", title: "Pagination & Range Queries", category: "Supabase CRUD", desc: ".range(0, 9) for 10 records per page with count headers." },
+
+  // Authentication & Authorization (GoTrue)
+  { id: "supabase-14", title: "User Signup with Email & Password", category: "Authentication & RLS", desc: "supabase.auth.signUp({ email, password }) with email confirmation." },
+  { id: "supabase-15", title: "User Login & Session Handling", category: "Authentication & RLS", desc: "supabase.auth.signInWithPassword({ email, password }) and JWT tokens." },
+  { id: "supabase-16", title: "User Logout & Session Cleansing", category: "Authentication & RLS", desc: "supabase.auth.signOut() and reactive auth state listening with onAuthStateChange." },
+  { id: "supabase-17", title: "Password Reset Flow with Supabase", category: "Authentication & RLS", desc: "supabase.auth.resetPasswordForEmail() and updatePassword() flows." },
+  { id: "supabase-18", title: "Row Level Security (RLS) Enablement", category: "Authentication & RLS", desc: "ALTER TABLE table_name ENABLE ROW LEVEL SECURITY." },
+  { id: "supabase-19", title: "RLS Policies: Restrict Users to Own Records", category: "Authentication & RLS", desc: "CREATE POLICY on table FOR ALL USING (auth.uid() = user_id)." },
+  { id: "supabase-20", title: "Role-Based Access Control (RBAC) with RLS", category: "Authentication & RLS", desc: "Policies evaluating user claims and admin privileges." },
+
+  // Storage
+  { id: "supabase-21", title: "Supabase Storage Bucket Creation", category: "Storage & Realtime", desc: "Public and private storage buckets for files, avatars, and documents." },
+  { id: "supabase-22", title: "Upload Files to Supabase Storage", category: "Storage & Realtime", desc: "supabase.storage.from('bucket').upload('path/to/file', file)." },
+  { id: "supabase-23", title: "Download & Generate Public File URLs", category: "Storage & Realtime", desc: "getPublicUrl() and createSignedUrl() for time-limited secure downloads." },
+  { id: "supabase-24", title: "Delete Files from Supabase Storage", category: "Storage & Realtime", desc: "supabase.storage.from('bucket').remove(['path/to/file'])." },
+
+  // Realtime
+  { id: "supabase-25", title: "Supabase Realtime Postgres Changes", category: "Storage & Realtime", desc: "supabase.channel().on('postgres_changes', { event: '*' }, callback).subscribe()." },
+  { id: "supabase-26", title: "Realtime Chat Application", category: "Storage & Realtime", desc: "Live broadcast messaging and multi-user chat room powered by Realtime." },
+  { id: "supabase-27", title: "Realtime Student Records Live Sync", category: "Storage & Realtime", desc: "Instant UI updates when rows are added, updated, or removed across clients." },
+
+  // Edge Functions & REST API
+  { id: "supabase-28", title: "Supabase Edge Functions (Deno Runtime)", category: "Edge Functions & Projects", desc: "Serverless TypeScript functions deployed globally on Deno Deploy." },
+  { id: "supabase-29", title: "Auto-Generated REST API & OpenAPI Docs", category: "Edge Functions & Projects", desc: "Automatic PostgREST RESTful endpoints generated directly from Postgres tables." },
+  { id: "supabase-30", title: "Full Student Management System with Supabase", category: "Edge Functions & Projects", desc: "End-to-end full-stack portal with PostgreSQL, Auth, RLS, Storage, and Realtime." }
+];
+
+console.log(`Parsed ${mysqlQuestions.length} MySQL questions, ${nodejsQuestions.length} Node.js questions, and ${supabaseQuestions.length} Supabase questions.`);
+fs.writeFileSync('./scripts/all-syllabi.json', JSON.stringify({ mysql: mysqlQuestions, nodejs: nodejsQuestions, supabase: supabaseQuestions }, null, 2), 'utf-8');

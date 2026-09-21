@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add &amp; Remove Elements Dynamically - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="bmi-calculator.html" class="nav-btn">⬅ Prev</a>
+        <a href="dom-dynamic-table.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Add &amp; Remove Elements Dynamically</h1>
+            <p class="card-subtitle">Demonstrates DOM manipulation methods: document.createElement(), appendChild(), element.remove(), and replaceChild().</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            DOM Manipulation
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 600px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;">
+        <h3 style="color: #0f172a; margin-bottom: 12px;">Dynamic DOM Element Operations</h3>
+        <div style="display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;">
+          <button onclick="addNewCard()" style="padding: 8px 14px; background: #16a34a; color: #fff; border: none; border-radius: 6px; cursor: pointer;">+ Append Child</button>
+          <button onclick="removeLastCard()" style="padding: 8px 14px; background: #dc2626; color: #fff; border: none; border-radius: 6px; cursor: pointer;">- Remove Child</button>
+          <button onclick="replaceFirstCard()" style="padding: 8px 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; cursor: pointer;">↺ Replace Child</button>
+        </div>
+        <div id="dynamicContainer" style="display: flex; flex-direction: column; gap: 8px; min-height: 120px; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px dashed #cbd5e1;">
+          <div class="dyn-item" style="padding: 10px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px;">Initial Element #1: Node rendered on page load.</div>
+        </div>
+        <script>
+          let count = 1;
+          function addNewCard() {
+            count++;
+            const div = document.createElement('div');
+            div.className = 'dyn-item';
+            div.style.cssText = 'padding: 10px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; color: #1e40af;';
+            div.innerText = 'Appended Node #' + count + ' created via createElement()';
+            document.getElementById('dynamicContainer').appendChild(div);
+          }
+          function removeLastCard() {
+            const container = document.getElementById('dynamicContainer');
+            if (container.lastElementChild) container.removeChild(container.lastElementChild);
+          }
+          function replaceFirstCard() {
+            const container = document.getElementById('dynamicContainer');
+            if (!container.firstElementChild) return;
+            const replacement = document.createElement('div');
+            replacement.style.cssText = 'padding: 10px; background: #fef3c7; border: 1px solid #fde68a; border-radius: 6px; color: #92400e; font-weight: bold;';
+            replacement.innerText = '⚡ Replaced Node via replaceChild()';
+            container.replaceChild(replacement, container.firstElementChild);
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: dom-add-remove-elements.html</span>
+              <button class="copy-btn" data-target="code_js-dom-add-remove">Copy Code</button>
+            </div>
+            <pre id="code_js-dom-add-remove"><code>&lt;div style=&quot;max-width: 600px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 12px;&quot;&gt;Dynamic DOM Element Operations&lt;/h3&gt;
+        &lt;div style=&quot;display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap;&quot;&gt;
+          &lt;button onclick=&quot;addNewCard()&quot; style=&quot;padding: 8px 14px; background: #16a34a; color: #fff; border: none; border-radius: 6px; cursor: pointer;&quot;&gt;+ Append Child&lt;/button&gt;
+          &lt;button onclick=&quot;removeLastCard()&quot; style=&quot;padding: 8px 14px; background: #dc2626; color: #fff; border: none; border-radius: 6px; cursor: pointer;&quot;&gt;- Remove Child&lt;/button&gt;
+          &lt;button onclick=&quot;replaceFirstCard()&quot; style=&quot;padding: 8px 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; cursor: pointer;&quot;&gt;↺ Replace Child&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;dynamicContainer&quot; style=&quot;display: flex; flex-direction: column; gap: 8px; min-height: 120px; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px dashed #cbd5e1;&quot;&gt;
+          &lt;div class=&quot;dyn-item&quot; style=&quot;padding: 10px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px;&quot;&gt;Initial Element #1: Node rendered on page load.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          let count = 1;
+          function addNewCard() {
+            count++;
+            const div = document.createElement(&#039;div&#039;);
+            div.className = &#039;dyn-item&#039;;
+            div.style.cssText = &#039;padding: 10px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; color: #1e40af;&#039;;
+            div.innerText = &#039;Appended Node #&#039; + count + &#039; created via createElement()&#039;;
+            document.getElementById(&#039;dynamicContainer&#039;).appendChild(div);
+          }
+          function removeLastCard() {
+            const container = document.getElementById(&#039;dynamicContainer&#039;);
+            if (container.lastElementChild) container.removeChild(container.lastElementChild);
+          }
+          function replaceFirstCard() {
+            const container = document.getElementById(&#039;dynamicContainer&#039;);
+            if (!container.firstElementChild) return;
+            const replacement = document.createElement(&#039;div&#039;);
+            replacement.style.cssText = &#039;padding: 10px; background: #fef3c7; border: 1px solid #fde68a; border-radius: 6px; color: #92400e; font-weight: bold;&#039;;
+            replacement.innerText = &#039;⚡ Replaced Node via replaceChild()&#039;;
+            container.replaceChild(replacement, container.firstElementChild);
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

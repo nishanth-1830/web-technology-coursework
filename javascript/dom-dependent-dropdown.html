@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dependent Dropdowns (Country → State → City) - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="dom-character-word-counter.html" class="nav-btn">⬅ Prev</a>
+        <a href="events-mouse.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Dependent Dropdowns (Country → State → City)</h1>
+            <p class="card-subtitle">Implements cascaded dropdown selection where choosing a Country dynamically populates States, and State populates Cities.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            DOM Manipulation
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;">
+        <h3 style="color: #0f172a; margin-bottom: 16px;">Cascaded Dependent Dropdown</h3>
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">1. Select Country</label>
+            <select id="ddCountry" onchange="onCountryChange()" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
+              <option value="">-- Choose Country --</option>
+              <option value="India">India</option>
+              <option value="USA">United States</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">2. Select State</label>
+            <select id="ddState" onchange="onStateChange()" disabled style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
+              <option value="">-- Select Country First --</option>
+            </select>
+          </div>
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;">3. Select City</label>
+            <select id="ddCity" disabled style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
+              <option value="">-- Select State First --</option>
+            </select>
+          </div>
+        </div>
+        <script>
+          const geoData = {
+            "India": {
+              "Telangana": ["Hyderabad", "Warangal", "Nizamabad"],
+              "Karnataka": ["Bengaluru", "Mysuru", "Hubli"],
+              "Maharashtra": ["Mumbai", "Pune", "Nagpur"]
+            },
+            "USA": {
+              "California": ["Los Angeles", "San Francisco", "San Diego"],
+              "New York": ["New York City", "Buffalo", "Albany"],
+              "Texas": ["Houston", "Austin", "Dallas"]
+            }
+          };
+          function onCountryChange() {
+            const country = document.getElementById('ddCountry').value;
+            const stateSelect = document.getElementById('ddState');
+            const citySelect = document.getElementById('ddCity');
+            stateSelect.innerHTML = '<option value="">-- Choose State --</option>';
+            citySelect.innerHTML = '<option value="">-- Select State First --</option>';
+            citySelect.disabled = true;
+            if (country && geoData[country]) {
+              stateSelect.disabled = false;
+              Object.keys(geoData[country]).forEach(st => {
+                const opt = document.createElement('option');
+                opt.value = st; opt.innerText = st;
+                stateSelect.appendChild(opt);
+              });
+            } else {
+              stateSelect.disabled = true;
+            }
+          }
+          function onStateChange() {
+            const country = document.getElementById('ddCountry').value;
+            const state = document.getElementById('ddState').value;
+            const citySelect = document.getElementById('ddCity');
+            citySelect.innerHTML = '<option value="">-- Choose City --</option>';
+            if (country && state && geoData[country][state]) {
+              citySelect.disabled = false;
+              geoData[country][state].forEach(ct => {
+                const opt = document.createElement('option');
+                opt.value = ct; opt.innerText = ct;
+                citySelect.appendChild(opt);
+              });
+            } else {
+              citySelect.disabled = true;
+            }
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: dom-dependent-dropdown.html</span>
+              <button class="copy-btn" data-target="code_js-dom-dropdown">Copy Code</button>
+            </div>
+            <pre id="code_js-dom-dropdown"><code>&lt;div style=&quot;max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 16px;&quot;&gt;Cascaded Dependent Dropdown&lt;/h3&gt;
+        &lt;div style=&quot;display: flex; flex-direction: column; gap: 14px;&quot;&gt;
+          &lt;div&gt;
+            &lt;label style=&quot;display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;&quot;&gt;1. Select Country&lt;/label&gt;
+            &lt;select id=&quot;ddCountry&quot; onchange=&quot;onCountryChange()&quot; style=&quot;width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+              &lt;option value=&quot;&quot;&gt;-- Choose Country --&lt;/option&gt;
+              &lt;option value=&quot;India&quot;&gt;India&lt;/option&gt;
+              &lt;option value=&quot;USA&quot;&gt;United States&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label style=&quot;display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;&quot;&gt;2. Select State&lt;/label&gt;
+            &lt;select id=&quot;ddState&quot; onchange=&quot;onStateChange()&quot; disabled style=&quot;width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+              &lt;option value=&quot;&quot;&gt;-- Select Country First --&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label style=&quot;display: block; font-size: 13px; font-weight: bold; margin-bottom: 4px;&quot;&gt;3. Select City&lt;/label&gt;
+            &lt;select id=&quot;ddCity&quot; disabled style=&quot;width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+              &lt;option value=&quot;&quot;&gt;-- Select State First --&lt;/option&gt;
+            &lt;/select&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          const geoData = {
+            &quot;India&quot;: {
+              &quot;Telangana&quot;: [&quot;Hyderabad&quot;, &quot;Warangal&quot;, &quot;Nizamabad&quot;],
+              &quot;Karnataka&quot;: [&quot;Bengaluru&quot;, &quot;Mysuru&quot;, &quot;Hubli&quot;],
+              &quot;Maharashtra&quot;: [&quot;Mumbai&quot;, &quot;Pune&quot;, &quot;Nagpur&quot;]
+            },
+            &quot;USA&quot;: {
+              &quot;California&quot;: [&quot;Los Angeles&quot;, &quot;San Francisco&quot;, &quot;San Diego&quot;],
+              &quot;New York&quot;: [&quot;New York City&quot;, &quot;Buffalo&quot;, &quot;Albany&quot;],
+              &quot;Texas&quot;: [&quot;Houston&quot;, &quot;Austin&quot;, &quot;Dallas&quot;]
+            }
+          };
+          function onCountryChange() {
+            const country = document.getElementById(&#039;ddCountry&#039;).value;
+            const stateSelect = document.getElementById(&#039;ddState&#039;);
+            const citySelect = document.getElementById(&#039;ddCity&#039;);
+            stateSelect.innerHTML = &#039;&lt;option value=&quot;&quot;&gt;-- Choose State --&lt;/option&gt;&#039;;
+            citySelect.innerHTML = &#039;&lt;option value=&quot;&quot;&gt;-- Select State First --&lt;/option&gt;&#039;;
+            citySelect.disabled = true;
+            if (country &amp;&amp; geoData[country]) {
+              stateSelect.disabled = false;
+              Object.keys(geoData[country]).forEach(st =&gt; {
+                const opt = document.createElement(&#039;option&#039;);
+                opt.value = st; opt.innerText = st;
+                stateSelect.appendChild(opt);
+              });
+            } else {
+              stateSelect.disabled = true;
+            }
+          }
+          function onStateChange() {
+            const country = document.getElementById(&#039;ddCountry&#039;).value;
+            const state = document.getElementById(&#039;ddState&#039;).value;
+            const citySelect = document.getElementById(&#039;ddCity&#039;);
+            citySelect.innerHTML = &#039;&lt;option value=&quot;&quot;&gt;-- Choose City --&lt;/option&gt;&#039;;
+            if (country &amp;&amp; state &amp;&amp; geoData[country][state]) {
+              citySelect.disabled = false;
+              geoData[country][state].forEach(ct =&gt; {
+                const opt = document.createElement(&#039;option&#039;);
+                opt.value = ct; opt.innerText = ct;
+                citySelect.appendChild(opt);
+              });
+            } else {
+              citySelect.disabled = true;
+            }
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

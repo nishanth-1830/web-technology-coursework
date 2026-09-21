@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Objects (Navigator, Screen, Location) - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="form-student-registration.html" class="nav-btn">⬅ Prev</a>
+        <a href="storage-local-crud.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Browser Objects (Navigator, Screen, Location)</h1>
+            <p class="card-subtitle">Inspects browser environment using window.navigator, window.screen, window.location, and online/offline connectivity status.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Browser Objects &amp; Features
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 600px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;">
+        <h3 style="color: #0f172a; margin-bottom: 16px;">Browser System Diagnostics</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div style="background: #f8fafc; padding: 14px; border-radius: 6px; border: 1px solid #e2e8f0;">
+            <strong style="color: #2563eb; font-size: 13px;">Navigator Object:</strong>
+            <ul style="list-style: none; padding: 0; font-size: 13px; color: #475569; margin-top: 6px;">
+              <li>Platform: <strong id="navPlatform"></strong></li>
+              <li>Language: <strong id="navLang"></strong></li>
+              <li>Online Status: <strong id="navOnline" style="color: #16a34a;">Online</strong></li>
+            </ul>
+          </div>
+          <div style="background: #f8fafc; padding: 14px; border-radius: 6px; border: 1px solid #e2e8f0;">
+            <strong style="color: #2563eb; font-size: 13px;">Screen Dimensions:</strong>
+            <ul style="list-style: none; padding: 0; font-size: 13px; color: #475569; margin-top: 6px;">
+              <li>Width: <strong id="scrWidth"></strong>px</li>
+              <li>Height: <strong id="scrHeight"></strong>px</li>
+              <li>Color Depth: <strong id="scrDepth"></strong>-bit</li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-top: 14px; background: #eff6ff; padding: 12px; border-radius: 6px; font-size: 13px; color: #1e40af;">
+          Current Page URL: <code id="navUrl"></code>
+        </div>
+        <script>
+          document.getElementById('navPlatform').innerText = navigator.platform || 'Web Container';
+          document.getElementById('navLang').innerText = navigator.language;
+          document.getElementById('navOnline').innerText = navigator.onLine ? 'Connected (Online)' : 'Offline';
+          document.getElementById('scrWidth').innerText = window.screen.width;
+          document.getElementById('scrHeight').innerText = window.screen.height;
+          document.getElementById('scrDepth').innerText = window.screen.colorDepth;
+          document.getElementById('navUrl').innerText = window.location.href;
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: browser-navigator-screen.html</span>
+              <button class="copy-btn" data-target="code_js-browser-features">Copy Code</button>
+            </div>
+            <pre id="code_js-browser-features"><code>&lt;div style=&quot;max-width: 600px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 16px;&quot;&gt;Browser System Diagnostics&lt;/h3&gt;
+        &lt;div style=&quot;display: grid; grid-template-columns: 1fr 1fr; gap: 14px;&quot;&gt;
+          &lt;div style=&quot;background: #f8fafc; padding: 14px; border-radius: 6px; border: 1px solid #e2e8f0;&quot;&gt;
+            &lt;strong style=&quot;color: #2563eb; font-size: 13px;&quot;&gt;Navigator Object:&lt;/strong&gt;
+            &lt;ul style=&quot;list-style: none; padding: 0; font-size: 13px; color: #475569; margin-top: 6px;&quot;&gt;
+              &lt;li&gt;Platform: &lt;strong id=&quot;navPlatform&quot;&gt;&lt;/strong&gt;&lt;/li&gt;
+              &lt;li&gt;Language: &lt;strong id=&quot;navLang&quot;&gt;&lt;/strong&gt;&lt;/li&gt;
+              &lt;li&gt;Online Status: &lt;strong id=&quot;navOnline&quot; style=&quot;color: #16a34a;&quot;&gt;Online&lt;/strong&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+          &lt;div style=&quot;background: #f8fafc; padding: 14px; border-radius: 6px; border: 1px solid #e2e8f0;&quot;&gt;
+            &lt;strong style=&quot;color: #2563eb; font-size: 13px;&quot;&gt;Screen Dimensions:&lt;/strong&gt;
+            &lt;ul style=&quot;list-style: none; padding: 0; font-size: 13px; color: #475569; margin-top: 6px;&quot;&gt;
+              &lt;li&gt;Width: &lt;strong id=&quot;scrWidth&quot;&gt;&lt;/strong&gt;px&lt;/li&gt;
+              &lt;li&gt;Height: &lt;strong id=&quot;scrHeight&quot;&gt;&lt;/strong&gt;px&lt;/li&gt;
+              &lt;li&gt;Color Depth: &lt;strong id=&quot;scrDepth&quot;&gt;&lt;/strong&gt;-bit&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;margin-top: 14px; background: #eff6ff; padding: 12px; border-radius: 6px; font-size: 13px; color: #1e40af;&quot;&gt;
+          Current Page URL: &lt;code id=&quot;navUrl&quot;&gt;&lt;/code&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          document.getElementById(&#039;navPlatform&#039;).innerText = navigator.platform || &#039;Web Container&#039;;
+          document.getElementById(&#039;navLang&#039;).innerText = navigator.language;
+          document.getElementById(&#039;navOnline&#039;).innerText = navigator.onLine ? &#039;Connected (Online)&#039; : &#039;Offline&#039;;
+          document.getElementById(&#039;scrWidth&#039;).innerText = window.screen.width;
+          document.getElementById(&#039;scrHeight&#039;).innerText = window.screen.height;
+          document.getElementById(&#039;scrDepth&#039;).innerText = window.screen.colorDepth;
+          document.getElementById(&#039;navUrl&#039;).innerText = window.location.href;
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

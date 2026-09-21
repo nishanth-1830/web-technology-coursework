@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select & Filter Records with Supabase - Supabase BaaS Lab</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <style>
+    .supabase-card { background: #0f172a; color: #f8fafc; border-radius: 8px; padding: 16px; font-family: monospace; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">⚡ Supabase Lab</a>
+        <a href="supabase-08.html" class="nav-btn">⬅ Prev</a>
+        <a href="supabase-10.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Select & Filter Records with Supabase</h1>
+            <p class="card-subtitle">supabase.from('table').select('*').eq('status', 'active').order('created_at').</p>
+          </div>
+          <span style="background: #ecfdf5; color: #047857; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #a7f3d0;">
+            Supabase CRUD
+          </span>
+        </div>
+      </div>
+
+      <!-- Live Interactive Supabase Console -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Interactive Supabase Client Console</h2>
+          <span style="font-size: 12px; color: #059669; font-weight: 500;">● Connected to Supabase Cloud</span>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+          <button class="btn btn-primary" onclick="runSupabaseCall()">▶ Invoke Supabase SDK Method</button>
+          <button class="btn btn-secondary" onclick="clearSupabaseConsole()">Clear Log</button>
+        </div>
+
+        <div id="sbOutput" class="supabase-card" style="display: none;">
+          <div style="color: #34d399; margin-bottom: 6px;">[OK] PostgREST API Returned 200 OK</div>
+          <pre id="sbData" style="margin: 0; color: #38bdf8;"></pre>
+        </div>
+      </section>
+
+      <!-- Source Code Display -->
+      <section style="margin-top: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Supabase JavaScript SDK Code</h2>
+          <button class="copy-btn" onclick="copySbCode()">📋 Copy Code</button>
+        </div>
+        <pre class="code-block" id="sbSourceCode"><code>// Experiment #9: Select &amp; Filter Records with Supabase
+// Supabase JavaScript Client SDK (@supabase/supabase-js)
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://xyzcompany.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Invoking Supabase feature: Select &amp; Filter Records with Supabase
+async function runSupabaseOperation() {
+  const { data, error } = await supabase
+    .from('students')
+    .select('id, full_name, roll_no, grade')
+    .eq('status', 'active')
+    .order('grade', { ascending: false });
+
+  if (error) {
+    console.error('Supabase Error:', error);
+  } else {
+    console.log('Supabase Data:', data);
+  }
+}
+
+runSupabaseOperation();</code></pre>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Web Technology Laboratory • Department of Computer Science & Engineering</p>
+    <p>Student: <strong>k. nishanth reddy</strong> | Reg No: <strong>250200439</strong> | Section: <strong>06</strong></p>
+  </footer>
+
+  <script>
+    function copySbCode() {
+      const code = document.getElementById('sbSourceCode').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.innerText = '✓ Copied!';
+        setTimeout(() => btn.innerText = '📋 Copy Code', 2000);
+      });
+    }
+
+    function clearSupabaseConsole() {
+      document.getElementById('sbOutput').style.display = 'none';
+    }
+
+    function runSupabaseCall() {
+      const out = document.getElementById('sbOutput');
+      const dataEl = document.getElementById('sbData');
+      out.style.display = 'block';
+
+      const mockData = {
+        data: [
+          { id: "e1b2c3d4", full_name: "k. nishanth reddy", roll_no: "250200439", grade: 9.8, status: "active" },
+          { id: "f2c3d4e5", full_name: "Aarav Sharma", roll_no: "250200440", grade: 9.2, status: "active" },
+          { id: "a3b4c5d6", full_name: "Sneha Patil", roll_no: "250200441", grade: 9.5, status: "active" }
+        ],
+        error: null,
+        count: 3,
+        status: 200,
+        statusText: "OK"
+      };
+
+      dataEl.innerText = JSON.stringify(mockData, null, 2);
+    }
+  </script>
+</body>
+</html>

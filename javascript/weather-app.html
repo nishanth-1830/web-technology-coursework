@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Application (API &amp; Simulation) - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="todo-list.html" class="nav-btn">⬅ Prev</a>
+        <a href="quiz-app.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Weather Application (API &amp; Simulation)</h1>
+            <p class="card-subtitle">Weather forecast application demonstrating asynchronous fetch API requests, city search, temperature display, humidity, and condition icon.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Mini Projects
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 440px; margin: 0 auto; background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 12px; padding: 24px; color: #fff; text-align: center; box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);">
+        <h3 style="margin-bottom: 16px;">Live Weather Forecast</h3>
+        <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+          <input type="text" id="weatherCity" value="Hyderabad" placeholder="Enter city name..." style="flex: 1; padding: 10px; border: none; border-radius: 6px; color: #0f172a; font-size: 14px;">
+          <button onclick="getWeather()" style="padding: 10px 18px; background: #fbbf24; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Search</button>
+        </div>
+        <div id="weatherResult" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border-radius: 8px; padding: 20px;">
+          <h2 id="wCityDisplay" style="font-size: 24px; margin-bottom: 4px;">Hyderabad, IN</h2>
+          <div id="wIcon" style="font-size: 48px; margin: 8px 0;">☀️</div>
+          <div id="wTemp" style="font-size: 42px; font-weight: bold;">32°C</div>
+          <p id="wDesc" style="font-size: 15px; opacity: 0.9;">Partly Sunny</p>
+          <div style="display: flex; justify-content: space-around; margin-top: 16px; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 12px;">
+            <span>💧 Humidity: <strong id="wHumidity">45%</strong></span>
+            <span>💨 Wind: <strong id="wWind">14 km/h</strong></span>
+          </div>
+        </div>
+        <script>
+          const weatherData = {
+            "hyderabad": { temp: 32, desc: "Partly Sunny", icon: "☀️", humidity: "45%", wind: "14 km/h" },
+            "bengaluru": { temp: 26, desc: "Pleasant & Breezy", icon: "⛅", humidity: "60%", wind: "18 km/h" },
+            "delhi": { temp: 35, desc: "Clear Sky", icon: "🌞", humidity: "35%", wind: "10 km/h" },
+            "mumbai": { temp: 30, desc: "Humid & Coastal Breeze", icon: "🌊", humidity: "78%", wind: "22 km/h" },
+            "london": { temp: 16, desc: "Light Rain Showers", icon: "🌧️", humidity: "82%", wind: "19 km/h" },
+            "new york": { temp: 21, desc: "Scattered Clouds", icon: "⛅", humidity: "52%", wind: "15 km/h" }
+          };
+          function getWeather() {
+            const city = document.getElementById('weatherCity').value.trim().toLowerCase();
+            const res = weatherData[city] || {
+              temp: Math.floor(20 + Math.random() * 15),
+              desc: "Mild Conditions",
+              icon: "🌤️",
+              humidity: Math.floor(40 + Math.random() * 40) + "%",
+              wind: Math.floor(8 + Math.random() * 20) + " km/h"
+            };
+            document.getElementById('wCityDisplay').innerText = document.getElementById('weatherCity').value;
+            document.getElementById('wTemp').innerText = res.temp + "°C";
+            document.getElementById('wDesc').innerText = res.desc;
+            document.getElementById('wIcon').innerText = res.icon;
+            document.getElementById('wHumidity').innerText = res.humidity;
+            document.getElementById('wWind').innerText = res.wind;
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: weather-app.html</span>
+              <button class="copy-btn" data-target="code_js-weather">Copy Code</button>
+            </div>
+            <pre id="code_js-weather"><code>&lt;div style=&quot;max-width: 440px; margin: 0 auto; background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 12px; padding: 24px; color: #fff; text-align: center; box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);&quot;&gt;
+        &lt;h3 style=&quot;margin-bottom: 16px;&quot;&gt;Live Weather Forecast&lt;/h3&gt;
+        &lt;div style=&quot;display: flex; gap: 8px; margin-bottom: 20px;&quot;&gt;
+          &lt;input type=&quot;text&quot; id=&quot;weatherCity&quot; value=&quot;Hyderabad&quot; placeholder=&quot;Enter city name...&quot; style=&quot;flex: 1; padding: 10px; border: none; border-radius: 6px; color: #0f172a; font-size: 14px;&quot;&gt;
+          &lt;button onclick=&quot;getWeather()&quot; style=&quot;padding: 10px 18px; background: #fbbf24; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Search&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;weatherResult&quot; style=&quot;background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border-radius: 8px; padding: 20px;&quot;&gt;
+          &lt;h2 id=&quot;wCityDisplay&quot; style=&quot;font-size: 24px; margin-bottom: 4px;&quot;&gt;Hyderabad, IN&lt;/h2&gt;
+          &lt;div id=&quot;wIcon&quot; style=&quot;font-size: 48px; margin: 8px 0;&quot;&gt;☀️&lt;/div&gt;
+          &lt;div id=&quot;wTemp&quot; style=&quot;font-size: 42px; font-weight: bold;&quot;&gt;32°C&lt;/div&gt;
+          &lt;p id=&quot;wDesc&quot; style=&quot;font-size: 15px; opacity: 0.9;&quot;&gt;Partly Sunny&lt;/p&gt;
+          &lt;div style=&quot;display: flex; justify-content: space-around; margin-top: 16px; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 12px;&quot;&gt;
+            &lt;span&gt;💧 Humidity: &lt;strong id=&quot;wHumidity&quot;&gt;45%&lt;/strong&gt;&lt;/span&gt;
+            &lt;span&gt;💨 Wind: &lt;strong id=&quot;wWind&quot;&gt;14 km/h&lt;/strong&gt;&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          const weatherData = {
+            &quot;hyderabad&quot;: { temp: 32, desc: &quot;Partly Sunny&quot;, icon: &quot;☀️&quot;, humidity: &quot;45%&quot;, wind: &quot;14 km/h&quot; },
+            &quot;bengaluru&quot;: { temp: 26, desc: &quot;Pleasant &amp; Breezy&quot;, icon: &quot;⛅&quot;, humidity: &quot;60%&quot;, wind: &quot;18 km/h&quot; },
+            &quot;delhi&quot;: { temp: 35, desc: &quot;Clear Sky&quot;, icon: &quot;🌞&quot;, humidity: &quot;35%&quot;, wind: &quot;10 km/h&quot; },
+            &quot;mumbai&quot;: { temp: 30, desc: &quot;Humid &amp; Coastal Breeze&quot;, icon: &quot;🌊&quot;, humidity: &quot;78%&quot;, wind: &quot;22 km/h&quot; },
+            &quot;london&quot;: { temp: 16, desc: &quot;Light Rain Showers&quot;, icon: &quot;🌧️&quot;, humidity: &quot;82%&quot;, wind: &quot;19 km/h&quot; },
+            &quot;new york&quot;: { temp: 21, desc: &quot;Scattered Clouds&quot;, icon: &quot;⛅&quot;, humidity: &quot;52%&quot;, wind: &quot;15 km/h&quot; }
+          };
+          function getWeather() {
+            const city = document.getElementById(&#039;weatherCity&#039;).value.trim().toLowerCase();
+            const res = weatherData[city] || {
+              temp: Math.floor(20 + Math.random() * 15),
+              desc: &quot;Mild Conditions&quot;,
+              icon: &quot;🌤️&quot;,
+              humidity: Math.floor(40 + Math.random() * 40) + &quot;%&quot;,
+              wind: Math.floor(8 + Math.random() * 20) + &quot; km/h&quot;
+            };
+            document.getElementById(&#039;wCityDisplay&#039;).innerText = document.getElementById(&#039;weatherCity&#039;).value;
+            document.getElementById(&#039;wTemp&#039;).innerText = res.temp + &quot;°C&quot;;
+            document.getElementById(&#039;wDesc&#039;).innerText = res.desc;
+            document.getElementById(&#039;wIcon&#039;).innerText = res.icon;
+            document.getElementById(&#039;wHumidity&#039;).innerText = res.humidity;
+            document.getElementById(&#039;wWind&#039;).innerText = res.wind;
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

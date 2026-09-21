@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Calculator - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        
+        <a href="digital-clock.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Digital Calculator</h1>
+            <p class="card-subtitle">An interactive digital calculator with arithmetic evaluation, clear, backspace, and responsive keypad.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Mini Projects
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 320px; margin: 0 auto; background: #1e293b; padding: 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+        <input type="text" id="calcDisplay" readonly value="0" style="width: 100%; height: 60px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #f8fafc; font-size: 28px; text-align: right; padding: 0 16px; font-family: monospace; margin-bottom: 16px;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+          <button onclick="calcClear()" style="grid-column: span 2; padding: 14px; background: #ef4444; color: #fff; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer;">AC</button>
+          <button onclick="calcDel()" style="padding: 14px; background: #475569; color: #fff; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">DEL</button>
+          <button onclick="calcAppend('/')" style="padding: 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">÷</button>
+
+          <button onclick="calcAppend('7')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">7</button>
+          <button onclick="calcAppend('8')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">8</button>
+          <button onclick="calcAppend('9')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">9</button>
+          <button onclick="calcAppend('*')" style="padding: 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">×</button>
+
+          <button onclick="calcAppend('4')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">4</button>
+          <button onclick="calcAppend('5')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">5</button>
+          <button onclick="calcAppend('6')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">6</button>
+          <button onclick="calcAppend('-')" style="padding: 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">-</button>
+
+          <button onclick="calcAppend('1')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">1</button>
+          <button onclick="calcAppend('2')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">2</button>
+          <button onclick="calcAppend('3')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">3</button>
+          <button onclick="calcAppend('+')" style="padding: 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">+</button>
+
+          <button onclick="calcAppend('0')" style="grid-column: span 2; padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">0</button>
+          <button onclick="calcAppend('.')" style="padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;">.</button>
+          <button onclick="calcEvaluate()" style="padding: 14px; background: #16a34a; color: #fff; border: none; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer;">=</button>
+        </div>
+        <script>
+          let currentExpr = "0";
+          function calcAppend(val) {
+            if (currentExpr === "0" && val !== ".") currentExpr = val;
+            else currentExpr += val;
+            document.getElementById('calcDisplay').value = currentExpr;
+          }
+          function calcClear() {
+            currentExpr = "0";
+            document.getElementById('calcDisplay').value = currentExpr;
+          }
+          function calcDel() {
+            currentExpr = currentExpr.slice(0, -1);
+            if (!currentExpr) currentExpr = "0";
+            document.getElementById('calcDisplay').value = currentExpr;
+          }
+          function calcEvaluate() {
+            try {
+              currentExpr = String(Function('"use strict";return (' + currentExpr + ')')());
+            } catch(e) {
+              currentExpr = "Error";
+            }
+            document.getElementById('calcDisplay').value = currentExpr;
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: digital-calculator.html</span>
+              <button class="copy-btn" data-target="code_js-calc">Copy Code</button>
+            </div>
+            <pre id="code_js-calc"><code>&lt;div style=&quot;max-width: 320px; margin: 0 auto; background: #1e293b; padding: 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3);&quot;&gt;
+        &lt;input type=&quot;text&quot; id=&quot;calcDisplay&quot; readonly value=&quot;0&quot; style=&quot;width: 100%; height: 60px; background: #0f172a; border: 1px solid #334155; border-radius: 8px; color: #f8fafc; font-size: 28px; text-align: right; padding: 0 16px; font-family: monospace; margin-bottom: 16px;&quot;&gt;
+        &lt;div style=&quot;display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;&quot;&gt;
+          &lt;button onclick=&quot;calcClear()&quot; style=&quot;grid-column: span 2; padding: 14px; background: #ef4444; color: #fff; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer;&quot;&gt;AC&lt;/button&gt;
+          &lt;button onclick=&quot;calcDel()&quot; style=&quot;padding: 14px; background: #475569; color: #fff; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;&quot;&gt;DEL&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;/&#039;)&quot; style=&quot;padding: 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;÷&lt;/button&gt;
+
+          &lt;button onclick=&quot;calcAppend(&#039;7&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;7&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;8&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;8&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;9&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;9&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;*&#039;)&quot; style=&quot;padding: 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;×&lt;/button&gt;
+
+          &lt;button onclick=&quot;calcAppend(&#039;4&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;4&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;5&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;5&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;6&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;6&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;-&#039;)&quot; style=&quot;padding: 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;-&lt;/button&gt;
+
+          &lt;button onclick=&quot;calcAppend(&#039;1&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;1&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;2&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;2&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;3&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;3&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;+&#039;)&quot; style=&quot;padding: 14px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;+&lt;/button&gt;
+
+          &lt;button onclick=&quot;calcAppend(&#039;0&#039;)&quot; style=&quot;grid-column: span 2; padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;0&lt;/button&gt;
+          &lt;button onclick=&quot;calcAppend(&#039;.&#039;)&quot; style=&quot;padding: 14px; background: #334155; color: #fff; border: none; border-radius: 6px; font-size: 18px; cursor: pointer;&quot;&gt;.&lt;/button&gt;
+          &lt;button onclick=&quot;calcEvaluate()&quot; style=&quot;padding: 14px; background: #16a34a; color: #fff; border: none; border-radius: 6px; font-size: 18px; font-weight: bold; cursor: pointer;&quot;&gt;=&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          let currentExpr = &quot;0&quot;;
+          function calcAppend(val) {
+            if (currentExpr === &quot;0&quot; &amp;&amp; val !== &quot;.&quot;) currentExpr = val;
+            else currentExpr += val;
+            document.getElementById(&#039;calcDisplay&#039;).value = currentExpr;
+          }
+          function calcClear() {
+            currentExpr = &quot;0&quot;;
+            document.getElementById(&#039;calcDisplay&#039;).value = currentExpr;
+          }
+          function calcDel() {
+            currentExpr = currentExpr.slice(0, -1);
+            if (!currentExpr) currentExpr = &quot;0&quot;;
+            document.getElementById(&#039;calcDisplay&#039;).value = currentExpr;
+          }
+          function calcEvaluate() {
+            try {
+              currentExpr = String(Function(&#039;&quot;use strict&quot;;return (&#039; + currentExpr + &#039;)&#039;)());
+            } catch(e) {
+              currentExpr = &quot;Error&quot;;
+            }
+            document.getElementById(&#039;calcDisplay&#039;).value = currentExpr;
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

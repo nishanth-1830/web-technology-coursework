@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch with Lap Timer - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="digital-clock.html" class="nav-btn">⬅ Prev</a>
+        <a href="countdown-timer.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Stopwatch with Lap Timer</h1>
+            <p class="card-subtitle">High-precision stopwatch with Start, Pause, Reset, and recorded lap intervals displayed in a chronological table.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Mini Projects
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 440px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <div id="stopwatchDisplay" style="font-size: 46px; font-family: monospace; font-weight: bold; color: #0f172a; margin-bottom: 20px;">00:00.00</div>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+          <button id="swStartBtn" onclick="startStopwatch()" style="padding: 10px 20px; background: #16a34a; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Start</button>
+          <button id="swLapBtn" onclick="lapStopwatch()" disabled style="padding: 10px 20px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; opacity: 0.6;">Lap</button>
+          <button onclick="resetStopwatch()" style="padding: 10px 20px; background: #ef4444; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Reset</button>
+        </div>
+        <div style="max-height: 160px; overflow-y: auto; text-align: left; font-size: 13px; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead><tr style="color: #64748b;"><th style="padding: 4px;">#</th><th style="padding: 4px;">Lap Time</th><th style="padding: 4px;">Total</th></tr></thead>
+            <tbody id="swLapsBody"></tbody>
+          </table>
+        </div>
+        <script>
+          let swStartTime = 0, swElapsedTime = 0, swTimerInterval = null, lapCounter = 0;
+          function formatSwTime(ms) {
+            let totalSecs = Math.floor(ms / 1000);
+            let mins = Math.floor(totalSecs / 60);
+            let secs = totalSecs % 60;
+            let hundredths = Math.floor((ms % 1000) / 10);
+            return String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0') + '.' + String(hundredths).padStart(2, '0');
+          }
+          function startStopwatch() {
+            const btn = document.getElementById('swStartBtn');
+            const lapBtn = document.getElementById('swLapBtn');
+            if (swTimerInterval) {
+              clearInterval(swTimerInterval);
+              swTimerInterval = null;
+              btn.innerText = 'Resume';
+              btn.style.background = '#16a34a';
+              lapBtn.disabled = true;
+              lapBtn.style.opacity = '0.6';
+            } else {
+              swStartTime = Date.now() - swElapsedTime;
+              swTimerInterval = setInterval(() => {
+                swElapsedTime = Date.now() - swStartTime;
+                document.getElementById('stopwatchDisplay').innerText = formatSwTime(swElapsedTime);
+              }, 10);
+              btn.innerText = 'Pause';
+              btn.style.background = '#eab308';
+              lapBtn.disabled = false;
+              lapBtn.style.opacity = '1';
+            }
+          }
+          function lapStopwatch() {
+            lapCounter++;
+            const row = document.createElement('tr');
+            row.innerHTML = '<td style="padding:4px;color:#64748b;">Lap ' + lapCounter + '</td><td style="padding:4px;font-family:monospace;font-weight:bold;">' + formatSwTime(swElapsedTime) + '</td><td style="padding:4px;font-family:monospace;color:#16a34a;">Recorded</td>';
+            document.getElementById('swLapsBody').prepend(row);
+          }
+          function resetStopwatch() {
+            clearInterval(swTimerInterval);
+            swTimerInterval = null;
+            swElapsedTime = 0;
+            lapCounter = 0;
+            document.getElementById('stopwatchDisplay').innerText = '00:00.00';
+            document.getElementById('swStartBtn').innerText = 'Start';
+            document.getElementById('swStartBtn').style.background = '#16a34a';
+            document.getElementById('swLapBtn').disabled = true;
+            document.getElementById('swLapBtn').style.opacity = '0.6';
+            document.getElementById('swLapsBody').innerHTML = '';
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: stopwatch.html</span>
+              <button class="copy-btn" data-target="code_js-stopwatch">Copy Code</button>
+            </div>
+            <pre id="code_js-stopwatch"><code>&lt;div style=&quot;max-width: 440px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);&quot;&gt;
+        &lt;div id=&quot;stopwatchDisplay&quot; style=&quot;font-size: 46px; font-family: monospace; font-weight: bold; color: #0f172a; margin-bottom: 20px;&quot;&gt;00:00.00&lt;/div&gt;
+        &lt;div style=&quot;display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;&quot;&gt;
+          &lt;button id=&quot;swStartBtn&quot; onclick=&quot;startStopwatch()&quot; style=&quot;padding: 10px 20px; background: #16a34a; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Start&lt;/button&gt;
+          &lt;button id=&quot;swLapBtn&quot; onclick=&quot;lapStopwatch()&quot; disabled style=&quot;padding: 10px 20px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; opacity: 0.6;&quot;&gt;Lap&lt;/button&gt;
+          &lt;button onclick=&quot;resetStopwatch()&quot; style=&quot;padding: 10px 20px; background: #ef4444; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Reset&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;max-height: 160px; overflow-y: auto; text-align: left; font-size: 13px; border-top: 1px solid #e2e8f0; padding-top: 10px;&quot;&gt;
+          &lt;table style=&quot;width: 100%; border-collapse: collapse;&quot;&gt;
+            &lt;thead&gt;&lt;tr style=&quot;color: #64748b;&quot;&gt;&lt;th style=&quot;padding: 4px;&quot;&gt;#&lt;/th&gt;&lt;th style=&quot;padding: 4px;&quot;&gt;Lap Time&lt;/th&gt;&lt;th style=&quot;padding: 4px;&quot;&gt;Total&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+            &lt;tbody id=&quot;swLapsBody&quot;&gt;&lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          let swStartTime = 0, swElapsedTime = 0, swTimerInterval = null, lapCounter = 0;
+          function formatSwTime(ms) {
+            let totalSecs = Math.floor(ms / 1000);
+            let mins = Math.floor(totalSecs / 60);
+            let secs = totalSecs % 60;
+            let hundredths = Math.floor((ms % 1000) / 10);
+            return String(mins).padStart(2, &#039;0&#039;) + &#039;:&#039; + String(secs).padStart(2, &#039;0&#039;) + &#039;.&#039; + String(hundredths).padStart(2, &#039;0&#039;);
+          }
+          function startStopwatch() {
+            const btn = document.getElementById(&#039;swStartBtn&#039;);
+            const lapBtn = document.getElementById(&#039;swLapBtn&#039;);
+            if (swTimerInterval) {
+              clearInterval(swTimerInterval);
+              swTimerInterval = null;
+              btn.innerText = &#039;Resume&#039;;
+              btn.style.background = &#039;#16a34a&#039;;
+              lapBtn.disabled = true;
+              lapBtn.style.opacity = &#039;0.6&#039;;
+            } else {
+              swStartTime = Date.now() - swElapsedTime;
+              swTimerInterval = setInterval(() =&gt; {
+                swElapsedTime = Date.now() - swStartTime;
+                document.getElementById(&#039;stopwatchDisplay&#039;).innerText = formatSwTime(swElapsedTime);
+              }, 10);
+              btn.innerText = &#039;Pause&#039;;
+              btn.style.background = &#039;#eab308&#039;;
+              lapBtn.disabled = false;
+              lapBtn.style.opacity = &#039;1&#039;;
+            }
+          }
+          function lapStopwatch() {
+            lapCounter++;
+            const row = document.createElement(&#039;tr&#039;);
+            row.innerHTML = &#039;&lt;td style=&quot;padding:4px;color:#64748b;&quot;&gt;Lap &#039; + lapCounter + &#039;&lt;/td&gt;&lt;td style=&quot;padding:4px;font-family:monospace;font-weight:bold;&quot;&gt;&#039; + formatSwTime(swElapsedTime) + &#039;&lt;/td&gt;&lt;td style=&quot;padding:4px;font-family:monospace;color:#16a34a;&quot;&gt;Recorded&lt;/td&gt;&#039;;
+            document.getElementById(&#039;swLapsBody&#039;).prepend(row);
+          }
+          function resetStopwatch() {
+            clearInterval(swTimerInterval);
+            swTimerInterval = null;
+            swElapsedTime = 0;
+            lapCounter = 0;
+            document.getElementById(&#039;stopwatchDisplay&#039;).innerText = &#039;00:00.00&#039;;
+            document.getElementById(&#039;swStartBtn&#039;).innerText = &#039;Start&#039;;
+            document.getElementById(&#039;swStartBtn&#039;).style.background = &#039;#16a34a&#039;;
+            document.getElementById(&#039;swLapBtn&#039;).disabled = true;
+            document.getElementById(&#039;swLapBtn&#039;).style.opacity = &#039;0.6&#039;;
+            document.getElementById(&#039;swLapsBody&#039;).innerHTML = &#039;&#039;;
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

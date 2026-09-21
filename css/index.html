@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Programs - Practical List</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn primary">🏠 Home Dashboard</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h1 class="card-title">CSS Programs</h1>
+          <p class="card-subtitle">Modern CSS styling, Box Model, Flexbox, Grid, SaaS Components, and Responsive Layouts.</p>
+        </div>
+        <div style="background: #f1f5f9; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: bold; color: #334155; border: 1px solid #cbd5e1;">
+          Total Programs: 20
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <input type="text" id="progSearch" oninput="filterPrograms()" placeholder="🔍 Search CSS Programs by keyword..." style="max-width: 400px;">
+      </div>
+
+      <div id="progListContainer">
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              CSS Foundation & Core UI (9)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-01.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Inline, Internal &amp; External CSS
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates comparison and cascading hierarchy of inline, internal, and external CSS styling methodologies.
+                  </p>
+                  <a href="css-01.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#2</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-02.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Universal, Element, Class, ID &amp; Grouping Selectors
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates universal (*), element (p, h2), class (.highlight), ID (#uniqueItem), and grouped (h1, h2, h3) CSS selectors.
+                  </p>
+                  <a href="css-02.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#3</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-03.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Descendant, Child, Adjacent &amp; Sibling Selectors
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates combinator selectors: descendant (A B), direct child (A &gt; B), adjacent sibling (A + B), and general sibling (A ~ B).
+                  </p>
+                  <a href="css-03.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#4</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-04.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      CSS Colors &amp; Backgrounds
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates RGB, RGBA, HSL, HSLA, Hex colors, background images, background sizes (cover, contain), and gradients.
+                  </p>
+                  <a href="css-04.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#5</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-05.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      The CSS Box Model
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Visualizes the CSS Box Model components: content area, padding, border, and margin, plus box-sizing: border-box vs content-box.
+                  </p>
+                  <a href="css-05.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#6</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-06.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      CSS Flexbox Layouts
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates flex direction, justify-content, align-items, flex-wrap, gap, and flex item grow/shrink ratios.
+                  </p>
+                  <a href="css-06.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#7</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-07.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      CSS Grid Layouts
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates CSS Grid template columns, template rows, auto-fit, minmax(), grid gap, and area spanning.
+                  </p>
+                  <a href="css-07.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#8</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-08.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      CSS Transitions &amp; Keyframe Animations
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates CSS 2D transitions (ease-in-out, transform scale/rotate) and continuous CSS keyframe animations.
+                  </p>
+                  <a href="css-08.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#9</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-09.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      CSS Variables &amp; Theme Switcher UI
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates custom properties (--main-color, --bg-color), scoping, and instant client-side theme switching with CSS variables.
+                  </p>
+                  <a href="css-09.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              SaaS UI Components (5)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-10.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      SaaS Navigation Bar &amp; Breadcrumbs
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Builds a sleek modern SaaS top navigation bar with search bar, active tab indicators, user menu, and dynamic breadcrumbs.
+                  </p>
+                  <a href="css-10.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#2</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-11.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      SaaS KPI &amp; Metric Analytics Cards
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Renders modern KPI metric cards with change indicators (+14.2%), comparison badges, progress bars, and subtle trend cues.
+                  </p>
+                  <a href="css-11.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#3</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-12.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      SaaS Pricing Plan Comparison Cards
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Designs modern SaaS tier cards (Starter, Pro, Enterprise) with features checklist, featured &#039;Popular&#039; badge, and call-to-action buttons.
+                  </p>
+                  <a href="css-12.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#4</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-13.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      SaaS Modal Dialog &amp; Slide-out Drawer
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Implements CSS/JS modal overlay with backdrops, transitions, confirmation actions, and slide-out side drawer.
+                  </p>
+                  <a href="css-13.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#5</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-16.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      SaaS UI Components Design System
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Complete design system featuring SaaS buttons, icon buttons, badges, avatars, tabs, breadcrumbs, accordions, modals, and progress steppers.
+                  </p>
+                  <a href="css-16.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              Modern SaaS & Analytics UI (1)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-14.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      AI-Powered SaaS Assistant &amp; Command Palette Interface
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Modern AI prompt interface featuring suggestion chips, prompt input bar, response cards, and keyboard shortcut command palette.
+                  </p>
+                  <a href="css-14.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              Final SaaS Projects (1)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-15.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Complete SaaS Analytics Dashboard
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Complete modern SaaS analytics dashboard with sidebar navigation, top header, KPI metric widgets, conversion charts, and activity feeds.
+                  </p>
+                  <a href="css-15.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              Modern SaaS, Analytics, AI/ML & Responsive UI (3)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-17.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Modern SaaS Analytics &amp; KPI Dashboard
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Real-time analytics dashboard with revenue charts, retention cohort heatmap, date range filters, and KPI summary metric widgets.
+                  </p>
+                  <a href="css-17.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#2</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-18.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      AI Assistant &amp; Copilot Workspace UI
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Interactive AI workspace featuring prompt suggestion chips, AI chat stream, confidence scoring badge, citations, and model selector.
+                  </p>
+                  <a href="css-18.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#3</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-19.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      AI Agent Workflow &amp; Execution Dashboard
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Visual AI agent management interface displaying live execution timelines, task queue, error retries, and human-in-the-loop approvals.
+                  </p>
+                  <a href="css-19.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              Final SaaS Webpage Projects (1)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="css-20.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Complete SaaS Landing Page &amp; Pricing Matrix
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    A complete production-ready SaaS landing page with high-contrast hero section, feature bento cards, responsive pricing tier comparison, and testimonials.
+                  </p>
+                  <a href="css-20.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Student: k. nishanth reddy (250200439) • Section 06 • web technology</p>
+  </footer>
+
+  <script type="module">
+    window.filterPrograms = function() {
+      const q = document.getElementById('progSearch').value.toLowerCase();
+      document.querySelectorAll('.prog-item').forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(q) ? 'block' : 'none';
+      });
+    };
+  </script>
+</body>
+</html>

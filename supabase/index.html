@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supabase BaaS Lab - Complete Syllabus (30 Programs)</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <style>
+    .cat-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #cbd5e1; background: #fff; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; color: #475569; }
+    .cat-btn.active, .cat-btn:hover { background: #059669; color: #fff; border-color: #059669; }
+    .prog-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; }
+    .prog-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.06); border-color: #a7f3d0; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links"><a href="../index.html" class="nav-btn primary">🏠 Home Dashboard</a></div>
+      <div class="student-badge"><span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span><span>• Sec: 06</span></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card" style="margin-bottom: 24px;">
+      <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h1 class="card-title">Supabase Cloud BaaS Lab (30 Programs)</h1>
+          <p class="card-subtitle">Full-stack backend architecture using Supabase: PostgreSQL schema design, PostgREST query builder, GoTrue Authentication, Row Level Security (RLS), S3-compatible Storage, and Realtime WebSocket syncing.</p>
+        </div>
+        <div style="background: #ecfdf5; padding: 8px 16px; border-radius: 24px; font-size: 14px; font-weight: bold; color: #059669; border: 1px solid #a7f3d0;">Total Programs: 30</div>
+      </div>
+
+      <div style="margin-top: 16px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <input type="text" id="progSearch" oninput="filterPrograms()" placeholder="🔍 Search Supabase programs..." style="padding: 10px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; width: 100%; max-width: 420px; outline: none;">
+        <div style="font-size: 13px; color: #64748b;">Showing <strong id="visibleCount" style="color: #0f172a;">30</strong> of 30 experiments</div>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;" id="catFilterContainer">
+        <button class="cat-btn active" onclick="setCategory('ALL')">All Categories (30)</button>
+        <button class="cat-btn" onclick="setCategory('Fundamentals & Client')">Fundamentals & Client (4)</button><button class="cat-btn" onclick="setCategory('PostgreSQL Database')">PostgreSQL Database (3)</button><button class="cat-btn" onclick="setCategory('Supabase CRUD')">Supabase CRUD (6)</button><button class="cat-btn" onclick="setCategory('Authentication & RLS')">Authentication & RLS (7)</button><button class="cat-btn" onclick="setCategory('Storage & Realtime')">Storage & Realtime (7)</button><button class="cat-btn" onclick="setCategory('Edge Functions & Projects')">Edge Functions & Projects (3)</button>
+      </div>
+    </div>
+
+    <div id="progGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;">
+      
+        <a href="supabase-01.html" class="prog-card" data-cat="Fundamentals & Client" data-title="supabase architecture & project setup" data-desc="understanding the open-source firebase alternative: postgresql, postgrest, gotrue, and realtime." data-num="1">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#1</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Fundamentals & Client</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Supabase Architecture & Project Setup</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Understanding the open-source Firebase alternative: PostgreSQL, PostgREST, GoTrue, and Realtime.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-02.html" class="prog-card" data-cat="Fundamentals & Client" data-title="supabase client initialization" data-desc="createclient(supabaseurl, supabasekey) and client singleton configuration." data-num="2">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#2</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Fundamentals & Client</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Supabase Client Initialization</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">createClient(supabaseUrl, supabaseKey) and client singleton configuration.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-03.html" class="prog-card" data-cat="Fundamentals & Client" data-title="supabase table editor & schema explorer" data-desc="gui data table management, column configuration, and data inspection." data-num="3">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#3</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Fundamentals & Client</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Supabase Table Editor & Schema Explorer</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">GUI data table management, column configuration, and data inspection.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-04.html" class="prog-card" data-cat="Fundamentals & Client" data-title="supabase sql editor & migration queries" data-desc="running raw sql commands, ddl schema scripts, and query profiling." data-num="4">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#4</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Fundamentals & Client</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Supabase SQL Editor & Migration Queries</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Running raw SQL commands, DDL schema scripts, and query profiling.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-05.html" class="prog-card" data-cat="PostgreSQL Database" data-title="table creation & postgresql types in supabase" data-desc="uuid primary keys, timestamptz, jsonb, text, and numeric types." data-num="5">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#5</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">PostgreSQL Database</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Table Creation & PostgreSQL Types in Supabase</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">uuid primary keys, timestamptz, jsonb, text, and numeric types.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-06.html" class="prog-card" data-cat="PostgreSQL Database" data-title="foreign keys & relationships in supabase" data-desc="creating 1-to-many and many-to-many relational constraints in postgres." data-num="6">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#6</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">PostgreSQL Database</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Foreign Keys & Relationships in Supabase</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Creating 1-to-many and many-to-many relational constraints in Postgres.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-07.html" class="prog-card" data-cat="PostgreSQL Database" data-title="constraints: not null, unique, default, check" data-desc="enforcing business constraints at the database engine level." data-num="7">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#7</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">PostgreSQL Database</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Constraints: NOT NULL, UNIQUE, DEFAULT, CHECK</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Enforcing business constraints at the database engine level.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-08.html" class="prog-card" data-cat="Supabase CRUD" data-title="insert records with supabase client" data-desc="supabase.from('table').insert([{ ... }]) with single and batch inserts." data-num="8">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#8</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Supabase CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Insert Records with Supabase Client</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.from('table').insert([{ ... }]) with single and batch inserts.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-09.html" class="prog-card" data-cat="Supabase CRUD" data-title="select & filter records with supabase" data-desc="supabase.from('table').select('*').eq('status', 'active').order('created_at')." data-num="9">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#9</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Supabase CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Select & Filter Records with Supabase</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.from('table').select('*').eq('status', 'active').order('created_at').</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-10.html" class="prog-card" data-cat="Supabase CRUD" data-title="update records with supabase client" data-desc="supabase.from('table').update({ ... }).match({ id: ... })." data-num="10">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#10</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Supabase CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Update Records with Supabase Client</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.from('table').update({ ... }).match({ id: ... }).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-11.html" class="prog-card" data-cat="Supabase CRUD" data-title="delete records with supabase client" data-desc="supabase.from('table').delete().match({ id: ... })." data-num="11">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#11</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Supabase CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Delete Records with Supabase Client</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.from('table').delete().match({ id: ... }).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-12.html" class="prog-card" data-cat="Supabase CRUD" data-title="relational queries with joined foreign tables" data-desc="select('*, profiles(username, avatar_url), comments(*)') nested queries." data-num="12">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#12</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Supabase CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Relational Queries with Joined Foreign Tables</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">select('*, profiles(username, avatar_url), comments(*)') nested queries.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-13.html" class="prog-card" data-cat="Supabase CRUD" data-title="pagination & range queries" data-desc=".range(0, 9) for 10 records per page with count headers." data-num="13">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#13</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Supabase CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Pagination & Range Queries</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">.range(0, 9) for 10 records per page with count headers.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-14.html" class="prog-card" data-cat="Authentication & RLS" data-title="user signup with email & password" data-desc="supabase.auth.signup({ email, password }) with email confirmation." data-num="14">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#14</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & RLS</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">User Signup with Email & Password</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.auth.signUp({ email, password }) with email confirmation.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-15.html" class="prog-card" data-cat="Authentication & RLS" data-title="user login & session handling" data-desc="supabase.auth.signinwithpassword({ email, password }) and jwt tokens." data-num="15">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#15</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & RLS</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">User Login & Session Handling</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.auth.signInWithPassword({ email, password }) and JWT tokens.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-16.html" class="prog-card" data-cat="Authentication & RLS" data-title="user logout & session cleansing" data-desc="supabase.auth.signout() and reactive auth state listening with onauthstatechange." data-num="16">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#16</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & RLS</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">User Logout & Session Cleansing</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.auth.signOut() and reactive auth state listening with onAuthStateChange.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-17.html" class="prog-card" data-cat="Authentication & RLS" data-title="password reset flow with supabase" data-desc="supabase.auth.resetpasswordforemail() and updatepassword() flows." data-num="17">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#17</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & RLS</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Password Reset Flow with Supabase</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.auth.resetPasswordForEmail() and updatePassword() flows.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-18.html" class="prog-card" data-cat="Authentication & RLS" data-title="row level security (rls) enablement" data-desc="alter table table_name enable row level security." data-num="18">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#18</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & RLS</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Row Level Security (RLS) Enablement</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">ALTER TABLE table_name ENABLE ROW LEVEL SECURITY.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-19.html" class="prog-card" data-cat="Authentication & RLS" data-title="rls policies: restrict users to own records" data-desc="create policy on table for all using (auth.uid() = user_id)." data-num="19">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#19</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & RLS</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">RLS Policies: Restrict Users to Own Records</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE POLICY on table FOR ALL USING (auth.uid() = user_id).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-20.html" class="prog-card" data-cat="Authentication & RLS" data-title="role-based access control (rbac) with rls" data-desc="policies evaluating user claims and admin privileges." data-num="20">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#20</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & RLS</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Role-Based Access Control (RBAC) with RLS</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Policies evaluating user claims and admin privileges.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-21.html" class="prog-card" data-cat="Storage & Realtime" data-title="supabase storage bucket creation" data-desc="public and private storage buckets for files, avatars, and documents." data-num="21">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#21</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Storage & Realtime</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Supabase Storage Bucket Creation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Public and private storage buckets for files, avatars, and documents.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-22.html" class="prog-card" data-cat="Storage & Realtime" data-title="upload files to supabase storage" data-desc="supabase.storage.from('bucket').upload('path/to/file', file)." data-num="22">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#22</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Storage & Realtime</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Upload Files to Supabase Storage</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.storage.from('bucket').upload('path/to/file', file).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-23.html" class="prog-card" data-cat="Storage & Realtime" data-title="download & generate public file urls" data-desc="getpublicurl() and createsignedurl() for time-limited secure downloads." data-num="23">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#23</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Storage & Realtime</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Download & Generate Public File URLs</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">getPublicUrl() and createSignedUrl() for time-limited secure downloads.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-24.html" class="prog-card" data-cat="Storage & Realtime" data-title="delete files from supabase storage" data-desc="supabase.storage.from('bucket').remove(['path/to/file'])." data-num="24">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#24</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Storage & Realtime</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Delete Files from Supabase Storage</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.storage.from('bucket').remove(['path/to/file']).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-25.html" class="prog-card" data-cat="Storage & Realtime" data-title="supabase realtime postgres changes" data-desc="supabase.channel().on('postgres_changes', { event: '*' }, callback).subscribe()." data-num="25">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#25</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Storage & Realtime</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Supabase Realtime Postgres Changes</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">supabase.channel().on('postgres_changes', { event: '*' }, callback).subscribe().</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-26.html" class="prog-card" data-cat="Storage & Realtime" data-title="realtime chat application" data-desc="live broadcast messaging and multi-user chat room powered by realtime." data-num="26">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#26</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Storage & Realtime</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Realtime Chat Application</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Live broadcast messaging and multi-user chat room powered by Realtime.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-27.html" class="prog-card" data-cat="Storage & Realtime" data-title="realtime student records live sync" data-desc="instant ui updates when rows are added, updated, or removed across clients." data-num="27">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#27</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Storage & Realtime</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Realtime Student Records Live Sync</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Instant UI updates when rows are added, updated, or removed across clients.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-28.html" class="prog-card" data-cat="Edge Functions & Projects" data-title="supabase edge functions (deno runtime)" data-desc="serverless typescript functions deployed globally on deno deploy." data-num="28">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#28</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Edge Functions & Projects</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Supabase Edge Functions (Deno Runtime)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Serverless TypeScript functions deployed globally on Deno Deploy.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-29.html" class="prog-card" data-cat="Edge Functions & Projects" data-title="auto-generated rest api & openapi docs" data-desc="automatic postgrest restful endpoints generated directly from postgres tables." data-num="29">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#29</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Edge Functions & Projects</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Auto-Generated REST API & OpenAPI Docs</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Automatic PostgREST RESTful endpoints generated directly from Postgres tables.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+        <a href="supabase-30.html" class="prog-card" data-cat="Edge Functions & Projects" data-title="full student management system with supabase" data-desc="end-to-end full-stack portal with postgresql, auth, rls, storage, and realtime." data-num="30">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#30</span>
+              <span style="font-size: 11px; background: #ecfdf5; color: #047857; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Edge Functions & Projects</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Full Student Management System with Supabase</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">End-to-end full-stack portal with PostgreSQL, Auth, RLS, Storage, and Realtime.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #059669; font-weight: 600;">
+            <span>✓ Cloud API Verified</span>
+            <span style="color: #059669;">Open BaaS Lab →</span>
+          </div>
+        </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Web Technology Laboratory • Department of Computer Science & Engineering</p>
+    <p>Student: <strong>k. nishanth reddy</strong> | Reg No: <strong>250200439</strong> | Section: <strong>06</strong></p>
+  </footer>
+
+  <script>
+    let activeCat = 'ALL';
+    function setCategory(cat) {
+      activeCat = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (cat === 'ALL' && btn.innerText.startsWith('All')) btn.classList.add('active');
+        else if (btn.innerText.startsWith(cat)) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+      filterPrograms();
+    }
+    function filterPrograms() {
+      const q = document.getElementById('progSearch').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.prog-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        const title = card.getAttribute('data-title');
+        const desc = card.getAttribute('data-desc');
+        const num = card.getAttribute('data-num');
+        const matchesCat = activeCat === 'ALL' || cat === activeCat;
+        const matchesQuery = !q || title.includes(q) || desc.includes(q) || num === q;
+        if (matchesCat && matchesQuery) { card.style.display = 'flex'; visible++; }
+        else { card.style.display = 'none'; }
+      });
+      document.getElementById('visibleCount').innerText = visible;
+    }
+  </script>
+</body>
+</html>

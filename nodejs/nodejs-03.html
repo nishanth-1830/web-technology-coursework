@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request-Response Cycle Demonstration - Node.js Backend</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <style>
+    .api-panel { background: #0f172a; color: #f8fafc; border-radius: 8px; padding: 16px; font-family: monospace; font-size: 13px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">🟢 Node.js Lab</a>
+        <a href="nodejs-02.html" class="nav-btn">⬅ Prev</a>
+        <a href="nodejs-04.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Request-Response Cycle Demonstration</h1>
+            <p class="card-subtitle">Inspecting headers, payloads, status codes, and streaming responses.</p>
+          </div>
+          <span style="background: #f0fdf4; color: #166534; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bbf7d0;">
+            Architecture & Fundamentals
+          </span>
+        </div>
+      </div>
+
+      <!-- Live Interactive API Client -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Live HTTP Client & Server Log Simulator</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Node.js v20.x Active</span>
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+          <select id="httpVerb" style="padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-weight: bold;">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+          </select>
+          <input type="text" id="apiEndpoint" value="/api/v1/resource?experiment=3" style="flex: 1; min-width: 220px; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: monospace;">
+          <button class="btn btn-primary" onclick="sendApiRequest()">▶ Send HTTP Request</button>
+        </div>
+
+        <div id="responseView" class="api-panel" style="display: none;">
+          <div style="color: #4ade80; margin-bottom: 8px;">HTTP/1.1 200 OK • Response Time: 14ms</div>
+          <pre id="jsonPayload" style="margin: 0; color: #38bdf8;"></pre>
+        </div>
+      </section>
+
+      <!-- Source Code Display -->
+      <section style="margin-top: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Node.js & Express Source Code</h2>
+          <button class="copy-btn" onclick="copyNodeCode()">📋 Copy Code</button>
+        </div>
+        <pre class="code-block" id="nodeSourceCode"><code>// Experiment #3: Request-Response Cycle Demonstration
+// Node.js &amp; Express API Backend
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
+// Endpoint implementation for: Request-Response Cycle Demonstration
+app.get('/api/v1/resource', (req, res) =&gt; {
+  res.status(200).json({
+    success: true,
+    code: 200,
+    timestamp: new Date().toISOString(),
+    message: "Executed Request-Response Cycle Demonstration",
+    student: {
+      name: "k. nishanth reddy",
+      regNo: "250200439",
+      section: "06"
+    }
+  });
+});
+
+app.listen(PORT, () =&gt; {
+  console.log(`Server running on http://localhost:${PORT}`);
+});</code></pre>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Web Technology Laboratory • Department of Computer Science & Engineering</p>
+    <p>Student: <strong>k. nishanth reddy</strong> | Reg No: <strong>250200439</strong> | Section: <strong>06</strong></p>
+  </footer>
+
+  <script>
+    function copyNodeCode() {
+      const code = document.getElementById('nodeSourceCode').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.innerText = '✓ Copied!';
+        setTimeout(() => btn.innerText = '📋 Copy Code', 2000);
+      });
+    }
+
+    function sendApiRequest() {
+      const verb = document.getElementById('httpVerb').value;
+      const endpoint = document.getElementById('apiEndpoint').value;
+      const panel = document.getElementById('responseView');
+      const payload = document.getElementById('jsonPayload');
+
+      panel.style.display = 'block';
+      const mock = {
+        success: true,
+        statusCode: verb === 'POST' ? 201 : 200,
+        route: endpoint,
+        method: verb,
+        latencyMs: 14,
+        data: {
+          experimentId: "nodejs-03",
+          title: "Request-Response Cycle Demonstration",
+          executionStatus: "PROCESSED_SUCCESSFULLY",
+          studentRecord: {
+            name: "k. nishanth reddy",
+            regNo: "250200439",
+            section: "06"
+          }
+        }
+      };
+      payload.innerText = JSON.stringify(mock, null, 2);
+    }
+  </script>
+</body>
+</html>

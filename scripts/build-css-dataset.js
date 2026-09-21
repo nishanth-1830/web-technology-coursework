@@ -1,0 +1,1631 @@
+// Script to construct the comprehensive 269 CSS programs dataset
+// matching every single question in the user's request.
+
+import fs from 'fs';
+
+const rawQuestions = [
+  // SECTION 1: CSS Foundation & Core UI (1 - 35)
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using Inline, Internal, and External CSS.",
+    title: "Inline, Internal, and External CSS",
+    desc: "Comprehensive demonstration of inline styles, internal style tag rules, and external CSS stylesheet link specificity hierarchy."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using Universal, Element, Class, ID, Attribute, and Grouping selectors.",
+    title: "Universal, Element, Class, ID, Attribute & Grouping Selectors",
+    desc: "Complete guide to foundational CSS selectors (*, tags, .class, #id, [attr=val], and grouped rules)."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using Descendant, Child, Adjacent Sibling, and General Sibling selectors.",
+    title: "Descendant, Child, Adjacent & General Sibling Selectors",
+    desc: "Visual demonstration of CSS combinators: descendant (A B), child (A > B), adjacent sibling (A + B), and general sibling (A ~ B)."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS colors for text, backgrounds, borders, and UI elements.",
+    title: "CSS Colors: Text, Backgrounds, Borders & Color Models",
+    desc: "Showcase of RGB, RGBA, HSL, HSLA, Hexadecimal, color-mix(), and high-contrast accessible color pairings."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using background images, background colors, background positioning, sizing, repeat, and attachment.",
+    title: "CSS Background Properties & Layering",
+    desc: "Demonstrates background-image, background-size (cover, contain), positioning, repeat, origin, and fixed attachment effects."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using different CSS border styles, widths, colors, and border-radius properties.",
+    title: "CSS Border Styles, Widths, Colors & Radii",
+    desc: "Solid, dashed, dotted, double, groove, ridge, inset, outset borders with individual corner radius sculpting."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using Linear and Radial CSS gradients.",
+    title: "Linear & Radial CSS Gradients",
+    desc: "Multi-stop directional linear gradients, radial circular/elliptical gradients, repeating gradients, and glassmorphic overlays."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS font-family, font-size, font-weight, font-style, and font-variant properties.",
+    title: "CSS Typography & Font Properties",
+    desc: "Font-family font stacks, fluid font sizing with clamp, font-weights (100-900), italic styles, small-caps, and ligatures."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS text alignment, decoration, transformation, indentation, spacing, and line-height.",
+    title: "Text Formatting, Alignment & Spacing",
+    desc: "Text-align (left, center, right, justify), text-decoration line/color/style, text-transform, letter-spacing, and line-height."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using the CSS box model with content, padding, border, and margin.",
+    title: "The CSS Box Model Visualizer",
+    desc: "Interactive visual breakdown of the four box model layers: content area, padding clearance, border stroke, and margin separation."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using different width, height, min-width, max-width, min-height, and max-height properties.",
+    title: "Width, Height, Min/Max Dimension Constraints",
+    desc: "Explicit dimensions, min/max dimension bounding, fit-content, min-content, and responsive container constraints."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using the CSS box-sizing property with content-box and border-box.",
+    title: "Box-Sizing: content-box vs border-box",
+    desc: "Side-by-side comparative analysis of width calculation with and without padding/border inclusion."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS display properties such as block, inline, inline-block, flex, grid, and none.",
+    title: "CSS Display Modes & Layout Behaviors",
+    desc: "Structural demonstration of block, inline, inline-block, flex, grid, and none rendering behaviors."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS visibility and opacity properties.",
+    title: "CSS Visibility, Opacity & DOM Presence",
+    desc: "Differences between opacity (visual transparency), visibility: hidden (occupies layout space), and display: none."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS overflow, overflow-x, and overflow-y properties.",
+    title: "CSS Overflow, Scrollbars & Clipping",
+    desc: "Managing content overflow with visible, hidden, scroll, auto, overflow-x horizontal carousels, and overflow-y feeds."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using border-radius to create rounded cards, circles, pills, and custom shapes.",
+    title: "Border-Radius Sculpting: Cards, Pills & Circles",
+    desc: "Creating uniform corner curves, oval badges, pill-shaped tags, avatar circles, and asymmetric organic shapes."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS box-shadow and text-shadow properties.",
+    title: "CSS Box-Shadow & Text-Shadow Depth",
+    desc: "Single and multi-layered elevation shadows, inset bevels, colored ambient glows, and readable typographic shadows."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS variables and custom properties.",
+    title: "CSS Variables (--custom-properties) & Dynamic Theming",
+    desc: "Declaring :root design tokens, component-scoped variables, fallback values, and dynamic runtime color switching."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS inheritance, specificity, and the cascade.",
+    title: "CSS Inheritance, Specificity & The Cascade",
+    desc: "Calculating selector specificity weights (inline 1000, ID 100, class 10, element 1), !important, and property inheritance."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS calc(), min(), max(), and clamp() functions.",
+    title: "CSS Math Functions: calc(), min(), max() & clamp()",
+    desc: "Dynamic fluid typography, responsive layout margins, viewport boundary guards, and mixed-unit arithmetic."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using static, relative, absolute, fixed, and sticky positioning.",
+    title: "CSS Positioning: Static, Relative, Absolute, Fixed & Sticky",
+    desc: "Complete reference for document flow positioning, absolute overlays inside relative parents, sticky headers, and fixed modals."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using z-index and CSS stacking order.",
+    title: "CSS z-index & Stacking Context Hierarchy",
+    desc: "Visual 3D layer visualization of root stacking context, isolated stacking contexts, opacity triggers, and negative z-index."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using float and clear properties.",
+    title: "CSS Float, Clear & Micro-Clearfix Layouts",
+    desc: "Left and right floating editorial media, inline text wrapping, clear: both, and clearfix container containment."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using different CSS cursor styles and pointer interactions.",
+    title: "CSS Cursor Styles & Interactive Pointer States",
+    desc: "Interactive showcase of default, pointer, wait, progress, not-allowed, grab, grabbing, col-resize, crosshair, and zoom-in."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS outline and outline-offset properties.",
+    title: "CSS Outline, Focus Rings & Outline-Offset",
+    desc: "Accessible keyboard focus indicators, non-layout-shifting borders, and high-visibility contrasting outline offsets."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS margin, padding, and spacing utilities.",
+    title: "CSS Margin, Padding & Directional Spacing Utilities",
+    desc: "Logical spacing properties (margin-block, margin-inline), negative margins, auto-centering, and rhythmic padding systems."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS width and height percentages, viewport units, and rem units.",
+    title: "CSS Units: Percentages, Viewport (vw, vh) & rem",
+    desc: "Comparative responsive scaling using % parent reference, vw/vh screen dimensions, and root-relative rem units."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS em, rem, vw, vh, and percentage units.",
+    title: "CSS Units Deep Dive: em vs rem vs Viewport vs Percent",
+    desc: "In-depth component sizing comparison showing compound em scaling vs predictable root rem scaling and fluid viewport units."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS object-fit and object-position properties.",
+    title: "CSS object-fit & object-position for Responsive Media",
+    desc: "Image aspect ratio preservation using cover, contain, fill, none, scale-down, and focal point object-positioning."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS filters such as blur, grayscale, brightness, contrast, and opacity.",
+    title: "CSS Filters: Blur, Grayscale, Brightness & Contrast",
+    desc: "Visual effects matrix demonstrating blur(), grayscale(), brightness(), contrast(), sepia(), hue-rotate(), and invert()."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS transitions for colors, sizes, shadows, and positions.",
+    title: "CSS Transitions: Timing Functions & Property Interpolation",
+    desc: "Smooth animated state transitions for background-color, transform scale, box-shadow, and cubic-bezier easing curves."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS 2D transformations such as rotate, scale, translate, and skew.",
+    title: "CSS 2D Transformations: Rotate, Scale, Translate & Skew",
+    desc: "Hardware-accelerated 2D geometric manipulations, transform origins, combined transform matrices, and interactive controls."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS 3D transformations and perspective effects.",
+    title: "CSS 3D Transforms, Perspective & Card Flipping",
+    desc: "3D scene perspective depth, rotateX, rotateY, translateZ, preserve-3d context, and realistic two-sided flippable 3D cards."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using CSS keyframe animations.",
+    title: "CSS @keyframes Animations & Orchestration",
+    desc: "Complex multi-step keyframe loops, animation-delay staggering, direction alternation, and fill-mode behavior."
+  },
+  {
+    category: "CSS Foundation & Core UI",
+    prompt: "Create a webpage using a CSS loading spinner and loading animation.",
+    title: "CSS Loading Spinners, Pulses & Progress Animations",
+    desc: "Smooth infinite dual-ring spinners, bouncing dots, pulsating radar rings, and skeleton shimmer loader animations."
+  },
+
+  // SECTION 2: SaaS UI Components (36 - 88)
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a SaaS navigation bar.",
+    title: "SaaS Application Top Navigation Bar",
+    desc: "Modern header featuring brand identity, product switcher, global search input, quick action shortcuts, notification icon, and profile dropdown."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a SaaS sidebar navigation.",
+    title: "SaaS Collapsible Sidebar Navigation",
+    desc: "Vertical navigation bar with categorized item groups, badge counters, active indicator states, collapsible submenus, and workspace switcher."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a responsive SaaS navigation menu.",
+    title: "Responsive SaaS Navigation Menu",
+    desc: "Adaptive responsive navigation bar transitioning seamlessly from multi-item desktop header into mobile-friendly drawer."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a mobile sidebar navigation drawer.",
+    title: "Mobile Sidebar Navigation Drawer",
+    desc: "Off-canvas slide-out mobile navigation drawer with backdrop dimming, touch-friendly links, user info header, and logout action."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a dropdown navigation menu.",
+    title: "Dropdown Navigation Menu",
+    desc: "Multi-tiered interactive dropdown menu with smooth CSS transitions, arrow indicators, item icons, keyboard navigation, and section dividers."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a mega navigation menu.",
+    title: "Enterprise Mega Navigation Menu",
+    desc: "Multi-column product mega menu featuring featured customer stories, categorized product links, documentation shortcuts, and CTA banner."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a breadcrumb navigation component.",
+    title: "Breadcrumb Navigation Component",
+    desc: "Hierarchical trail component with chevron separators, truncated middle items, home icon, and accessible ARIA current page indicators."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a tab navigation component.",
+    title: "Tab Navigation Component",
+    desc: "Underlined and encapsulated tab navigation system with active highlight bar, badge count indicators, and accessible role tab panels."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a pill navigation component.",
+    title: "Pill Navigation Component",
+    desc: "Segmented pill navigation bar with active high-contrast background capsules, smooth sliding indicator, and rounded badge counters."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a pagination component.",
+    title: "Data Table Pagination Component",
+    desc: "Complete pagination bar with Previous/Next controls, page number buttons, active page highlight, jump-to-page input, and rows-per-page selector."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a SaaS card component.",
+    title: "Modular SaaS Content Card",
+    desc: "Clean versatile SaaS card with header actions, subtle hover elevation, dividerless typography, and contextual footer CTA buttons."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a profile card component.",
+    title: "User Profile Card Component",
+    desc: "Profile summary card with user avatar, verification badge, job role, direct message button, social links, and activity status indicator."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a product card component.",
+    title: "Digital Product Showcase Card",
+    desc: "E-commerce/SaaS product card with product badge, preview imagery, customer rating stars, pricing tier, and Add-to-Cart button."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a feature card component.",
+    title: "Feature Highlight Bento Card",
+    desc: "Product value-proposition card with gradient icon container, bold heading, concise technical copy, and interactive Learn More link."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a pricing card component.",
+    title: "Subscription Pricing Tier Card",
+    desc: "High-converting pricing card featuring plan name, billing frequency toggle, highlighted popular badge, checklist of features, and primary CTA."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a SaaS statistics card component.",
+    title: "SaaS Statistics Metric Card",
+    desc: "Compact quantitative metric card with delta growth badge (+18.4%), sparkline trend visualizer, and comparative timeframe label."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a KPI and metric card component.",
+    title: "Executive KPI & Metric Card",
+    desc: "Executive-level metric widget showing Target vs Actual progress bar, status color indicator (On Track), and monthly velocity."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a dashboard card component.",
+    title: "Dashboard Quick-Stats Card",
+    desc: "Multi-metric dashboard card with top icon, large numeral, subtitle context, and mini interactive drill-down button."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a notification card component.",
+    title: "Interactive Notification Card",
+    desc: "Alert and notification item with unread indicator dot, timestamp, sender avatar, actionable accept/dismiss buttons, and category tag."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for an activity feed card component.",
+    title: "Team Activity Feed Card",
+    desc: "Chronological event card with vertical timeline connectors, user action descriptions, commit hashes, and relative time badges."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a testimonial card component.",
+    title: "Customer Testimonial & Review Card",
+    desc: "High-trust customer endorsement card with quotation styling, 5-star rating, client headshot, enterprise company logo, and verified badge."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a SaaS hero section.",
+    title: "High-Converting SaaS Hero Section",
+    desc: "Modern hero section with announcement pill banner, high-impact headline, subtext, dual CTA button group, social proof logos, and UI mockup."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a SaaS landing page header.",
+    title: "SaaS Landing Page Header with Navigation",
+    desc: "Clean sticky header with brand logo, navigation links with hover underlines, pricing shortcut, login link, and Get Started CTA button."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for primary, secondary, outline, and destructive buttons.",
+    title: "Button System: Primary, Secondary, Outline & Destructive",
+    desc: "Comprehensive button design system demonstrating standard sizes, active states, focus rings, disabled styling, and icon support."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for icon buttons and action buttons.",
+    title: "Icon Buttons & Quick Action Buttons",
+    desc: "Square and circular icon buttons, floating action buttons (FAB), button groups with connected borders, and tooltip triggers."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for badges, labels, tags, and chips.",
+    title: "Badges, Status Labels, Tags & Interactive Chips",
+    desc: "Status indicator badges (Success, Warning, Error, Info), dismissible filter chips, category pills, and numeric notification dots."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for user avatars and avatar groups.",
+    title: "User Avatars & Overlapping Avatar Groups",
+    desc: "Avatar sizes (xs to xl), online status indicator badges, fallback initials, and stacked team avatar groups with +N overflow count."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for dividers and section separators.",
+    title: "Dividers, Hairlines & Section Separators",
+    desc: "Horizontal hairline dividers, vertical column dividers, text-in-divider headers ('OR CONTINUE WITH'), and gradient separators."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for alert and notification components.",
+    title: "Banner Alerts & Contextual Notifications",
+    desc: "Full-width and inline alert banners with severity icons (Info, Success, Warning, Danger), close buttons, and descriptive body copy."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for toast notification components.",
+    title: "Floating Toast Notification Stack",
+    desc: "Floating bottom-right toast message stack with progress countdown bar, action retry button, close dismiss, and slide-in animation."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for tooltip components.",
+    title: "Accessible CSS Tooltip Components",
+    desc: "Positioned tooltips (top, right, bottom, left) with directional arrow pointers, subtle enter animation, and screen boundary awareness."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for popover components.",
+    title: "Interactive Popover Menu Component",
+    desc: "Triggered floating popover card containing user quick-actions, mini form inputs, dismiss trigger, and pointer triangle."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for modal and dialog components.",
+    title: "Modal Dialog & Backdrop Component",
+    desc: "Centered modal overlay with dimmed backdrop, structured header, scrolling content body, and sticky cancel/confirm footer buttons."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for confirmation dialog components.",
+    title: "Destructive Confirmation Dialog",
+    desc: "High-friction confirmation modal for critical operations (e.g. Delete Workspace) with warning icon, consequences list, and text validation."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a drawer and slide-out panel.",
+    title: "Slide-Out Drawer & Detail Panel",
+    desc: "Right-aligned off-canvas panel for viewing granular entity details, editing properties, and managing team permissions without page navigation."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a command palette interface.",
+    title: "Keyboard Command Palette (Cmd + K)",
+    desc: "Floating command bar overlay with instant search filter, keyboard shortcut badges, categorized action results, and active item highlight."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for an accordion component.",
+    title: "Interactive FAQ Accordion Component",
+    desc: "Expandable content accordion using modern semantic details/summary elements with rotating chevron indicators and smooth expansion."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for an empty-state component.",
+    title: "Empty State Placeholder Component",
+    desc: "Helpful empty state screen featuring centered illustration, encouraging headline, guidance copy, and primary action button (e.g. Create First Project)."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for an error-state component.",
+    title: "Application Error State & Retry Component",
+    desc: "Component-level error boundary display showing error icon, user-friendly failure explanation, error reference code, and Retry Request button."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a success-state component.",
+    title: "Success & Confirmation State Component",
+    desc: "Operation completion card with animated checkmark icon, summary transaction receipt, download link, and Continue to Dashboard button."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a loading-state component.",
+    title: "Loading State & Spinner Indicators",
+    desc: "Contextual loading states including dual-ring spinner, pulsing status text, and full-container loading veil."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a skeleton-loading component.",
+    title: "Skeleton Loading Placeholder Component",
+    desc: "High-fidelity skeleton screen with animated shimmering gradient simulating loaded text rows, circular avatars, and metric cards."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a progress bar component.",
+    title: "Progress Bar & Completion Meter",
+    desc: "Linear progress bars with custom percentage fills, striped animated loading bars, multi-color segment bars, and labeled thresholds."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a progress stepper component.",
+    title: "Multi-Step Onboarding Progress Stepper",
+    desc: "Horizontal process stepper with numbered step circles, completed checkmark icons, connecting connector lines, and active step focus."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a timeline and activity history component.",
+    title: "Timeline & Activity History Log",
+    desc: "Vertical milestone timeline with date markers, colored event nodes, status tags, expandable details, and user author avatars."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a login form.",
+    title: "Secure SaaS Login Form",
+    desc: "Production-ready login card with social SSO buttons (Google, GitHub), email/password inputs with floating labels, remember me checkbox, and Forgot Password link."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a signup form.",
+    title: "SaaS Customer Signup Form",
+    desc: "New customer registration form with real-time password strength meter, email validation, terms acceptance checkbox, and clear CTA button."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a forgot-password form.",
+    title: "Forgot Password Recovery Form",
+    desc: "Password reset request interface with security instructions, email input field, Send Reset Link button, and Back to Sign In shortcut."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a reset-password form.",
+    title: "Reset Password Security Form",
+    desc: "Password reset confirmation form with new password input, confirm password field, checklist of password requirements, and Update Password button."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a registration form.",
+    title: "Enterprise Organization Registration Form",
+    desc: "Company account setup form with company name, domain selection, team size selector, industry dropdown, and address details."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a contact form.",
+    title: "Sales & Support Contact Form",
+    desc: "Customer inquiry form featuring topic selector pills, name, work email, phone, message textarea, and priority indicator."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for a multi-step form.",
+    title: "Multi-Step Wizard Form Interface",
+    desc: "Interactive step wizard with progress header, step validation, Back/Next navigation buttons, and final confirmation review screen."
+  },
+  {
+    category: "SaaS UI Components",
+    prompt: "Create a webpage for form validation and error messages.",
+    title: "Form Validation States & Error Messaging",
+    desc: "Interactive form fields showing pristine, valid, invalid, and disabled states with helper text, error icons, and live validation rules."
+  },
+
+  // SECTION 3: Modern SaaS, Analytics, AI/ML & Responsive UI (89 - 246)
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS dashboard.",
+    title: "Comprehensive SaaS Operations Dashboard",
+    desc: "Unified SaaS overview dashboard with system status, active users metric, quick action cards, and resource allocation."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an admin dashboard.",
+    title: "Enterprise Admin Management Dashboard",
+    desc: "System administration console for managing database health, tenant organizations, permission policies, and server load."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an analytics dashboard.",
+    title: "Cross-Channel Analytics Dashboard",
+    desc: "Data-driven analytics center with traffic sources breakdown, user session duration, bounce rates, and geographic visitor maps."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a KPI analytics dashboard.",
+    title: "Executive KPI Performance Dashboard",
+    desc: "High-level executive metrics tracking Net Retention Rate (NRR), CAC payback period, Monthly Active Users (MAU), and LTV."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a revenue analytics dashboard.",
+    title: "Revenue & Subscription Analytics Dashboard",
+    desc: "Financial analytics dashboard tracking Monthly Recurring Revenue (MRR), Annual Run Rate (ARR), churn loss, and expansion revenue."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a sales analytics dashboard.",
+    title: "B2B Sales Pipeline & Deal Analytics Dashboard",
+    desc: "Sales execution dashboard monitoring deal stages (Lead, Qualification, Proposal, Closed-Won), win rates, and sales rep quota leaderboards."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for user analytics.",
+    title: "User Engagement & Cohort Analytics Interface",
+    desc: "Deep user analytics view measuring session frequency, Daily Active Users (DAU), average engagement time, and user lifecycle segments."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for customer analytics.",
+    title: "Customer Health & Net Promoter Score (NPS) Analytics",
+    desc: "Customer success dashboard tracking NPS scores, account health flags, high-risk churn indicators, and support ticket volume."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for product analytics.",
+    title: "Product Feature Adoption & Usage Analytics",
+    desc: "Product intelligence console analyzing feature click-through rates, module retention, workflow drop-offs, and onboarding completion."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for marketing analytics.",
+    title: "Marketing Attribution & Campaign Analytics",
+    desc: "Marketing analytics tracking organic vs paid acquisition channels, cost-per-lead (CPL), campaign ROAS, and email click rates."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for financial analytics.",
+    title: "SaaS Financial Health & Cashflow Analytics",
+    desc: "Cashflow runway tracker, Gross Margins breakdown, cloud hosting expenditure, operational expenses (OpEx), and EBITDA margins."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for real-time analytics.",
+    title: "Real-Time Streaming Telemetry Dashboard",
+    desc: "Live stream analytics monitoring real-time active visitors on site, live requests/sec, event throughput, and geo-traffic spikes."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for SaaS usage analytics.",
+    title: "SaaS Platform Usage & Quota Consumption",
+    desc: "Compute hours consumed, storage gigabytes utilized, API call volumes, and tiered overage alerts."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a conversion funnel dashboard.",
+    title: "Multi-Step Conversion Funnel Dashboard",
+    desc: "Visual funnel chart showing visitor progression from Homepage → Pricing → Signup → Active Subscription with drop-off percentages."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a retention and cohort analytics dashboard.",
+    title: "Retention Heatmap & Cohort Analytics Dashboard",
+    desc: "Weekly and monthly retention matrix with color-coded heatmap cells demonstrating user stickiness over 12 billing cycles."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a revenue chart dashboard.",
+    title: "Revenue Trajectory & Growth Chart Dashboard",
+    desc: "High-contrast revenue comparison charts showing actual vs target MRR, recurring income projections, and year-over-year gains."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a line chart analytics component.",
+    title: "Responsive Line Chart Analytics Component",
+    desc: "Pure CSS and SVG line chart with smooth bezier curves, interactive hover tooltip markers, and dual data series comparison."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a bar chart analytics component.",
+    title: "Categorical Bar Chart Analytics Component",
+    desc: "Horizontal and vertical bar charts with rounded caps, value labels, gradient fills, and interactive category selection."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an area chart analytics component.",
+    title: "Stacked Area Chart Analytics Component",
+    desc: "Gradient-filled area chart showcasing cumulative volume trends over time with translucent layered fills."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a pie and donut chart analytics component.",
+    title: "Pie & Donut Chart Analytics Component",
+    desc: "Conic-gradient donut charts displaying market share distribution with centered summary numeral and legend list."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a heatmap analytics component.",
+    title: "Activity Heatmap Matrix Component",
+    desc: "GitHub-style contribution grid and server load hourly heatmap with graduated color density scales."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for data visualization cards.",
+    title: "Modular Data Visualization Card Grid",
+    desc: "Collection of diverse analytical cards: radial gauge meters, mini sparklines, progress circles, and delta comparisons."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an analytics date-range filter.",
+    title: "Analytics Date-Range Filter Component",
+    desc: "Calendar range selector with quick presets (Today, Last 7 Days, Last 30 Days, QTD, YTD) and custom start/end date inputs."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an analytics filter and sorting panel.",
+    title: "Multi-Attribute Analytics Filter & Sorting Panel",
+    desc: "Filter sidebar with facets, status checkboxes, value sliders, search keyword filters, and active filter pill tags with Clear All."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for customizable dashboard widgets.",
+    title: "Customizable Dashboard Widget Grid",
+    desc: "Grid layout of draggable/configurable metric cards with collapse toggles, refresh triggers, and widget settings menus."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a customizable analytics dashboard.",
+    title: "Personalized Analytics Studio Dashboard",
+    desc: "Customizable dashboard enabling users to toggle visibility of sales, traffic, conversion, and error reporting modules."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an analytics report and export interface.",
+    title: "Analytics Report Generator & Export Interface",
+    desc: "Reporting hub to configure PDF/CSV/Excel exports, schedule automated email deliveries, and preview report tables."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI assistant interface.",
+    title: "Intelligent AI Assistant Workspace",
+    desc: "Full-screen AI workspace featuring query input, conversational context history, reasoning breakdown, and code output."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI chat interface.",
+    title: "Conversational AI Chat Interface",
+    desc: "Message stream with alternating user and AI message bubbles, copyable code snippets, streaming typing indicator, and stop button."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI chat sidebar.",
+    title: "Slide-Out AI Chat Assistant Sidebar",
+    desc: "Docked right-hand assistant sidebar allowing users to query AI insights while browsing application data uninterrupted."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI command bar.",
+    title: "AI Natural Language Command Bar",
+    desc: "Unified AI prompt bar that interprets natural language instructions (e.g. 'Show me top 5 churning accounts in APAC')."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI-powered search interface.",
+    title: "AI Semantic Search Interface",
+    desc: "Search engine with natural language comprehension, semantic similarity ranking, category facets, and auto-generated direct answers."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI search results.",
+    title: "AI Search Results with Key Citations",
+    desc: "Search result view displaying generated summary card, relevancy percentage scores, highlighted keywords, and document links."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI prompt input interface.",
+    title: "Rich AI Prompt Input Box & Controls",
+    desc: "Auto-expanding prompt textarea with model selector dropdown, attachment uploader, token counter, and send shortcut."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI prompt suggestions.",
+    title: "Contextual AI Prompt Suggestions & Templates",
+    desc: "Categorized prompt cards (Engineering, Marketing, Data Science) to jumpstart AI queries with pre-engineered prompt templates."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI response card.",
+    title: "Structured AI Response Card",
+    desc: "Card container rendering AI response with markdown formatting, syntax highlighted code, copy button, and thumbs up/down feedback."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI-generated content card.",
+    title: "AI-Generated Creative Content Card",
+    desc: "Showcase card displaying generated copy, image previews, tone of voice badges, and one-click edit/publish actions."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI summary card.",
+    title: "Executive AI Summary & Key Takeaways Card",
+    desc: "Concise document digest showing 3 bulleted key takeaways, estimated reading time saved, and sentiment analysis rating."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI recommendation card.",
+    title: "AI Smart Recommendation Card",
+    desc: "Prescriptive insights card proposing automated optimizations (e.g. 'Upgrade server cluster to save $420/mo') with Apply Now CTA."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI insight card.",
+    title: "Anomaly AI Insight Card",
+    desc: "Card alerting on unexpected deviations (e.g. '+34% spike in API errors after deploy') with root cause hypothesis."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI copilot interface.",
+    title: "In-App AI Copilot Assistant Interface",
+    desc: "Integrated copilot panel that observes user active documents and offers contextual auto-completion and bug fixes."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI autocomplete interface.",
+    title: "Intelligent AI Autocomplete & Ghost Text",
+    desc: "Text editor interface with inline gray ghost text completions, Tab-to-accept shortcut, and alternative completion options."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI smart suggestions.",
+    title: "AI Smart Quick-Action Suggestions",
+    desc: "Floating suggestion pills next to cursor with actions: 'Summarize', 'Translate to Spanish', 'Fix Grammar', 'Make More Professional'."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI content generator.",
+    title: "AI Marketing Content Generator Studio",
+    desc: "Studio interface with topic inputs, target audience selector, length slider, and instant side-by-side output variations."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI document summarizer.",
+    title: "AI Document Summarizer & Extractor",
+    desc: "File dropzone supporting PDF/Docx with instant TL;DR synthesis, action items checklist, and key stakeholder table."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI data analysis interface.",
+    title: "AI-Powered Data Analysis Workbench",
+    desc: "Workbench where users query datasets with plain English questions and receive auto-generated SQL, pivot tables, and charts."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a natural-language query interface.",
+    title: "Natural-Language Query Interface (Text-to-SQL)",
+    desc: "Interface transforming conversational questions ('Which clients have overdue invoices?') into executed database queries."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an Ask Your Data interface.",
+    title: "Ask Your Data Conversational BI Interface",
+    desc: "Interactive business intelligence dialog connecting to PostgreSQL and BigQuery with automated schema comprehension."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a text-to-chart analytics interface.",
+    title: "Text-to-Chart AI Visualization Interface",
+    desc: "System that accepts textual prompts and dynamically renders the most optimal visual chart type (bar, line, or scatter)."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI report generator.",
+    title: "Automated AI Executive Report Generator",
+    desc: "Report synthesis engine compiling weekly departmental metrics into formatted executive briefing documents."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI-powered analytics dashboard.",
+    title: "Autonomous AI-Powered Analytics Dashboard",
+    desc: "Self-optimizing dashboard featuring machine learning forecasting, outlier detection banners, and auto-discovered correlations."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI prediction card.",
+    title: "Predictive Intelligence Outcome Card",
+    desc: "Forward-looking card forecasting next quarter churn probability (e.g. 92% retention likelihood) with risk factors list."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI forecasting dashboard.",
+    title: "Time-Series AI Forecasting Dashboard",
+    desc: "Projections dashboard displaying confidence bands, historical trends, upper/lower prediction bounds, and seasonal adjustments."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an anomaly detection dashboard.",
+    title: "Real-Time Anomaly Detection Dashboard",
+    desc: "Monitoring system highlighting statistical standard deviation spikes, network packet anomalies, and fraud detection flags."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI confidence score component.",
+    title: "AI Confidence Score & Certainty Gauge",
+    desc: "Radial gauge and percentage meter displaying model certainty score (e.g. 98.4% Confidence) with calibration metadata."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI sources and citations component.",
+    title: "AI Source Verification & Citation Footnotes",
+    desc: "Citations drawer verifying AI claims with linked source document numbers, page references, and similarity match percentages."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI explanation and reasoning interface.",
+    title: "AI Chain-of-Thought & Reasoning Interface",
+    desc: "Expandable reasoning inspector detailing step-by-step model deduction logic, intermediate queries, and verification checks."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent dashboard.",
+    title: "Autonomous AI Agent Orchestration Dashboard",
+    desc: "Mission control dashboard overseeing multiple active autonomous agents, current task statuses, memory usage, and execution limits."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent list.",
+    title: "AI Agent Fleet & Directory List",
+    desc: "Agent management table displaying agent names, assigned models, role descriptions, status indicators, and quick pause/resume toggles."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent profile.",
+    title: "Individual AI Agent Profile & Capabilities",
+    desc: "Detailed profile showing system prompt instructions, installed tool integrations, allowed memory window, and authorized API keys."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI agent status monitoring.",
+    title: "Live AI Agent Status & Heartbeat Monitoring",
+    desc: "Real-time health monitor reporting agent uptime, active socket connections, latency percentiles (p95/p99), and heartbeat pulses."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent task queue.",
+    title: "AI Agent Asynchronous Task Queue",
+    desc: "Kanban and list view of queued, processing, and completed background tasks with priority badges and worker assignments."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent activity log.",
+    title: "AI Agent Real-Time Activity Stream",
+    desc: "Console log viewer streaming tool executions, API calls, payload sizes, and timestamped internal agent thoughts."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent execution history.",
+    title: "AI Agent Execution Run History",
+    desc: "Historical audit log of past runs with duration seconds, token consumption, exit codes, and download run trace links."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent execution timeline.",
+    title: "Agent Execution Step-by-Step Timeline",
+    desc: "Visual DAG flow chart and Gantt timeline displaying subtask dependencies, parallel tool runs, and completion milestones."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent workflow.",
+    title: "Multi-Step AI Agent Workflow Engine",
+    desc: "Workflow view showing chained prompts, branch conditions, fallback handlers, and human intervention checkpoints."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent builder.",
+    title: "Visual AI Agent Builder & Configurator",
+    desc: "Drag-and-drop agent construction studio connecting triggers, LLM processing nodes, external tools, and output webhooks."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI agent configuration settings.",
+    title: "AI Agent Hyperparameters & Environment Settings",
+    desc: "Configuration editor for temperature, top-p, max tokens, frequency penalty, system persona, and retry limits."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI agent permissions management.",
+    title: "AI Agent Security & RBAC Permissions",
+    desc: "Security matrix granting or restricting agent access to production databases, payment systems, file exports, and user emails."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent approval interface.",
+    title: "Human-In-The-Loop Action Approval Queue",
+    desc: "Review interface where human operators inspect proposed agent actions (e.g. Refund $450 to User) and click Approve or Reject."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a human-in-the-loop AI workflow.",
+    title: "Human-in-the-Loop Hybrid Decision Workflow",
+    desc: "Workflow interface routing low-confidence agent predictions to human reviewers with side-by-side diff comparison."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI agent error and retry interface.",
+    title: "AI Agent Error Handling & Retry Manager",
+    desc: "Failure management dashboard displaying rate limit 429s, hallucination alerts, automatic backoff timers, and manual retry triggers."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI agent monitoring.",
+    title: "Enterprise AI Agent Monitoring & Observability",
+    desc: "Observability console monitoring token burn rates, average resolution cost per task, success percentages, and latency."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for multi-agent workflow management.",
+    title: "Multi-Agent Swarm Collaboration Hub",
+    desc: "Swarm management view coordinating specialized agents (Researcher, Coder, Critic, Synthesizer) toward shared project goals."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an automation workflow builder.",
+    title: "Automation Workflow Builder Canvas",
+    desc: "Visual workflow canvas connecting triggers (Webhook received) to actions (Update CRM, Send Slack Notification, Charge Card)."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a trigger and action workflow.",
+    title: "Trigger & Action Rule Automation Table",
+    desc: "Rules table displaying 'WHEN <Event> OCCURS, IF <Condition> IS MET, THEN EXECUTE <Action>' with active toggles."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML prediction dashboard.",
+    title: "Machine Learning Prediction Dashboard",
+    desc: "Inference dashboard showing real-time batch predictions, model inference latencies, throughput, and outcome distributions."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML forecast chart.",
+    title: "ML Probabilistic Demand Forecast Chart",
+    desc: "Forecast chart with 80% and 95% confidence intervals forecasting inventory needs, customer inquiries, and server capacities."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML probability score component.",
+    title: "ML Classification Probability Score Meter",
+    desc: "Multi-class probability distribution visualizer displaying relative probabilities across Top-5 predicted classes."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML confidence score component.",
+    title: "ML Prediction Confidence Indicator",
+    desc: "Color-coded badge and meter (High: 96%, Medium: 74%, Low: 42%) indicating reliability of machine learning predictions."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML risk score dashboard.",
+    title: "Financial & Credit ML Risk Score Dashboard",
+    desc: "Risk assessment dashboard ranking accounts by risk tier (Low, Moderate, High, Severe) with automated risk mitigations."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a recommendation engine interface.",
+    title: "AI/ML Personalized Recommendation Engine",
+    desc: "Personalization grid recommending add-on features and content based on collaborative filtering and user embedding vectors."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML anomaly alert.",
+    title: "Machine Learning Outlier & Anomaly Alert",
+    desc: "Urgent anomaly notification modal displaying z-score statistical deviation, affected microservices, and remediation playbooks."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML outlier detection interface.",
+    title: "ML Outlier Detection & Scatterplot Visualizer",
+    desc: "Interactive 2D scatterplot plotting data clusters with flagged anomalies highlighted in vibrant warning colors."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML classification result.",
+    title: "Multi-Label ML Classification Result Card",
+    desc: "Document classification results card showing primary category, secondary tags, confidence bars, and human verification button."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML prediction comparison dashboard.",
+    title: "Model Prediction A/B Comparison Dashboard",
+    desc: "Side-by-side evaluation dashboard comparing model v1 vs model v2 inference speed, accuracy scores, and edge-case predictions."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML model performance dashboard.",
+    title: "ML Model Performance & Validation Dashboard",
+    desc: "Evaluation dashboard reporting Precision, Recall, F1-Score, ROC-AUC curve, and Confusion Matrix across test splits."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for ML model metrics.",
+    title: "ML Training & Validation Metrics Board",
+    desc: "Loss curves, epoch progression, learning rate schedules, and cross-entropy validation tracking."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for ML model version management.",
+    title: "Model Registry & Version Management Hub",
+    desc: "Model registry table displaying versions (v1.2.0 production, v1.3.0 staging), artifact hashes, training dates, and rollback buttons."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for ML model monitoring.",
+    title: "Production ML Model Health & Drift Monitor",
+    desc: "Live model monitoring console alerting on accuracy degradation, request latency spikes, and input feature drift."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for ML data drift monitoring.",
+    title: "Statistical Data Drift & Population Shift Monitor",
+    desc: "Kolmogorov-Smirnov and Population Stability Index (PSI) visualizer highlighting feature distribution shifts over time."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for ML feature importance visualization.",
+    title: "SHAP & Feature Importance Visualization",
+    desc: "Bar chart ranking top predictive factors driving model decisions with positive/negative attribution color scales."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for ML prediction explanation.",
+    title: "LIME / SHAP Individual Prediction Explainer",
+    desc: "Granular case inspector breaking down exactly which features influenced a specific prediction (e.g. Loan Approved)."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an ML experiment dashboard.",
+    title: "MLflow / Weights & Biases Experiment Tracker",
+    desc: "Experiment comparison table ranking hyperparameter tuning runs by validation loss, learning rates, and training durations."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for account settings.",
+    title: "SaaS Account Profile & Personal Settings",
+    desc: "Personal preferences management page with avatar upload, display name, time zone, primary language, and notification toggles."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for profile settings.",
+    title: "Public Developer Profile Settings",
+    desc: "Public profile customizer with bio, personal website URL, GitHub/Twitter integrations, and public badge visibility."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for team management.",
+    title: "Team Members & Collaboration Management",
+    desc: "Team directory with invite member modal, pending invitations list, seat allocation counter, and remove member actions."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for user management.",
+    title: "Enterprise User Directory & Provisioning",
+    desc: "Comprehensive user administration table with search, role filters, status tags (Active, Suspended, Invited), and batch actions."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for role and permission management.",
+    title: "Role-Based Access Control (RBAC) Matrix",
+    desc: "Interactive permission grid assigning granular Read/Write/Delete/Admin rights across roles (Admin, Member, Billing, Viewer)."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for organization settings.",
+    title: "Organization & Workspace Settings",
+    desc: "Company workspace controls including organization legal name, custom subdomain, brand logo, and default member permissions."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for API key management.",
+    title: "Developer API Key Management Hub",
+    desc: "API credential vault allowing developers to generate secret keys, configure scoped read/write permissions, and revoke compromised keys."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for API usage analytics.",
+    title: "Developer API Traffic & Rate Limit Analytics",
+    desc: "API consumption dashboard reporting status code distribution (200, 400, 429, 500), p95 response time (ms), and rate limit usage."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for integrations management.",
+    title: "Third-Party App Integrations Marketplace",
+    desc: "Integration hub featuring connection cards for GitHub, Slack, Google Drive, Stripe, Jira, and Figma with Connect/Configure toggles."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for webhook management.",
+    title: "Event Webhook Management & Delivery Logs",
+    desc: "Webhook configuration panel with endpoint URL input, subscribed event checkboxes, secret signing keys, and retry test buttons."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for developer settings.",
+    title: "Developer Tools & Environment Settings",
+    desc: "Engineering preferences for enabling sandbox mode, GraphQL explorer, SDK package downloads, and CORS origin whitelisting."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for security settings.",
+    title: "Enterprise Security & Compliance Controls",
+    desc: "Security panel managing Single Sign-On (SAML/Okta), session idle timeouts, password complexity rules, and IP allowlisting."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for two-factor authentication settings.",
+    title: "Two-Factor Authentication (2FA) Setup",
+    desc: "2FA enrollment page with authenticator app QR code, manual setup key, verification code test, and emergency recovery backup codes."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for active sessions and device management.",
+    title: "Active Sessions & Connected Devices",
+    desc: "Security audit list showing logged-in devices (Chrome on macOS, Safari on iPhone), IP locations, and Revoke Other Sessions CTA."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an audit log.",
+    title: "Enterprise Security & Compliance Audit Log",
+    desc: "Immutable activity audit log tracking timestamp, actor email, event name, target resource, IP address, and JSON metadata payload."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for SaaS pricing plans.",
+    title: "SaaS Subscription Pricing Plans Matrix",
+    desc: "Tiered pricing table (Starter, Growth, Scale, Enterprise) with monthly/annual discount toggle and detailed feature checklists."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for pricing plan comparison.",
+    title: "Comprehensive Feature Comparison Matrix",
+    desc: "Full-width matrix comparing over 30 granular platform capabilities across pricing tiers with checkmarks, dashes, and limits."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for subscription management.",
+    title: "Subscription Management & Renewal Overview",
+    desc: "Current plan status card displaying Pro Plan, next renewal date, active license seats, and Cancel/Change Plan buttons."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for subscription upgrade and downgrade.",
+    title: "Plan Upgrade & Downgrade Proration Flow",
+    desc: "Upgrade confirmation modal showing immediate prorated billing calculation, unlocked new features, and Confirm Upgrade CTA."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS billing dashboard.",
+    title: "SaaS Billing & Payment Central Dashboard",
+    desc: "Comprehensive billing hub displaying current period balance, primary credit card, billing email, and recent invoice receipts."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for payment method management.",
+    title: "Payment Methods & Card Management",
+    desc: "Credit card vault showing primary Visa card, Add New Card modal, ACH bank transfer option, and billing address editor."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for invoice management.",
+    title: "Invoices & Billing History Archive",
+    desc: "Invoices table listing invoice numbers, issue dates, amounts, payment status badges (Paid, Due), and PDF download shortcuts."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for invoice details.",
+    title: "Detailed Tax Invoice Statement Receipt",
+    desc: "Formatted printable invoice receipt with company tax ID, line-item itemized charges, VAT calculations, and total paid."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for usage-based billing.",
+    title: "Pay-As-You-Go Usage-Based Billing Dashboard",
+    desc: "Metered billing interface calculating charges per active gigabyte and API request with projected end-of-month invoice total."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for usage and consumption meters.",
+    title: "Resource Consumption Meters & Tiered Limits",
+    desc: "Visual meter gauges monitoring bandwidth used, active database connections, storage consumed, and warnings at 80% and 95%."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI token and credit usage.",
+    title: "AI Token & Inference Credit Usage Tracker",
+    desc: "Detailed token usage breakdown by model (GPT-4o, Gemini 2.5, Claude 3.5), total tokens consumed, and remaining monthly balance."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for AI spending limits.",
+    title: "AI Spending Limits & Budget Guardrails",
+    desc: "Hard and soft monthly expenditure limits slider with automatic email alerts and auto-pause API throttling toggles."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for billing alerts.",
+    title: "Automated Billing & Overage Alerts Configuration",
+    desc: "Notification settings allowing finance teams to receive threshold alerts via email and Slack when billing exceeds budgeted amounts."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive Flexbox layout.",
+    title: "Responsive Flexbox Holy Grail Layout",
+    desc: "Clean flexible layout combining sticky header, collapsible flex-direction column on mobile, row on desktop, and sticky footer."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive CSS Grid layout.",
+    title: "Responsive CSS Grid Bento Layout",
+    desc: "Modern responsive grid system utilizing grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) with asymmetric bento cards."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive SaaS dashboard.",
+    title: "Fully Responsive Mobile-Ready SaaS Dashboard",
+    desc: "Multi-device dashboard with responsive layout restructuring cards gracefully across mobile phones, tablets, and desktop displays."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive data table.",
+    title: "Responsive SaaS Data Table with Mobile Card Fallback",
+    desc: "Data grid that renders standard horizontal table columns on desktop and cleanly converts into stacked cards on mobile viewports."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for responsive SaaS cards.",
+    title: "Fluid Responsive SaaS Card Grid System",
+    desc: "Auto-fitting card matrix with fluid spacing, responsive typography, and consistent aspect ratios regardless of screen resolution."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive SaaS form.",
+    title: "Adaptive Responsive SaaS Configuration Form",
+    desc: "Form layout that smoothly transitions from dual-column inputs on desktop into single-column full-width controls on mobile devices."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive analytics dashboard.",
+    title: "Adaptive Responsive Analytics Suite",
+    desc: "Fluid metrics dashboard ensuring charts, metric counters, and filter controls resize dynamically without horizontal clipping."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for responsive charts and data visualization.",
+    title: "Responsive Charts & Visualizations Viewport Adapter",
+    desc: "Data charts engineered with viewBox and container queries to preserve readable axis labels and markers across all screens."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive pricing page.",
+    title: "Mobile-Optimized Responsive Pricing Page",
+    desc: "Responsive pricing layout stacking plans vertically on phones with sticky feature comparison and horizontal tabs on desktop."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive login page.",
+    title: "Responsive Split-Screen Login Experience",
+    desc: "Split-view auth screen featuring branded testimonial illustration on left (hidden on mobile) and streamlined login form on right."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive signup page.",
+    title: "Responsive Onboarding Signup Interface",
+    desc: "Multi-viewport customer onboarding page with responsive input fields, social sign-in buttons, and terms agreement."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a mobile-first SaaS layout.",
+    title: "Mobile-First SaaS Architecture Layout",
+    desc: "Layout designed phone-first with progressive enhancement for tablets, laptops, and ultra-wide monitor screens."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a mobile bottom navigation.",
+    title: "Mobile Sticky Bottom Navigation Bar",
+    desc: "App-like mobile bottom navigation bar with 5 primary icons, active pill highlights, notification badge, and thumb-friendly touch targets."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a sticky SaaS header.",
+    title: "Sticky Floating SaaS App Header",
+    desc: "Fixed position header with backdrop blur (frosted glass), shadow on scroll, breadcrumb path, and user profile avatar."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a fixed SaaS sidebar.",
+    title: "Fixed Sidebar with Independent Scrollable Body",
+    desc: "Enterprise viewport layout featuring pinned 260px sidebar navigation while main application content scrolls independently."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive SaaS footer.",
+    title: "Comprehensive Multi-Column SaaS Footer",
+    desc: "Five-column responsive footer with product links, legal disclosures, newsletter subscription input, copyright, and social icons."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a responsive photo and media gallery.",
+    title: "Responsive Media & Asset Gallery Grid",
+    desc: "Masonry/grid photo gallery with object-fit cover, hover zoom micro-interactions, file metadata overlays, and responsive breakpoints."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for CSS hover effects and micro-interactions.",
+    title: "CSS Hover Effects & Micro-Interactions Showcase",
+    desc: "Catalog of delightful micro-interactions: card elevation shifts, magnetic button hovers, link underlines, and ripple effects."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for animated SaaS cards and components.",
+    title: "Animated SaaS Components & Keyframe Effects",
+    desc: "Components enriched with entrance fade-ups, pulsating live badges, floating action items, and smooth state changes."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a CSS sliding card animation.",
+    title: "CSS Sliding Card & Drawer Animation",
+    desc: "Smooth horizontal and vertical sliding cards utilizing CSS transforms and transition timing curves for seamless interactivity."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a CSS-only modal and popup interface.",
+    title: "CSS-Only Modal & Popup Interface (:target)",
+    desc: "Pure CSS modal implementation using the :target pseudo-class and checkbox hack with zero JavaScript required."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a dark-mode SaaS interface using CSS variables.",
+    title: "Dark Mode SaaS Architecture with CSS Custom Properties",
+    desc: "Theme engine using CSS variables (--bg-primary, --text-primary, --border-color) with prefers-color-scheme media query support."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a light and dark theme switcher.",
+    title: "Light & Dark Theme Switcher Component",
+    desc: "Interactive toggle switch allowing users to toggle between Light, Dark, and System Auto color palettes in real-time."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for responsive SaaS typography.",
+    title: "Fluid Typography & Responsive Scale System",
+    desc: "Typographic scale leveraging clamp() functions to ensure headings scale smoothly from mobile viewports to desktop monitors."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a glassmorphism SaaS interface.",
+    title: "Modern Glassmorphism Frosted Glass Interface",
+    desc: "Contemporary aesthetic using backdrop-filter: blur(16px), translucent white backgrounds, and delicate gradient borders."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a gradient-based SaaS interface.",
+    title: "Vibrant Gradient-Driven SaaS Interface",
+    desc: "Multi-layered radial and linear mesh gradients producing modern atmospheric depth across cards, buttons, and badges."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS command palette with keyboard shortcuts.",
+    title: "SaaS Command Palette with Keyboard Shortcuts",
+    desc: "Pro-developer navigation palette with highlighted keyboard shortcuts (⌘K, ⌘P, ⇧D), search input, and action grouping."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for an AI notification center.",
+    title: "Intelligent AI Notification Center",
+    desc: "Notification panel prioritizing alerts by AI importance score with one-click actions ('Summarize', 'Approve', 'Dismiss')."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS user profile menu.",
+    title: "User Profile Dropdown & Organization Switcher",
+    desc: "Profile popup displaying current user email, active team plan, switch organization sub-menu, and log out button."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS onboarding workflow.",
+    title: "Interactive SaaS Customer Onboarding Workflow",
+    desc: "Four-step onboarding wizard introducing user to workspace setup, inviting teammates, connecting GitHub, and running first build."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS help and support interface.",
+    title: "Help Center & Customer Support Hub",
+    desc: "Customer support page with search bar, knowledge base categories, system status banner, and Live Chat widget."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS documentation interface.",
+    title: "Developer Documentation & API Reference Interface",
+    desc: "Three-column documentation layout with article navigation, markdown body with copyable code blocks, and On This Page table of contents."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS search and filter interface.",
+    title: "Advanced Search & Multi-Faceted Filter Interface",
+    desc: "Search page with instantaneous debounced results, category checkboxes, price range sliders, and active filter management."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS calendar and scheduling interface.",
+    title: "SaaS Calendar & Team Scheduling Interface",
+    desc: "Monthly/weekly calendar view showing scheduled releases, meeting events, colored project milestones, and Add Event button."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS file management interface.",
+    title: "Cloud File Manager & Asset Browser",
+    desc: "File directory with folder tree navigation, grid/list view toggles, file upload dropzone, size metadata, and action menus."
+  },
+  {
+    category: "Modern SaaS, Analytics, AI/ML & Responsive UI",
+    prompt: "Create a webpage for a SaaS collaboration and team workspace.",
+    title: "Real-Time Collaboration & Workspace Hub",
+    desc: "Collaborative whiteboard/document interface showing real-time active user presence cursors, comments, and sharing permissions."
+  },
+
+  // SECTION 4: Final SaaS Webpage Projects (247 - 269)
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a complete SaaS landing page.",
+    title: "Production-Ready SaaS Landing Page",
+    desc: "Full marketing landing page featuring hero section, logo cloud, feature bento grid, customer testimonials, pricing matrix, and footer."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS login page.",
+    title: "Complete Enterprise SaaS Login Page",
+    desc: "Polished authentication portal with SSO integrations, two-factor auth prompt, floating labels, security badges, and terms."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS signup page.",
+    title: "Complete SaaS Customer Signup Page",
+    desc: "High-conversion registration page with 14-day free trial guarantee, company details, password validation, and social proofs."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS onboarding page.",
+    title: "Complete User Onboarding Experience Page",
+    desc: "Interactive welcoming flow guiding new users through role customization, workspace branding, and initial project scaffolding."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a complete SaaS dashboard.",
+    title: "Complete Enterprise SaaS Management Dashboard",
+    desc: "Full-featured operational dashboard with sidebar, topbar, metric summary cards, real-time charts, and recent activity logs."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a complete analytics dashboard.",
+    title: "Complete Full-Scale Analytics Dashboard",
+    desc: "Deep analytics console featuring revenue trajectories, cohort retention tables, customer acquisition funnels, and filter controls."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for an AI-powered SaaS dashboard.",
+    title: "Complete AI-Powered SaaS Executive Dashboard",
+    desc: "Next-gen dashboard featuring automated AI forecasting, natural language data querying, anomaly alerts, and recommendation cards."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for an AI agent management dashboard.",
+    title: "Complete AI Agent Fleet Management Dashboard",
+    desc: "Full agent mission control with live agent status cards, active task queues, execution timelines, and human-in-the-loop approvals."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS user management system.",
+    title: "Complete SaaS User Directory & Administration System",
+    desc: "Full user management suite with batch invitations, role assignment, status toggles, user search, and audit trail."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS team management system.",
+    title: "Complete Team & Department Management System",
+    desc: "Enterprise team organizer managing engineering, product, and sales teams with seat quotas and departmental permissions."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS account settings page.",
+    title: "Complete SaaS Account & Workspace Settings Page",
+    desc: "Full settings center managing profile, company branding, notifications, localization, and account deletion safety gates."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS security settings page.",
+    title: "Complete SaaS Enterprise Security & Compliance Center",
+    desc: "Comprehensive security management with SAML SSO setup, 2FA enforcement, IP allowlisting, active session revoking, and SOC2 audit."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS integrations page.",
+    title: "Complete App Integrations & Marketplace Directory",
+    desc: "Full-scale integrations marketplace with featured apps, search filters, categorized connectors, and API key linkages."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS billing management page.",
+    title: "Complete SaaS Billing & Subscription Management Center",
+    desc: "Unified billing hub with subscription tier upgrades, invoice downloads, usage-based consumption meters, and payment methods."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS pricing page.",
+    title: "Complete Commercial SaaS Pricing & Plans Page",
+    desc: "Complete public pricing page with monthly/yearly billing switches, 4 tier cards, enterprise custom quote form, and FAQ accordion."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS checkout page.",
+    title: "Complete SaaS Checkout & Payment Processing Page",
+    desc: "Secure checkout experience with plan summary, prorated tax calculation, credit card and Apple Pay integration, and Money-back guarantee."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS invoice management page.",
+    title: "Complete Invoices & Billing Archive Page",
+    desc: "Full financial receipts page with date filtering, payment status indicators, total spent summaries, and bulk PDF export."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS help center.",
+    title: "Complete Customer Help Center & Support Portal",
+    desc: "Self-service support portal with prominent search input, featured troubleshooting guides, community forum links, and ticket submission."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS documentation website.",
+    title: "Complete Developer Documentation Website",
+    desc: "Full technical documentation interface with three-panel layout, interactive API request builder, code samples, and version selector."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS blog and news website.",
+    title: "Complete SaaS Company Blog & Product Updates Magazine",
+    desc: "Content publication page with featured article hero, category pills (Product, Engineering, Design), newsletter signup, and reading time tags."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS 404 error page.",
+    title: "Complete SaaS Custom 404 Page Not Found",
+    desc: "Delightfully crafted 404 page featuring clean vector artwork, helpful navigation links to popular sections, and a Return Home button."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a SaaS 500 error page.",
+    title: "Complete SaaS 500 Internal Server Error Page",
+    desc: "Professional server incident page displaying incident tracking ID, real-time status page link, auto-retry countdown, and support contact."
+  },
+  {
+    category: "Final SaaS Webpage Projects",
+    prompt: "Create a webpage for a complete responsive SaaS website using HTML5, CSS3, Flexbox, Grid, media queries, analytics, AI/ML interfaces, dashboards, and modern SaaS components.",
+    title: "Complete Responsive Modern SaaS Web Platform",
+    desc: "Master production-grade responsive SaaS website combining HTML5 semantic landmarks, CSS3 variables, Flexbox headers, Grid bento layouts, AI/ML copilots, analytics dashboards, and interactive UI components."
+  }
+];
+
+console.log(`Loaded ${rawQuestions.length} total questions.`);
+fs.writeFileSync('scripts/css-questions.json', JSON.stringify(rawQuestions, null, 2), 'utf-8');

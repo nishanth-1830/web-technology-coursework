@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images &amp; Hyperlinks - HTML Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 HTML Programs</a>
+        <a href="html-03.html" class="nav-btn">⬅ Prev</a>
+        <a href="html-05.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Images &amp; Hyperlinks</h1>
+            <p class="card-subtitle">Demonstrates embedding images with alt text, width/height properties, rounded borders, external links with target=&#039;_blank&#039;, and intra-page anchor links.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            HTML Fundamentals
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <h2 style="color: #1e293b; margin-bottom: 16px;">HTML Images & Hyperlinks Demonstration</h2>
+        
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 24px;">
+          <div style="flex: 1; min-width: 250px; text-align: center; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <svg width="180" height="140" viewBox="0 0 200 150" style="background: #dbeafe; border-radius: 8px; border: 2px solid #bfdbfe;">
+              <rect width="200" height="150" fill="#eff6ff"/>
+              <circle cx="100" cy="65" r="35" fill="#3b82f6"/>
+              <polygon points="40,130 160,130 100,70" fill="#2563eb" opacity="0.8"/>
+              <text x="100" y="145" font-family="Arial" font-size="12" fill="#1e40af" text-anchor="middle">Embedded Graphic</text>
+            </svg>
+            <p style="font-size: 13px; color: #64748b; margin-top: 8px;"><code>&lt;img src="..." alt="Web Tech Logo"&gt;</code></p>
+          </div>
+
+          <div style="flex: 1; min-width: 250px; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <h3 style="color: #1e293b; font-size: 16px; margin-bottom: 10px;">Hyperlinks Demonstrations:</h3>
+            <ul style="padding-left: 20px; color: #475569; font-size: 14px;">
+              <li style="margin-bottom: 8px;"><a href="#section-notes" style="color: #2563eb; font-weight: 500;">Jump to Intra-page Bookmark</a></li>
+              <li style="margin-bottom: 8px;"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" style="color: #2563eb; font-weight: 500;">MDN HTML Docs (New Window _blank)</a></li>
+              <li style="margin-bottom: 8px;"><a href="mailto:nishanth@example.com" style="color: #2563eb; font-weight: 500;">Send Email (mailto: link)</a></li>
+              <li><a href="tel:+919876543210" style="color: #2563eb; font-weight: 500;">Call Telephone (tel: link)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="section-notes" style="background: #e0f2fe; padding: 16px; border-left: 4px solid #0284c7; border-radius: 4px;">
+          <h4 style="color: #0369a1; margin-bottom: 4px;">Bookmarked Section: Anchor Target Reached!</h4>
+          <p style="color: #0c4a6e; font-size: 13px;">This section is targeted by <code>&lt;a href="#section-notes"&gt;</code> demonstrating page navigation without reload.</p>
+        </div>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: html-04.html</span>
+              <button class="copy-btn" data-target="code_html-04">Copy Code</button>
+            </div>
+            <pre id="code_html-04"><code>&lt;div style=&quot;font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;&quot;&gt;
+        &lt;h2 style=&quot;color: #1e293b; margin-bottom: 16px;&quot;&gt;HTML Images &amp; Hyperlinks Demonstration&lt;/h2&gt;
+        
+        &lt;div style=&quot;display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 24px;&quot;&gt;
+          &lt;div style=&quot;flex: 1; min-width: 250px; text-align: center; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;&quot;&gt;
+            &lt;svg width=&quot;180&quot; height=&quot;140&quot; viewBox=&quot;0 0 200 150&quot; style=&quot;background: #dbeafe; border-radius: 8px; border: 2px solid #bfdbfe;&quot;&gt;
+              &lt;rect width=&quot;200&quot; height=&quot;150&quot; fill=&quot;#eff6ff&quot;/&gt;
+              &lt;circle cx=&quot;100&quot; cy=&quot;65&quot; r=&quot;35&quot; fill=&quot;#3b82f6&quot;/&gt;
+              &lt;polygon points=&quot;40,130 160,130 100,70&quot; fill=&quot;#2563eb&quot; opacity=&quot;0.8&quot;/&gt;
+              &lt;text x=&quot;100&quot; y=&quot;145&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;#1e40af&quot; text-anchor=&quot;middle&quot;&gt;Embedded Graphic&lt;/text&gt;
+            &lt;/svg&gt;
+            &lt;p style=&quot;font-size: 13px; color: #64748b; margin-top: 8px;&quot;&gt;&lt;code&gt;&amp;lt;img src=&quot;...&quot; alt=&quot;Web Tech Logo&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+          &lt;/div&gt;
+
+          &lt;div style=&quot;flex: 1; min-width: 250px; background: #f8fafc; padding: 16px; border-radius: 8px; border: 1px solid #e2e8f0;&quot;&gt;
+            &lt;h3 style=&quot;color: #1e293b; font-size: 16px; margin-bottom: 10px;&quot;&gt;Hyperlinks Demonstrations:&lt;/h3&gt;
+            &lt;ul style=&quot;padding-left: 20px; color: #475569; font-size: 14px;&quot;&gt;
+              &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;&lt;a href=&quot;#section-notes&quot; style=&quot;color: #2563eb; font-weight: 500;&quot;&gt;Jump to Intra-page Bookmark&lt;/a&gt;&lt;/li&gt;
+              &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; style=&quot;color: #2563eb; font-weight: 500;&quot;&gt;MDN HTML Docs (New Window _blank)&lt;/a&gt;&lt;/li&gt;
+              &lt;li style=&quot;margin-bottom: 8px;&quot;&gt;&lt;a href=&quot;mailto:nishanth@example.com&quot; style=&quot;color: #2563eb; font-weight: 500;&quot;&gt;Send Email (mailto: link)&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;tel:+919876543210&quot; style=&quot;color: #2563eb; font-weight: 500;&quot;&gt;Call Telephone (tel: link)&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id=&quot;section-notes&quot; style=&quot;background: #e0f2fe; padding: 16px; border-left: 4px solid #0284c7; border-radius: 4px;&quot;&gt;
+          &lt;h4 style=&quot;color: #0369a1; margin-bottom: 4px;&quot;&gt;Bookmarked Section: Anchor Target Reached!&lt;/h4&gt;
+          &lt;p style=&quot;color: #0c4a6e; font-size: 13px;&quot;&gt;This section is targeted by &lt;code&gt;&amp;lt;a href=&quot;#section-notes&quot;&amp;gt;&lt;/code&gt; demonstrating page navigation without reload.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">HTML Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

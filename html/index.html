@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Programs - Practical List</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn primary">🏠 Home Dashboard</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h1 class="card-title">HTML Programs</h1>
+          <p class="card-subtitle">Structured HTML5 experiments covering markup elements, tables, forms, and semantic tags.</p>
+        </div>
+        <div style="background: #f1f5f9; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: bold; color: #334155; border: 1px solid #cbd5e1;">
+          Total Programs: 15
+        </div>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <input type="text" id="progSearch" oninput="filterPrograms()" placeholder="🔍 Search HTML Programs by keyword..." style="max-width: 400px;">
+      </div>
+
+      <div id="progListContainer">
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              HTML Fundamentals (10)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-01.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Headings, Paragraphs &amp; Line Breaks
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates standard HTML heading hierarchy from h1 to h6, structured text paragraphs, and line breaks (&lt;br&gt;).
+                  </p>
+                  <a href="html-01.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#2</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-02.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Ordered, Unordered &amp; Description Lists
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates HTML list elements including ordered (&lt;ol&gt;), unordered (&lt;ul&gt;), nested lists, and description lists (&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;).
+                  </p>
+                  <a href="html-02.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#3</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-03.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Tables with Rows, Columns &amp; Merged Cells
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Creates an HTML table demonstrating rows (&lt;tr&gt;), header cells (&lt;th&gt;), data cells (&lt;td&gt;), borders, and cell merging using colspan and rowspan.
+                  </p>
+                  <a href="html-03.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#4</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-04.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Images &amp; Hyperlinks
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates embedding images with alt text, width/height properties, rounded borders, external links with target=&#039;_blank&#039;, and intra-page anchor links.
+                  </p>
+                  <a href="html-04.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#5</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-05.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Student Registration Form
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Implements an extensive HTML student registration form with text, radio buttons, checkboxes, select dropdown, textarea, date picker, and submit/reset buttons.
+                  </p>
+                  <a href="html-05.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#6</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-06.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Audio &amp; Video Elements
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates HTML5 native media elements (&lt;audio&gt; and &lt;video&gt;) with control bars, autoplay settings, loop attributes, and fallback descriptions.
+                  </p>
+                  <a href="html-06.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#7</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-07.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Frames &amp; Iframes
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates embedding external web documents and interactive sandbox previews using the HTML &lt;iframe&gt; tag.
+                  </p>
+                  <a href="html-07.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#8</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-08.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Semantic HTML Elements
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates HTML5 semantic layout structure using &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, and &lt;footer&gt;.
+                  </p>
+                  <a href="html-08.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#9</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-09.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      HTML5 Input Types
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates modern HTML5 form input types including email, date, time, number, range, color, tel, url, and search with native browser validation.
+                  </p>
+                  <a href="html-09.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#10</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-10.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      College Timetable Table
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Constructs a comprehensive college lecture timetable utilizing table headers, column spans for lunch break, and row spans for 2-hour practical lab slots.
+                  </p>
+                  <a href="html-10.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              HTML & CSS Integration (3)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-11.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Internal &amp; External CSS Styling
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Demonstrates comparison of inline style attributes, internal style blocks in the document head, and external stylesheet linking.
+                  </p>
+                  <a href="html-11.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#2</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-12.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      CSS Selectors, Colors, Margins, Padding &amp; Borders
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Explores CSS universal, tag, class, ID selectors, hex/hsl colors, margins, padding, and varied border styles.
+                  </p>
+                  <a href="html-12.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#3</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-15.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Simple Personal Portfolio Webpage
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    A complete personal portfolio webpage created using HTML and CSS showcasing student profile, technical skills, projects, and contact info.
+                  </p>
+                  <a href="html-15.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              Responsive Design (1)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-13.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Responsive Webpage Using CSS Media Queries
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Implements responsive layout that gracefully adapts between desktop (3 columns), tablet (2 columns), and mobile (single column) using @media rules.
+                  </p>
+                  <a href="html-13.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+          <div class="cat-group" style="margin-bottom: 24px;">
+            <h2 style="font-size: 18px; color: #1e293b; border-bottom: 2px solid #3b82f6; padding-bottom: 6px; margin-bottom: 12px;">
+              Frameworks & Components (1)
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;">
+              
+                <div class="prog-item card" style="margin: 0; padding: 16px; border: 1px solid #cbd5e1; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';" onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                    <span style="font-size: 12px; background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace;">#1</span>
+                    <span style="font-size: 11px; color: #16a34a; font-weight: bold;">✓ Tested</span>
+                  </div>
+                  <h3 style="font-size: 15px; margin-bottom: 6px; line-height: 1.4;">
+                    <a href="html-14.html" style="color: #0f172a; text-decoration: none; font-weight: bold;" onmouseover="this.style.color='#2563eb';" onmouseout="this.style.color='#0f172a';">
+                      Webpage Using Bootstrap Components
+                    </a>
+                  </h3>
+                  <p style="font-size: 13px; color: #64748b; margin-bottom: 12px; line-height: 1.5;">
+                    Builds a webpage utilizing Bootstrap design components including navigation bar, cards, badge indicators, buttons, and alert components.
+                  </p>
+                  <a href="html-14.html" class="nav-btn primary" style="font-size: 12px; padding: 6px 12px; width: 100%; justify-content: center;">
+                    Launch Program 🚀
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Student: k. nishanth reddy (250200439) • Section 06 • web technology</p>
+  </footer>
+
+  <script type="module">
+    window.filterPrograms = function() {
+      const q = document.getElementById('progSearch').value.toLowerCase();
+      document.querySelectorAll('.prog-item').forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(q) ? 'block' : 'none';
+      });
+    };
+  </script>
+</body>
+</html>

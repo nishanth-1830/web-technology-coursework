@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Timetable Table - HTML Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 HTML Programs</a>
+        <a href="html-09.html" class="nav-btn">⬅ Prev</a>
+        <a href="html-11.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">College Timetable Table</h1>
+            <p class="card-subtitle">Constructs a comprehensive college lecture timetable utilizing table headers, column spans for lunch break, and row spans for 2-hour practical lab slots.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            HTML Fundamentals
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <h2 style="color: #1e293b; text-align: center; margin-bottom: 4px;">Department of Computer Science & Engineering</h2>
+        <p style="text-align: center; color: #64748b; font-size: 14px; margin-bottom: 16px;">Weekly Academic Timetable - Semester IV (Section 06)</p>
+        
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 13px;">
+            <thead>
+              <tr style="background: #1e293b; color: #ffffff;">
+                <th style="padding: 10px; border: 1px solid #475569;">Day / Time</th>
+                <th style="padding: 10px; border: 1px solid #475569;">09:00 - 10:00</th>
+                <th style="padding: 10px; border: 1px solid #475569;">10:00 - 11:00</th>
+                <th style="padding: 10px; border: 1px solid #475569;">11:15 - 12:15</th>
+                <th style="padding: 10px; border: 1px solid #475569; background: #d97706;">12:15 - 01:15</th>
+                <th style="padding: 10px; border: 1px solid #475569;">01:15 - 02:15</th>
+                <th style="padding: 10px; border: 1px solid #475569;">02:15 - 03:15</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;">Monday</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px; background: #dbeafe;">Web Tech (WT)</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">DBMS</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">OS</td>
+                <td rowspan="5" style="border: 1px solid #cbd5e1; background: #fef3c7; color: #92400e; font-weight: bold; vertical-align: middle; letter-spacing: 2px;">L<br>U<br>N<br>C<br>H<br><br>B<br>R<br>E<br>A<br>K</td>
+                <td colspan="2" style="border: 1px solid #cbd5e1; padding: 10px; background: #dcfce7; font-weight: bold; color: #166534;">Web Technology Practical Lab (Sec 06)</td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;">Tuesday</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">Computer Networks</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px; background: #dbeafe;">Web Tech (WT)</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">Software Eng</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">DBMS</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">Library / Seminar</td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;">Wednesday</td>
+                <td colspan="2" style="border: 1px solid #cbd5e1; padding: 10px; background: #fee2e2; color: #991b1b; font-weight: bold;">DBMS Lab Practical</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">OS</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px; background: #dbeafe;">Web Tech (WT)</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">Sports / Physical Ed</td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;">Thursday</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">OS</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">CN</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">DBMS</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">SE</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">Aptitude Training</td>
+              </tr>
+              <tr>
+                <td style="font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;">Friday</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">SE</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px; background: #dbeafe;">Web Tech (WT)</td>
+                <td style="border: 1px solid #cbd5e1; padding: 10px;">CN</td>
+                <td colspan="2" style="border: 1px solid #cbd5e1; padding: 10px; background: #f3e8ff; color: #6b21a8; font-weight: bold;">Project Mentorship & Lab</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: html-10.html</span>
+              <button class="copy-btn" data-target="code_html-10">Copy Code</button>
+            </div>
+            <pre id="code_html-10"><code>&lt;div style=&quot;font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;&quot;&gt;
+        &lt;h2 style=&quot;color: #1e293b; text-align: center; margin-bottom: 4px;&quot;&gt;Department of Computer Science &amp; Engineering&lt;/h2&gt;
+        &lt;p style=&quot;text-align: center; color: #64748b; font-size: 14px; margin-bottom: 16px;&quot;&gt;Weekly Academic Timetable - Semester IV (Section 06)&lt;/p&gt;
+        
+        &lt;div style=&quot;overflow-x: auto;&quot;&gt;
+          &lt;table style=&quot;width: 100%; border-collapse: collapse; text-align: center; font-size: 13px;&quot;&gt;
+            &lt;thead&gt;
+              &lt;tr style=&quot;background: #1e293b; color: #ffffff;&quot;&gt;
+                &lt;th style=&quot;padding: 10px; border: 1px solid #475569;&quot;&gt;Day / Time&lt;/th&gt;
+                &lt;th style=&quot;padding: 10px; border: 1px solid #475569;&quot;&gt;09:00 - 10:00&lt;/th&gt;
+                &lt;th style=&quot;padding: 10px; border: 1px solid #475569;&quot;&gt;10:00 - 11:00&lt;/th&gt;
+                &lt;th style=&quot;padding: 10px; border: 1px solid #475569;&quot;&gt;11:15 - 12:15&lt;/th&gt;
+                &lt;th style=&quot;padding: 10px; border: 1px solid #475569; background: #d97706;&quot;&gt;12:15 - 01:15&lt;/th&gt;
+                &lt;th style=&quot;padding: 10px; border: 1px solid #475569;&quot;&gt;01:15 - 02:15&lt;/th&gt;
+                &lt;th style=&quot;padding: 10px; border: 1px solid #475569;&quot;&gt;02:15 - 03:15&lt;/th&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              &lt;tr&gt;
+                &lt;td style=&quot;font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Monday&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px; background: #dbeafe;&quot;&gt;Web Tech (WT)&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;DBMS&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;OS&lt;/td&gt;
+                &lt;td rowspan=&quot;5&quot; style=&quot;border: 1px solid #cbd5e1; background: #fef3c7; color: #92400e; font-weight: bold; vertical-align: middle; letter-spacing: 2px;&quot;&gt;L&lt;br&gt;U&lt;br&gt;N&lt;br&gt;C&lt;br&gt;H&lt;br&gt;&lt;br&gt;B&lt;br&gt;R&lt;br&gt;E&lt;br&gt;A&lt;br&gt;K&lt;/td&gt;
+                &lt;td colspan=&quot;2&quot; style=&quot;border: 1px solid #cbd5e1; padding: 10px; background: #dcfce7; font-weight: bold; color: #166534;&quot;&gt;Web Technology Practical Lab (Sec 06)&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td style=&quot;font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Tuesday&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Computer Networks&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px; background: #dbeafe;&quot;&gt;Web Tech (WT)&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Software Eng&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;DBMS&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Library / Seminar&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td style=&quot;font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Wednesday&lt;/td&gt;
+                &lt;td colspan=&quot;2&quot; style=&quot;border: 1px solid #cbd5e1; padding: 10px; background: #fee2e2; color: #991b1b; font-weight: bold;&quot;&gt;DBMS Lab Practical&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;OS&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px; background: #dbeafe;&quot;&gt;Web Tech (WT)&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Sports / Physical Ed&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td style=&quot;font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Thursday&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;OS&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;CN&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;DBMS&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;SE&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Aptitude Training&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td style=&quot;font-weight: bold; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Friday&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;SE&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px; background: #dbeafe;&quot;&gt;Web Tech (WT)&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;CN&lt;/td&gt;
+                &lt;td colspan=&quot;2&quot; style=&quot;border: 1px solid #cbd5e1; padding: 10px; background: #f3e8ff; color: #6b21a8; font-weight: bold;&quot;&gt;Project Mentorship &amp; Lab&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">HTML Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

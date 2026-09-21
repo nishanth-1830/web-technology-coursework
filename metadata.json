@@ -1,0 +1,7 @@
+{
+  "name": "HTML CSS & JavaScript Practical Programs",
+  "description": "Complete Web Technology Practical Assignment containing HTML, CSS, and JavaScript programs with working demonstrations, navigation, and documentation.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

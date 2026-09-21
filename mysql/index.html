@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySQL Database Lab - Complete Syllabus (56 Programs)</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <style>
+    .cat-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #cbd5e1; background: #fff; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; color: #475569; }
+    .cat-btn.active, .cat-btn:hover { background: #2563eb; color: #fff; border-color: #2563eb; }
+    .prog-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; }
+    .prog-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.06); border-color: #93c5fd; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links"><a href="../index.html" class="nav-btn primary">🏠 Home Dashboard</a></div>
+      <div class="student-badge"><span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span><span>• Sec: 06</span></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card" style="margin-bottom: 24px;">
+      <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h1 class="card-title">MySQL Relational Database Lab (56 Programs)</h1>
+          <p class="card-subtitle">Comprehensive SQL suite covering DDL, DML, Constraints, Multi-Table JOINs, Subqueries, Views, B-Tree Indexes, Stored Procedures, Functions, Triggers, ACID Transactions, and 3NF Database Design.</p>
+        </div>
+        <div style="background: #eff6ff; padding: 8px 16px; border-radius: 24px; font-size: 14px; font-weight: bold; color: #2563eb; border: 1px solid #bfdbfe;">Total Programs: 56</div>
+      </div>
+
+      <div style="margin-top: 16px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <input type="text" id="progSearch" oninput="filterPrograms()" placeholder="🔍 Search MySQL programs..." style="padding: 10px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; width: 100%; max-width: 420px; outline: none;">
+        <div style="font-size: 13px; color: #64748b;">Showing <strong id="visibleCount" style="color: #0f172a;">56</strong> of 56 experiments</div>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;" id="catFilterContainer">
+        <button class="cat-btn active" onclick="setCategory('ALL')">All Categories (56)</button>
+        <button class="cat-btn" onclick="setCategory('Database Fundamentals')">Database Fundamentals (7)</button><button class="cat-btn" onclick="setCategory('SQL Commands')">SQL Commands (8)</button><button class="cat-btn" onclick="setCategory('SQL Operators & Functions')">SQL Operators & Functions (7)</button><button class="cat-btn" onclick="setCategory('Table Joins')">Table Joins (5)</button><button class="cat-btn" onclick="setCategory('Subqueries')">Subqueries (4)</button><button class="cat-btn" onclick="setCategory('Views & Indexes')">Views & Indexes (5)</button><button class="cat-btn" onclick="setCategory('Stored Procedures & Functions')">Stored Procedures & Functions (5)</button><button class="cat-btn" onclick="setCategory('Triggers & Auditing')">Triggers & Auditing (5)</button><button class="cat-btn" onclick="setCategory('Transactions')">Transactions (5)</button><button class="cat-btn" onclick="setCategory('Database Design & CRUD')">Database Design & CRUD (5)</button>
+      </div>
+    </div>
+
+    <div id="progGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;">
+      
+        <a href="mysql-01.html" class="prog-card" data-cat="Database Fundamentals" data-title="create a database using mysql" data-desc="create database commands with character sets (utf8mb4) and collation settings." data-num="1">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#1</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Create a Database using MySQL</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE DATABASE commands with character sets (utf8mb4) and collation settings.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-02.html" class="prog-card" data-cat="Database Fundamentals" data-title="create and delete tables using mysql" data-desc="create table with schema definition and drop table if exists." data-num="2">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#2</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Create and Delete Tables using MySQL</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE TABLE with schema definition and DROP TABLE IF EXISTS.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-03.html" class="prog-card" data-cat="Database Fundamentals" data-title="demonstrate mysql data types" data-desc="int, bigint, decimal, varchar, text, date, timestamp, enum, and boolean types." data-num="3">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#3</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Demonstrate MySQL Data Types</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">INT, BIGINT, DECIMAL, VARCHAR, TEXT, DATE, TIMESTAMP, ENUM, and BOOLEAN types.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-04.html" class="prog-card" data-cat="Database Fundamentals" data-title="demonstrate primary key and foreign key" data-desc="primary key constraint and foreign key references with referential integrity." data-num="4">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#4</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Demonstrate Primary Key and Foreign Key</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">PRIMARY KEY constraint and FOREIGN KEY REFERENCES with referential integrity.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-05.html" class="prog-card" data-cat="Database Fundamentals" data-title="not null, unique, default, and check constraints" data-desc="data validation constraints on table columns during schema initialization." data-num="5">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#5</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">NOT NULL, UNIQUE, DEFAULT, and CHECK Constraints</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Data validation constraints on table columns during schema initialization.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-06.html" class="prog-card" data-cat="Database Fundamentals" data-title="alter table structure using alter table" data-desc="add column, modify datatype, drop column, and rename column." data-num="6">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#6</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Alter Table Structure using ALTER TABLE</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">ADD column, MODIFY datatype, DROP column, and RENAME COLUMN.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-07.html" class="prog-card" data-cat="Database Fundamentals" data-title="rename and truncate tables" data-desc="rename table and truncate table for high-speed table resetting." data-num="7">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#7</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Rename and Truncate Tables</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">RENAME TABLE and TRUNCATE TABLE for high-speed table resetting.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-08.html" class="prog-card" data-cat="SQL Commands" data-title="insert records using insert" data-desc="insert into single row and batch multi-row tuple insertion." data-num="8">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#8</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Commands</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Insert Records using INSERT</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">INSERT INTO single row and batch multi-row tuple insertion.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-09.html" class="prog-card" data-cat="SQL Commands" data-title="retrieve records using select" data-desc="select column projection, aliases (as), and table querying." data-num="9">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#9</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Commands</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Retrieve Records using SELECT</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">SELECT column projection, aliases (AS), and table querying.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-10.html" class="prog-card" data-cat="SQL Commands" data-title="update records using update" data-desc="update table set column = value where condition with safe update guards." data-num="10">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#10</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Commands</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Update Records using UPDATE</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">UPDATE table SET column = value WHERE condition with safe update guards.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-11.html" class="prog-card" data-cat="SQL Commands" data-title="delete records using delete" data-desc="delete from table where condition to remove specific tuples." data-num="11">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#11</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Commands</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Delete Records using DELETE</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">DELETE FROM table WHERE condition to remove specific tuples.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-12.html" class="prog-card" data-cat="SQL Commands" data-title="where clause for filtering records" data-desc="filtering records with comparison operators (=, !=, &lt;, &gt;, &lt;=, &gt;=)." data-num="12">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#12</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Commands</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">WHERE Clause for Filtering Records</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Filtering records with comparison operators (=, !=, &lt;, &gt;, &lt;=, &gt;=).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-13.html" class="prog-card" data-cat="SQL Commands" data-title="order by for sorting records" data-desc="sort records ascending (asc) and descending (desc) across multiple keys." data-num="13">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#13</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Commands</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">ORDER BY for Sorting Records</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Sort records ascending (ASC) and descending (DESC) across multiple keys.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-14.html" class="prog-card" data-cat="SQL Commands" data-title="distinct to retrieve unique values" data-desc="eliminate duplicate result records from query projections." data-num="14">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#14</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Commands</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">DISTINCT to Retrieve Unique Values</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Eliminate duplicate result records from query projections.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-15.html" class="prog-card" data-cat="SQL Commands" data-title="limit to restrict query results" data-desc="pagination using limit count offset offset." data-num="15">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#15</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Commands</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">LIMIT to Restrict Query Results</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Pagination using LIMIT count OFFSET offset.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-16.html" class="prog-card" data-cat="SQL Operators & Functions" data-title="arithmetic operators in sql" data-desc="+, -, *, /, and % operations on numeric table columns." data-num="16">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#16</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Operators & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Arithmetic Operators in SQL</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">+, -, *, /, and % operations on numeric table columns.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-17.html" class="prog-card" data-cat="SQL Operators & Functions" data-title="comparison and logical operators (and, or, not)" data-desc="compound boolean condition filters in where clauses." data-num="17">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#17</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Operators & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Comparison and Logical Operators (AND, OR, NOT)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Compound boolean condition filters in WHERE clauses.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-18.html" class="prog-card" data-cat="SQL Operators & Functions" data-title="like, in, and between operators" data-desc="pattern matching with wildcards (%, _), value sets (in), and ranges (between)." data-num="18">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#18</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Operators & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">LIKE, IN, and BETWEEN Operators</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Pattern matching with wildcards (%, _), value sets (IN), and ranges (BETWEEN).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-19.html" class="prog-card" data-cat="SQL Operators & Functions" data-title="aggregate functions: count, sum, avg, min, max" data-desc="compute statistical metrics across record sets." data-num="19">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#19</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Operators & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Aggregate Functions: COUNT, SUM, AVG, MIN, MAX</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Compute statistical metrics across record sets.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-20.html" class="prog-card" data-cat="SQL Operators & Functions" data-title="string functions in sql" data-desc="concat, upper, lower, length, substring, and trim." data-num="20">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#20</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Operators & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">String Functions in SQL</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CONCAT, UPPER, LOWER, LENGTH, SUBSTRING, and TRIM.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-21.html" class="prog-card" data-cat="SQL Operators & Functions" data-title="date and time functions in sql" data-desc="now(), curdate(), datediff(), date_add(), and date_format()." data-num="21">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#21</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Operators & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Date and Time Functions in SQL</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">NOW(), CURDATE(), DATEDIFF(), DATE_ADD(), and DATE_FORMAT().</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-22.html" class="prog-card" data-cat="SQL Operators & Functions" data-title="group by and having clauses" data-desc="aggregate grouping by categorical columns and post-aggregation filtering with having." data-num="22">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#22</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">SQL Operators & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">GROUP BY and HAVING Clauses</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Aggregate grouping by categorical columns and post-aggregation filtering with HAVING.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-23.html" class="prog-card" data-cat="Table Joins" data-title="inner join implementation" data-desc="retrieve matching tuples between two related relational tables." data-num="23">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#23</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Table Joins</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">INNER JOIN Implementation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Retrieve matching tuples between two related relational tables.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-24.html" class="prog-card" data-cat="Table Joins" data-title="left outer join implementation" data-desc="preserve all records from the left table matched against optional right records." data-num="24">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#24</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Table Joins</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">LEFT OUTER JOIN Implementation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Preserve all records from the left table matched against optional right records.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-25.html" class="prog-card" data-cat="Table Joins" data-title="right outer join implementation" data-desc="preserve all records from the right table matched against optional left records." data-num="25">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#25</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Table Joins</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">RIGHT OUTER JOIN Implementation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Preserve all records from the right table matched against optional left records.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-26.html" class="prog-card" data-cat="Table Joins" data-title="self join implementation" data-desc="join a table to itself using table aliasing (e.g. employee-manager hierarchy)." data-num="26">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#26</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Table Joins</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Self Join Implementation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Join a table to itself using table aliasing (e.g. employee-manager hierarchy).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-27.html" class="prog-card" data-cat="Table Joins" data-title="multiple-table joins (3+ tables)" data-desc="join students, courses, and enrollments across foreign key chains." data-num="27">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#27</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Table Joins</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Multiple-Table Joins (3+ Tables)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Join Students, Courses, and Enrollments across foreign key chains.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-28.html" class="prog-card" data-cat="Subqueries" data-title="single-row subqueries" data-desc="subqueries returning a scalar value used in comparison predicates." data-num="28">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#28</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Subqueries</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Single-Row Subqueries</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Subqueries returning a scalar value used in comparison predicates.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-29.html" class="prog-card" data-cat="Subqueries" data-title="multiple-row subqueries (in, any, all)" data-desc="subqueries returning a vector of values evaluated against outer query." data-num="29">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#29</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Subqueries</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Multiple-Row Subqueries (IN, ANY, ALL)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Subqueries returning a vector of values evaluated against outer query.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-30.html" class="prog-card" data-cat="Subqueries" data-title="subqueries with in operator" data-desc="filter records whose foreign key exists in an inner query result set." data-num="30">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#30</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Subqueries</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Subqueries with IN Operator</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Filter records whose foreign key exists in an inner query result set.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-31.html" class="prog-card" data-cat="Subqueries" data-title="correlated subqueries" data-desc="subqueries referencing columns from the outer query executed per outer row." data-num="31">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#31</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Subqueries</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Correlated Subqueries</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Subqueries referencing columns from the outer query executed per outer row.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-32.html" class="prog-card" data-cat="Views & Indexes" data-title="create and query database views" data-desc="create view virtual table abstractions over complex multi-table queries." data-num="32">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#32</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Views & Indexes</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Create and Query Database Views</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE VIEW virtual table abstractions over complex multi-table queries.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-33.html" class="prog-card" data-cat="Views & Indexes" data-title="update and drop views" data-desc="create or replace view and drop view commands." data-num="33">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#33</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Views & Indexes</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Update and Drop Views</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE OR REPLACE VIEW and DROP VIEW commands.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-34.html" class="prog-card" data-cat="Views & Indexes" data-title="create indexes on tables (b-tree)" data-desc="create index to accelerate query lookup performance on frequently searched columns." data-num="34">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#34</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Views & Indexes</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Create Indexes on Tables (B-Tree)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE INDEX to accelerate query lookup performance on frequently searched columns.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-35.html" class="prog-card" data-cat="Views & Indexes" data-title="demonstrate unique indexes" data-desc="create unique index to enforce unique integrity constraints." data-num="35">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#35</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Views & Indexes</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Demonstrate Unique Indexes</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE UNIQUE INDEX to enforce unique integrity constraints.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-36.html" class="prog-card" data-cat="Views & Indexes" data-title="drop indexes using drop index" data-desc="remove unused index overhead from table metadata." data-num="36">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#36</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Views & Indexes</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Drop Indexes using DROP INDEX</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Remove unused index overhead from table metadata.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-37.html" class="prog-card" data-cat="Stored Procedures & Functions" data-title="create and execute stored procedures" data-desc="create procedure with delimiter, begin, and end blocks." data-num="37">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#37</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Stored Procedures & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Create and Execute Stored Procedures</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE PROCEDURE with DELIMITER, BEGIN, and END blocks.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-38.html" class="prog-card" data-cat="Stored Procedures & Functions" data-title="stored procedures with in, out, and inout parameters" data-desc="parameter passing and return value extraction from stored routines." data-num="38">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#38</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Stored Procedures & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Stored Procedures with IN, OUT, and INOUT Parameters</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Parameter passing and return value extraction from stored routines.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-39.html" class="prog-card" data-cat="Stored Procedures & Functions" data-title="create and execute stored functions" data-desc="create function returning deterministic scalar values." data-num="39">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#39</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Stored Procedures & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Create and Execute Stored Functions</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">CREATE FUNCTION returning deterministic scalar values.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-40.html" class="prog-card" data-cat="Stored Procedures & Functions" data-title="conditional if-then-else in stored procedures" data-desc="procedural branching logic inside sql server routines." data-num="40">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#40</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Stored Procedures & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Conditional IF-THEN-ELSE in Stored Procedures</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Procedural branching logic inside SQL server routines.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-41.html" class="prog-card" data-cat="Stored Procedures & Functions" data-title="loops in stored procedures (while / loop)" data-desc="iterative cursor loops and row processing in stored routines." data-num="41">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#41</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Stored Procedures & Functions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Loops in Stored Procedures (WHILE / LOOP)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Iterative cursor loops and row processing in stored routines.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-42.html" class="prog-card" data-cat="Triggers & Auditing" data-title="before insert trigger" data-desc="data validation and timestamp population before row write." data-num="42">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#42</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Triggers & Auditing</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">BEFORE INSERT Trigger</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Data validation and timestamp population before row write.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-43.html" class="prog-card" data-cat="Triggers & Auditing" data-title="after insert trigger" data-desc="automated counter increments or notification logging upon insertion." data-num="43">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#43</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Triggers & Auditing</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">AFTER INSERT Trigger</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Automated counter increments or notification logging upon insertion.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-44.html" class="prog-card" data-cat="Triggers & Auditing" data-title="before update trigger" data-desc="intercept column updates and maintain modified_at audit metadata." data-num="44">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#44</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Triggers & Auditing</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">BEFORE UPDATE Trigger</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Intercept column updates and maintain modified_at audit metadata.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-45.html" class="prog-card" data-cat="Triggers & Auditing" data-title="after delete trigger" data-desc="record deleted entity archive logs into historical audit tables." data-num="45">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#45</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Triggers & Auditing</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">AFTER DELETE Trigger</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Record deleted entity archive logs into historical audit tables.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-46.html" class="prog-card" data-cat="Triggers & Auditing" data-title="audit log system using triggers" data-desc="comprehensive change-data-capture audit log recording old and new row states." data-num="46">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#46</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Triggers & Auditing</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Audit Log System using Triggers</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Comprehensive change-data-capture audit log recording old and new row states.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-47.html" class="prog-card" data-cat="Transactions" data-title="acid transactions in mysql" data-desc="atomicity, consistency, isolation, and durability guarantees in innodb." data-num="47">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#47</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Transactions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">ACID Transactions in MySQL</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Atomicity, Consistency, Isolation, and Durability guarantees in InnoDB.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-48.html" class="prog-card" data-cat="Transactions" data-title="commit implementation" data-desc="start transaction and permanent persistence with commit." data-num="48">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#48</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Transactions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">COMMIT Implementation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">START TRANSACTION and permanent persistence with COMMIT.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-49.html" class="prog-card" data-cat="Transactions" data-title="rollback implementation" data-desc="roll back uncommitted dml changes upon constraint violation or error." data-num="49">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#49</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Transactions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">ROLLBACK Implementation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Roll back uncommitted DML changes upon constraint violation or error.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-50.html" class="prog-card" data-cat="Transactions" data-title="savepoint implementation" data-desc="partial rollbacks to designated intermediate checkpoints." data-num="50">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#50</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Transactions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">SAVEPOINT Implementation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Partial rollbacks to designated intermediate checkpoints.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-51.html" class="prog-card" data-cat="Transactions" data-title="multi-operation financial transfer transaction" data-desc="debit account a and credit account b atomically with consistency verification." data-num="51">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#51</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Transactions</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Multi-Operation Financial Transfer Transaction</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Debit account A and credit account B atomically with consistency verification.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-52.html" class="prog-card" data-cat="Database Design & CRUD" data-title="student management database design" data-desc="complete 3nf schema for students, departments, courses, and grades." data-num="52">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#52</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Design & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Student Management Database Design</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Complete 3NF schema for Students, Departments, Courses, and Grades.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-53.html" class="prog-card" data-cat="Database Design & CRUD" data-title="user & role management database schema" data-desc="users, roles, and user_roles join table with rbac permissions." data-num="53">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#53</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Design & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">User & Role Management Database Schema</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Users, Roles, and User_Roles join table with RBAC permissions.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-54.html" class="prog-card" data-cat="Database Design & CRUD" data-title="e-commerce product & order management database" data-desc="products, categories, customers, orders, and order_items schema." data-num="54">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#54</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Design & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">E-Commerce Product & Order Management Database</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Products, Categories, Customers, Orders, and Order_Items schema.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-55.html" class="prog-card" data-cat="Database Design & CRUD" data-title="library management database schema" data-desc="books, authors, members, and book_loans tracking system." data-num="55">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#55</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Design & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Library Management Database Schema</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Books, Authors, Members, and Book_Loans tracking system.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+        <a href="mysql-56.html" class="prog-card" data-cat="Database Design & CRUD" data-title="database normalization (1nf, 2nf, 3nf)" data-desc="eliminating repeating groups, partial dependencies, and transitive dependencies." data-num="56">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#56</span>
+              <span style="font-size: 11px; background: #eff6ff; color: #2563eb; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database Design & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Database Normalization (1NF, 2NF, 3NF)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Eliminating repeating groups, partial dependencies, and transitive dependencies.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ SQL Terminal Tested</span>
+            <span style="color: #2563eb;">Open SQL Lab →</span>
+          </div>
+        </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Web Technology Laboratory • Department of Computer Science & Engineering</p>
+    <p>Student: <strong>k. nishanth reddy</strong> | Reg No: <strong>250200439</strong> | Section: <strong>06</strong></p>
+  </footer>
+
+  <script>
+    let activeCat = 'ALL';
+    function setCategory(cat) {
+      activeCat = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (cat === 'ALL' && btn.innerText.startsWith('All')) btn.classList.add('active');
+        else if (btn.innerText.startsWith(cat)) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+      filterPrograms();
+    }
+    function filterPrograms() {
+      const q = document.getElementById('progSearch').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.prog-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        const title = card.getAttribute('data-title');
+        const desc = card.getAttribute('data-desc');
+        const num = card.getAttribute('data-num');
+        const matchesCat = activeCat === 'ALL' || cat === activeCat;
+        const matchesQuery = !q || title.includes(q) || desc.includes(q) || num === q;
+        if (matchesCat && matchesQuery) { card.style.display = 'flex'; visible++; }
+        else { card.style.display = 'none'; }
+      });
+      document.getElementById('visibleCount').innerText = visible;
+    }
+  </script>
+</body>
+</html>

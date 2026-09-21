@@ -1,0 +1,1124 @@
+[
+  {
+    "id": "js-01",
+    "title": "Display 'Hello World' in JavaScript",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Write a JavaScript program to display 'Hello World' using console.log, document.write, and DOM manipulation."
+  },
+  {
+    "id": "js-02",
+    "title": "Arithmetic Operations",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Perform addition, subtraction, multiplication, division, modulus, and exponentiation operations on two numbers."
+  },
+  {
+    "id": "js-03",
+    "title": "Largest of Three Numbers",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Find the maximum of three user-entered numbers using conditional statements and Math.max."
+  },
+  {
+    "id": "js-04",
+    "title": "Check Even or Odd",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Determine whether a given integer is even or odd using the modulus operator."
+  },
+  {
+    "id": "js-05",
+    "title": "Check Positive, Negative, or Zero",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Evaluate whether an input number is greater than, less than, or equal to zero."
+  },
+  {
+    "id": "js-06",
+    "title": "Factorial of a Number",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Compute the factorial of a non-negative integer using iterative and recursive algorithms."
+  },
+  {
+    "id": "js-07",
+    "title": "Fibonacci Series Generation",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Generate the Fibonacci sequence up to N terms using loops."
+  },
+  {
+    "id": "js-08",
+    "title": "Prime Number Checker",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Check if a number is prime by evaluating factors up to its square root."
+  },
+  {
+    "id": "js-09",
+    "title": "Number Palindrome Checker",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Determine if a number reads identically forwards and backwards."
+  },
+  {
+    "id": "js-10",
+    "title": "Reverse a Number",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Reverse the digits of an integer mathematically and through string casting."
+  },
+  {
+    "id": "js-11",
+    "title": "Sum of Digits of a Number",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Calculate the arithmetic sum of all individual digits in an integer."
+  },
+  {
+    "id": "js-12",
+    "title": "Largest and Smallest Element in an Array",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Iterate through an array to extract minimum and maximum values without built-in sorting."
+  },
+  {
+    "id": "js-13",
+    "title": "Sort an Array (Ascending & Descending)",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Sort numeric and string arrays using comparison functions and standard bubble/sort logic."
+  },
+  {
+    "id": "js-14",
+    "title": "Sum and Average of Array Elements",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Traverse numeric arrays to compute the total sum and statistical mean average."
+  },
+  {
+    "id": "js-15",
+    "title": "JavaScript Function Demonstrations",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Demonstrate function declarations, function expressions, parameters, and return statements."
+  },
+  {
+    "id": "js-16",
+    "title": "Arrow Functions in ES6",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Showcase concise syntax, implicit returns, lexical this binding, and arrow callbacks."
+  },
+  {
+    "id": "js-17",
+    "title": "Strings & String Methods",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Demonstrate slice, substring, replace, toUpperCase, toLowerCase, trim, split, and indexOf."
+  },
+  {
+    "id": "js-18",
+    "title": "Arrays & Array Methods",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Demonstrate push, pop, shift, unshift, splice, slice, map, filter, and reduce."
+  },
+  {
+    "id": "js-19",
+    "title": "Objects & Object Methods",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Demonstrate object creation, dot/bracket notation, Object.keys, Object.values, and methods."
+  },
+  {
+    "id": "js-20",
+    "title": "Date & Math Built-in Objects",
+    "category": "Core JavaScript Fundamentals",
+    "desc": "Explore Date getters/setters, timestamps, Math.round, Math.floor, Math.ceil, and Math.random."
+  },
+  {
+    "id": "js-21",
+    "title": "Swap Two Numbers",
+    "category": "Mathematical Algorithms",
+    "desc": "Swap values of two variables with and without using a third temporary variable."
+  },
+  {
+    "id": "js-22",
+    "title": "Greatest Common Divisor (GCD / HCF)",
+    "category": "Mathematical Algorithms",
+    "desc": "Calculate GCD of two numbers using the Euclidean algorithm."
+  },
+  {
+    "id": "js-23",
+    "title": "Least Common Multiple (LCM)",
+    "category": "Mathematical Algorithms",
+    "desc": "Compute LCM of two integers using the relationship LCM(a, b) = (a * b) / GCD(a, b)."
+  },
+  {
+    "id": "js-24",
+    "title": "Armstrong Number Checker",
+    "category": "Mathematical Algorithms",
+    "desc": "Determine if a number equals the sum of its own digits each raised to the power of digit count."
+  },
+  {
+    "id": "js-25",
+    "title": "Perfect Number Checker",
+    "category": "Mathematical Algorithms",
+    "desc": "Check if a positive integer equals the sum of its proper positive divisors excluding itself."
+  },
+  {
+    "id": "js-26",
+    "title": "Multiplication Table Generator",
+    "category": "Mathematical Algorithms",
+    "desc": "Generate formatted multiplication table from 1 to N for any given number."
+  },
+  {
+    "id": "js-27",
+    "title": "Power of a Number (Exponentiation)",
+    "category": "Mathematical Algorithms",
+    "desc": "Calculate base raised to exponent using loops and Math.pow."
+  },
+  {
+    "id": "js-28",
+    "title": "Count Number of Digits",
+    "category": "Mathematical Algorithms",
+    "desc": "Count total digits in an integer using mathematical division and string length."
+  },
+  {
+    "id": "js-29",
+    "title": "Second Largest Element in an Array",
+    "category": "Mathematical Algorithms",
+    "desc": "Find the second-highest distinct value in an unsorted numeric array."
+  },
+  {
+    "id": "js-30",
+    "title": "Remove Duplicate Elements from Array",
+    "category": "Mathematical Algorithms",
+    "desc": "Deduplicate array values using Set, filter, and indexOf."
+  },
+  {
+    "id": "js-31",
+    "title": "Merge Two Arrays",
+    "category": "Mathematical Algorithms",
+    "desc": "Combine two arrays using concat, spread operator (...), and deduplicated unions."
+  },
+  {
+    "id": "js-32",
+    "title": "Frequency of Elements in an Array",
+    "category": "Mathematical Algorithms",
+    "desc": "Calculate occurrence counts of each distinct item in an array using an object map."
+  },
+  {
+    "id": "js-33",
+    "title": "Find Common Elements in Two Arrays (Intersection)",
+    "category": "Mathematical Algorithms",
+    "desc": "Compute array intersection to display elements present in both input arrays."
+  },
+  {
+    "id": "js-34",
+    "title": "Reverse a String",
+    "category": "String Manipulation",
+    "desc": "Reverse text characters using split-reverse-join and iterative decremental loops."
+  },
+  {
+    "id": "js-35",
+    "title": "String Palindrome Checker",
+    "category": "String Manipulation",
+    "desc": "Check if a phrase or word is a palindrome ignoring case and alphanumeric boundaries."
+  },
+  {
+    "id": "js-36",
+    "title": "Count Vowels and Consonants in a String",
+    "category": "String Manipulation",
+    "desc": "Analyze user text to count vowels (a,e,i,o,u) and consonant letters."
+  },
+  {
+    "id": "js-37",
+    "title": "Word Counter in a String",
+    "category": "String Manipulation",
+    "desc": "Compute total words by tokenizing input text with whitespace regular expressions."
+  },
+  {
+    "id": "js-38",
+    "title": "Character Frequency in a String",
+    "category": "String Manipulation",
+    "desc": "Tabulate frequency distribution of each letter and symbol in a given string."
+  },
+  {
+    "id": "js-39",
+    "title": "Regular Expressions (Regex) Demonstrator",
+    "category": "String Manipulation",
+    "desc": "Test regex test(), match(), replace(), and search() methods interactively."
+  },
+  {
+    "id": "js-40",
+    "title": "Validate Email with Regular Expression",
+    "category": "String Manipulation",
+    "desc": "RFC 5322 compliant regex validator for email address strings with instant feedback."
+  },
+  {
+    "id": "js-41",
+    "title": "ES6 let, const, Template Literals & Destructuring",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Demonstrate block scoping, immutable constants, string interpolation, and object/array destructuring."
+  },
+  {
+    "id": "js-42",
+    "title": "Spread and Rest Operators (...)",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Illustrate array spreading, object cloning, and function variadic rest parameters."
+  },
+  {
+    "id": "js-43",
+    "title": "Classes and Objects in JavaScript",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Construct ES6 class declarations, constructor methods, getters, setters, and static methods."
+  },
+  {
+    "id": "js-44",
+    "title": "Class Inheritance & super Keyword",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Demonstrate OOP inheritance where derived classes extend parent classes using super()."
+  },
+  {
+    "id": "js-45",
+    "title": "Callbacks, Promises & Async/Await",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Compare asynchronous paradigms: callback chains, Promise states, and modern async/await syntax."
+  },
+  {
+    "id": "js-46",
+    "title": "Fetch API Demonstration",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Perform HTTP GET/POST network requests with JSON serialization and HTTP error guards."
+  },
+  {
+    "id": "js-47",
+    "title": "Display API Data Dynamically on Webpage",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Fetch remote JSON data (e.g. user directory or weather) and render card layouts dynamically."
+  },
+  {
+    "id": "js-48",
+    "title": "Local & Session Storage Operations",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Set, retrieve, inspect, and remove structured key-value state across browser sessions."
+  },
+  {
+    "id": "js-49",
+    "title": "Responsive Login Form with Validation",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Build a sleek responsive login interface with email, password regex, and error badges."
+  },
+  {
+    "id": "js-50",
+    "title": "Complete Interactive Web Application",
+    "category": "Advanced ES6+ Lab",
+    "desc": "Unify HTML5, CSS3 transitions, and full JavaScript event-driven state into a production app."
+  },
+  {
+    "id": "js-51",
+    "title": "Change Text Content (textContent vs innerText)",
+    "category": "DOM Manipulation",
+    "desc": "Dynamically swap element text content upon button clicks with animated confirmation."
+  },
+  {
+    "id": "js-52",
+    "title": "Change HTML Content using innerHTML",
+    "category": "DOM Manipulation",
+    "desc": "Inject rich markup, badges, and styled elements into containers dynamically."
+  },
+  {
+    "id": "js-53",
+    "title": "Dynamically Modify Element CSS Styles",
+    "category": "DOM Manipulation",
+    "desc": "Manipulate inline style properties such as color, fontSize, transform, and background."
+  },
+  {
+    "id": "js-54",
+    "title": "Change Background Color on Button Click",
+    "category": "DOM Manipulation",
+    "desc": "Cycle palette tints and generate random hex/HSL backgrounds on demand."
+  },
+  {
+    "id": "js-55",
+    "title": "Create & Append New HTML Elements",
+    "category": "DOM Manipulation",
+    "desc": "Use document.createElement(), textNode creation, and appendChild() to inject nodes."
+  },
+  {
+    "id": "js-56",
+    "title": "Remove HTML Elements Dynamically",
+    "category": "DOM Manipulation",
+    "desc": "Demonstrate element.remove() and parentNode.removeChild() with visual feedback."
+  },
+  {
+    "id": "js-57",
+    "title": "Replace Elements with replaceChild()",
+    "category": "DOM Manipulation",
+    "desc": "Swap existing DOM tree nodes with newly created components dynamically."
+  },
+  {
+    "id": "js-58",
+    "title": "Add, Remove and Toggle CSS Classes",
+    "category": "DOM Manipulation",
+    "desc": "Use classList.add, classList.remove, and classList.toggle for dynamic UI styling."
+  },
+  {
+    "id": "js-59",
+    "title": "Change Element Attributes Dynamically",
+    "category": "DOM Manipulation",
+    "desc": "Modify src, href, title, disabled, and custom data attributes via setAttribute()."
+  },
+  {
+    "id": "js-60",
+    "title": "Generate Dynamic Unordered List from Array",
+    "category": "DOM Manipulation",
+    "desc": "Iterate through JavaScript arrays to generate structured bullet lists programmatically."
+  },
+  {
+    "id": "js-61",
+    "title": "Generate Dynamic Ordered List from User Input",
+    "category": "DOM Manipulation",
+    "desc": "Accept item inputs and append numbered sequence items dynamically."
+  },
+  {
+    "id": "js-62",
+    "title": "Dynamic Student Table CRUD",
+    "category": "DOM Manipulation",
+    "desc": "Render table rows from JSON state with real-time add, edit, and delete functionality."
+  },
+  {
+    "id": "js-63",
+    "title": "Add & Delete Rows in HTML Table",
+    "category": "DOM Manipulation",
+    "desc": "Table manipulation with row insertion, deletion buttons, and row count indicators."
+  },
+  {
+    "id": "js-64",
+    "title": "Search and Filter Table Records in Real-Time",
+    "category": "DOM Manipulation",
+    "desc": "Instant table row filtering as the user types into a search query box."
+  },
+  {
+    "id": "js-65",
+    "title": "Sort Table Columns Alphabetically & Numerically",
+    "category": "DOM Manipulation",
+    "desc": "Clickable table header sorting with ascending and descending direction indicators."
+  },
+  {
+    "id": "js-66",
+    "title": "Dynamic Dropdown Menu from Array",
+    "category": "DOM Manipulation",
+    "desc": "Populate select options dynamically from configured data models."
+  },
+  {
+    "id": "js-67",
+    "title": "Dependent Cascading Dropdowns (Country → State → City)",
+    "category": "DOM Manipulation",
+    "desc": "Cascading select elements where selecting a country dynamically filters states and cities."
+  },
+  {
+    "id": "js-68",
+    "title": "Dynamic Image Gallery from JSON Data",
+    "category": "DOM Manipulation",
+    "desc": "Render photo cards dynamically with titles, thumbnails, and preview lightboxes."
+  },
+  {
+    "id": "js-69",
+    "title": "Image Slideshow / Carousel with Controls",
+    "category": "DOM Manipulation",
+    "desc": "Automatic and manual carousel slideshow with Prev/Next buttons and indicator dots."
+  },
+  {
+    "id": "js-70",
+    "title": "Password Show/Hide Toggle Feature",
+    "category": "DOM Manipulation",
+    "desc": "Toggle input type between 'password' and 'text' with dynamic eye icon feedback."
+  },
+  {
+    "id": "js-71",
+    "title": "Show / Hide Content Toggle Button",
+    "category": "DOM Manipulation",
+    "desc": "Expandable text section with smooth height transition and button label updates."
+  },
+  {
+    "id": "js-72",
+    "title": "Interactive Tabbed Content Switcher",
+    "category": "DOM Manipulation",
+    "desc": "Sleek tabbed navigation panels showing active state and swapping panel contents."
+  },
+  {
+    "id": "js-73",
+    "title": "Collapsible Accordion Component",
+    "category": "DOM Manipulation",
+    "desc": "Multi-panel accordion with expandable and collapsible FAQ cards."
+  },
+  {
+    "id": "js-74",
+    "title": "Interactive Modal Popup Dialog",
+    "category": "DOM Manipulation",
+    "desc": "Modal window with background overlay backdrop, open triggers, and ESC/close handlers."
+  },
+  {
+    "id": "js-75",
+    "title": "Dynamic Floating Tooltip Generator",
+    "category": "DOM Manipulation",
+    "desc": "Position floating tooltips dynamically relative to target element bounding boxes."
+  },
+  {
+    "id": "js-76",
+    "title": "Live Character Counter for Textarea",
+    "category": "DOM Manipulation",
+    "desc": "Real-time remaining character counter with warning thresholds and max limits."
+  },
+  {
+    "id": "js-77",
+    "title": "Live Word Counter & Reading Time Estimator",
+    "category": "DOM Manipulation",
+    "desc": "Compute total words, characters, sentences, and estimated reading duration in minutes."
+  },
+  {
+    "id": "js-78",
+    "title": "Live Digital Clock & Current Date Displayer",
+    "category": "DOM Manipulation",
+    "desc": "Real-time digital clock rendering HH:MM:SS with AM/PM and full calendar date formatting."
+  },
+  {
+    "id": "js-79",
+    "title": "To-Do List with Add, Edit, Complete & Delete",
+    "category": "DOM Manipulation",
+    "desc": "Feature-complete task manager with status toggling, editing, and badge counters."
+  },
+  {
+    "id": "js-80",
+    "title": "DOM Node API: createElement, appendChild, remove, replaceChild",
+    "category": "DOM Manipulation",
+    "desc": "Comprehensive side-by-side interactive demo of core native DOM manipulation primitives."
+  },
+  {
+    "id": "js-81",
+    "title": "Mouse Click Event (onclick)",
+    "category": "JavaScript Events",
+    "desc": "Handle single mouse click triggers with visual ripple animations and counter increments."
+  },
+  {
+    "id": "js-82",
+    "title": "Mouse Double-Click Event (ondblclick)",
+    "category": "JavaScript Events",
+    "desc": "Detect and respond to double-click gestures for special UI triggers."
+  },
+  {
+    "id": "js-83",
+    "title": "Mouse Over & Mouse Out (onmouseover / onmouseout)",
+    "category": "JavaScript Events",
+    "desc": "Interactive hover cards demonstrating cursor entry and exit detection."
+  },
+  {
+    "id": "js-84",
+    "title": "Mouse Down & Mouse Up (onmousedown / onmouseup)",
+    "category": "JavaScript Events",
+    "desc": "Detect active press down and release states with tactile visual depressions."
+  },
+  {
+    "id": "js-85",
+    "title": "Mouse Move Event & Coordinate Tracker",
+    "category": "JavaScript Events",
+    "desc": "Track clientX, clientY, pageX, and screenX coordinates in real-time on canvas."
+  },
+  {
+    "id": "js-86",
+    "title": "Keyboard Keydown Event",
+    "category": "JavaScript Events",
+    "desc": "Capture keydown events, inspecting key codes, modifiers (Shift, Ctrl, Alt), and repeat flags."
+  },
+  {
+    "id": "js-87",
+    "title": "Keyboard Keyup Event",
+    "category": "JavaScript Events",
+    "desc": "Trigger actions upon keyboard key release with visual keycaps highlighting."
+  },
+  {
+    "id": "js-88",
+    "title": "Key Press Displayer & Virtual Keyboard",
+    "category": "JavaScript Events",
+    "desc": "Display pressed key name, ASCII value, and keyCode in modern telemetry badges."
+  },
+  {
+    "id": "js-89",
+    "title": "Keyboard Keystroke Counter & Speed Meter",
+    "category": "JavaScript Events",
+    "desc": "Count total keystrokes and calculate real-time keys-per-second typing velocity."
+  },
+  {
+    "id": "js-90",
+    "title": "Focus and Blur Events on Form Inputs",
+    "category": "JavaScript Events",
+    "desc": "Highlight active fields and trigger validation feedback on input blur."
+  },
+  {
+    "id": "js-91",
+    "title": "Change and Input Events Comparison",
+    "category": "JavaScript Events",
+    "desc": "Compare continuous real-time input event with commit-on-blur change event."
+  },
+  {
+    "id": "js-92",
+    "title": "Form Submit and Reset Events",
+    "category": "JavaScript Events",
+    "desc": "Intercept form submission with preventDefault() and handle form reset events."
+  },
+  {
+    "id": "js-93",
+    "title": "Color Switcher Button on Click",
+    "category": "JavaScript Events",
+    "desc": "Dynamically transition theme backgrounds across predefined color presets on click."
+  },
+  {
+    "id": "js-94",
+    "title": "Dynamic Font Size Scaler (+ / -)",
+    "category": "JavaScript Events",
+    "desc": "Increase, decrease, and reset paragraph typography sizes dynamically."
+  },
+  {
+    "id": "js-95",
+    "title": "Multi-Button Event Dispatcher",
+    "category": "JavaScript Events",
+    "desc": "Multiple action buttons binding unique handler routines to a shared display console."
+  },
+  {
+    "id": "js-96",
+    "title": "addEventListener vs Inline Handlers",
+    "category": "JavaScript Events",
+    "desc": "Demonstrate standard addEventListener separation of concerns and multiple listeners."
+  },
+  {
+    "id": "js-97",
+    "title": "Multiple Event Listeners on Single Element",
+    "category": "JavaScript Events",
+    "desc": "Attach several distinct listener callbacks to one button trigger."
+  },
+  {
+    "id": "js-98",
+    "title": "removeEventListener() Demonstration",
+    "category": "JavaScript Events",
+    "desc": "Programmatically detach named event listener functions to stop event handling."
+  },
+  {
+    "id": "js-99",
+    "title": "Event Bubbling vs Event Capturing",
+    "category": "JavaScript Events",
+    "desc": "Visualize propagation phases: capture phase down, target phase, and bubble phase up."
+  },
+  {
+    "id": "js-100",
+    "title": "Event Delegation with Match Selector",
+    "category": "JavaScript Events",
+    "desc": "Handle dynamic child element clicks efficiently using a single parent listener."
+  },
+  {
+    "id": "js-101",
+    "title": "HTML5 Drag and Drop Application",
+    "category": "JavaScript Events",
+    "desc": "Drag items between Kanban board status columns (Todo, In Progress, Done)."
+  },
+  {
+    "id": "js-102",
+    "title": "Interactive Canvas Mouse Coordinate Tracker",
+    "category": "JavaScript Events",
+    "desc": "Draw fluid trailing particles following cursor movement across interactive canvas."
+  },
+  {
+    "id": "js-103",
+    "title": "Keyboard Controlled Moving Object / Game",
+    "category": "JavaScript Events",
+    "desc": "Move a character sprite across a 2D arena using Arrow keys and WASD."
+  },
+  {
+    "id": "js-104",
+    "title": "Click Counter with Reset & Target Goals",
+    "category": "JavaScript Events",
+    "desc": "Track user clicks with target milestones, audio clicks, and confetti rewards."
+  },
+  {
+    "id": "js-105",
+    "title": "Double-Click Speed Challenge",
+    "category": "JavaScript Events",
+    "desc": "Measure inter-click interval milliseconds between double taps."
+  },
+  {
+    "id": "js-106",
+    "title": "Reflex & Reaction Time Test Game",
+    "category": "JavaScript Events",
+    "desc": "Wait for green indicator and test human reaction latency down to the millisecond."
+  },
+  {
+    "id": "js-107",
+    "title": "Typing Speed Test (WPM & Accuracy)",
+    "category": "JavaScript Events",
+    "desc": "Real-time typing test measuring Words Per Minute (WPM) and character accuracy."
+  },
+  {
+    "id": "js-108",
+    "title": "Student Registration Form with Full Validation",
+    "category": "Forms & Validation",
+    "desc": "Validate Name, Roll Number, Branch, Semester, Email, and Phone with comprehensive checks."
+  },
+  {
+    "id": "js-109",
+    "title": "Login Form with Username & Password Validation",
+    "category": "Forms & Validation",
+    "desc": "Authentication form with credential length checks and password visibility toggling."
+  },
+  {
+    "id": "js-110",
+    "title": "Alphabet-Only Name Field Validator",
+    "category": "Forms & Validation",
+    "desc": "Disallow numeric or special characters in real-time as the user types."
+  },
+  {
+    "id": "js-111",
+    "title": "Age Validator with Range Checks",
+    "category": "Forms & Validation",
+    "desc": "Validate numeric age constraints (e.g. 18 to 100) with descriptive alerts."
+  },
+  {
+    "id": "js-112",
+    "title": "Mobile Phone Number Validator",
+    "category": "Forms & Validation",
+    "desc": "Validate 10-digit telephone format with country code formatting."
+  },
+  {
+    "id": "js-113",
+    "title": "Email Address Pattern Validator",
+    "category": "Forms & Validation",
+    "desc": "Regex email validation checking domain, top-level domain, and user format."
+  },
+  {
+    "id": "js-114",
+    "title": "Password Minimum Length Validator",
+    "category": "Forms & Validation",
+    "desc": "Enforce password character minimums with visual progress indicators."
+  },
+  {
+    "id": "js-115",
+    "title": "Strong Password Strength Meter",
+    "category": "Forms & Validation",
+    "desc": "Analyze password entropy for lowercase, uppercase, digits, and special characters."
+  },
+  {
+    "id": "js-116",
+    "title": "Password & Confirm Password Matching",
+    "category": "Forms & Validation",
+    "desc": "Real-time matching comparison verifying identical entries before enabling submission."
+  },
+  {
+    "id": "js-117",
+    "title": "Date of Birth Validator & Age Calculator",
+    "category": "Forms & Validation",
+    "desc": "Pick birth date to validate against future dates and calculate exact age in years/months."
+  },
+  {
+    "id": "js-118",
+    "title": "Gender Radio Button Validation",
+    "category": "Forms & Validation",
+    "desc": "Ensure required radio button group selection before proceeding."
+  },
+  {
+    "id": "js-119",
+    "title": "Terms & Conditions Checkbox Validation",
+    "category": "Forms & Validation",
+    "desc": "Verify mandatory terms acceptance checkbox before enabling submit."
+  },
+  {
+    "id": "js-120",
+    "title": "Dropdown / Select Box Validation",
+    "category": "Forms & Validation",
+    "desc": "Ensure non-default option selection from select menus."
+  },
+  {
+    "id": "js-121",
+    "title": "Textarea Character & Length Validation",
+    "category": "Forms & Validation",
+    "desc": "Validate minimum and maximum character thresholds in feedback textareas."
+  },
+  {
+    "id": "js-122",
+    "title": "Required Field Validation with Error Highlights",
+    "category": "Forms & Validation",
+    "desc": "Red border highlights and clear error prompts beside incomplete mandatory inputs."
+  },
+  {
+    "id": "js-123",
+    "title": "Inline Field-Level Error Messages",
+    "category": "Forms & Validation",
+    "desc": "Contextual error labels placed beneath individual form fields."
+  },
+  {
+    "id": "js-124",
+    "title": "Submission Success Banner without Page Reload",
+    "category": "Forms & Validation",
+    "desc": "Show green success confirmation card and reset form without refreshing the page."
+  },
+  {
+    "id": "js-125",
+    "title": "Form Submission Interception with preventDefault",
+    "category": "Forms & Validation",
+    "desc": "Halt form action until all client-side validation rules evaluate to true."
+  },
+  {
+    "id": "js-126",
+    "title": "Regex Suite: Email, Phone & Password",
+    "category": "Forms & Validation",
+    "desc": "Multi-field validation using standard compiled regular expressions."
+  },
+  {
+    "id": "js-127",
+    "title": "Real-Time Validation on Input, Change, Blur",
+    "category": "Forms & Validation",
+    "desc": "Live feedback reacting to user typing, field changes, and focus blur events."
+  },
+  {
+    "id": "js-128",
+    "title": "College Admission Application Form",
+    "category": "Forms & Validation",
+    "desc": "Comprehensive college admissions form with personal, academic, and document fields."
+  },
+  {
+    "id": "js-129",
+    "title": "Job Application Form with Experience Checks",
+    "category": "Forms & Validation",
+    "desc": "Professional employment form with role selection, salary expectations, and skills."
+  },
+  {
+    "id": "js-130",
+    "title": "Feedback & Rating Form with Star Selection",
+    "category": "Forms & Validation",
+    "desc": "Interactive 5-star rating selector paired with validated comments."
+  },
+  {
+    "id": "js-131",
+    "title": "Contact Us Form with Instant Validation",
+    "category": "Forms & Validation",
+    "desc": "Customer enquiry form with real-time feedback and validation summary."
+  },
+  {
+    "id": "js-132",
+    "title": "Multi-Step Form Wizard with Progress Bar",
+    "category": "Forms & Validation",
+    "desc": "Step 1 (Account) → Step 2 (Profile) → Step 3 (Review) wizard with validation gates."
+  },
+  {
+    "id": "js-133",
+    "title": "Form Preview Modal before Final Submit",
+    "category": "Forms & Validation",
+    "desc": "Modal window rendering formatted summary of entered data for user review."
+  },
+  {
+    "id": "js-134",
+    "title": "Student Marks, Average & Grade Calculator Form",
+    "category": "Forms & Validation",
+    "desc": "Enter marks for 5 subjects to compute Total, Percentage, and Letter Grade (A+, A, B, etc.)."
+  },
+  {
+    "id": "js-135",
+    "title": "Employee Salary & Tax Deductions Calculator",
+    "category": "Forms & Validation",
+    "desc": "Calculate Basic Pay, HRA, DA, PF, Income Tax, and Net In-Hand Salary."
+  },
+  {
+    "id": "js-136",
+    "title": "E-Commerce Shopping Order Form & Price Calculator",
+    "category": "Forms & Validation",
+    "desc": "Select products, quantity, tax rate, and shipping to calculate grand total."
+  },
+  {
+    "id": "js-137",
+    "title": "Dynamic Conditional Form Fields",
+    "category": "Forms & Validation",
+    "desc": "Reveal or hide additional input fields based on user answers."
+  },
+  {
+    "id": "js-138",
+    "title": "Window Object Properties & Methods",
+    "category": "Browser & Storage",
+    "desc": "Explore window dimensions (innerWidth, innerHeight), scrollX, scrollY, and open/close."
+  },
+  {
+    "id": "js-139",
+    "title": "Custom Alert, Confirm & Prompt Dialogs",
+    "category": "Browser & Storage",
+    "desc": "Modern accessible modal replacements for browser alert(), confirm(), and prompt()."
+  },
+  {
+    "id": "js-140",
+    "title": "setTimeout() Delayed Execution",
+    "category": "Browser & Storage",
+    "desc": "Execute timer routines after a specified delay with cancelable clearTimeout()."
+  },
+  {
+    "id": "js-141",
+    "title": "setInterval() Periodic Execution",
+    "category": "Browser & Storage",
+    "desc": "Continuous interval triggers with start, stop, and clearInterval() controls."
+  },
+  {
+    "id": "js-142",
+    "title": "Digital Clock using setInterval()",
+    "category": "Browser & Storage",
+    "desc": "Tick every 1000ms to maintain synchronized clock with hours, minutes, and seconds."
+  },
+  {
+    "id": "js-143",
+    "title": "Countdown Timer with Audio Beep",
+    "category": "Browser & Storage",
+    "desc": "Set minutes and seconds with animated countdown circle and alarm sound."
+  },
+  {
+    "id": "js-144",
+    "title": "High-Precision Stopwatch with Laps",
+    "category": "Browser & Storage",
+    "desc": "Stopwatch with 10ms precision, Start, Pause, Lap recording, and Reset."
+  },
+  {
+    "id": "js-145",
+    "title": "Location Object & URL Parsing",
+    "category": "Browser & Storage",
+    "desc": "Inspect href, protocol, host, pathname, hash, and search query parameters."
+  },
+  {
+    "id": "js-146",
+    "title": "Redirect and Reload Controller",
+    "category": "Browser & Storage",
+    "desc": "Demonstrate location.assign(), location.replace(), and location.reload()."
+  },
+  {
+    "id": "js-147",
+    "title": "History Object & Navigation Simulation",
+    "category": "Browser & Storage",
+    "desc": "Simulate history.back(), history.forward(), and history.go() with breadcrumbs."
+  },
+  {
+    "id": "js-148",
+    "title": "Navigator Object & System Telemetry",
+    "category": "Browser & Storage",
+    "desc": "Read userAgent, platform, language, hardware concurrency, and cookieEnabled."
+  },
+  {
+    "id": "js-149",
+    "title": "Screen Dimensions & Color Depth",
+    "category": "Browser & Storage",
+    "desc": "Display screen.width, screen.height, availWidth, availHeight, and colorDepth."
+  },
+  {
+    "id": "js-150",
+    "title": "Online / Offline Network Connection Detector",
+    "category": "Browser & Storage",
+    "desc": "Listen to online/offline window events with visual connection status badges."
+  },
+  {
+    "id": "js-151",
+    "title": "Browser Language & Locale Detector",
+    "category": "Browser & Storage",
+    "desc": "Detect navigator.language and display localized currency and date formatting."
+  },
+  {
+    "id": "js-152",
+    "title": "Geolocation API (Latitude, Longitude, Accuracy)",
+    "category": "Browser & Storage",
+    "desc": "Query user coordinates via navigator.geolocation.getCurrentPosition with map pin."
+  },
+  {
+    "id": "js-153",
+    "title": "Network Status Live Monitor",
+    "category": "Browser & Storage",
+    "desc": "Simulate network disconnection and test graceful offline recovery behavior."
+  },
+  {
+    "id": "js-154",
+    "title": "Store & Retrieve Username with localStorage",
+    "category": "Web Storage",
+    "desc": "Persist personalized user name across browser tab closures and reloads."
+  },
+  {
+    "id": "js-155",
+    "title": "Update and Delete localStorage Items",
+    "category": "Web Storage",
+    "desc": "Modify stored values and use removeItem() and clear() with state inspections."
+  },
+  {
+    "id": "js-156",
+    "title": "Store Arrays in localStorage with JSON Serialization",
+    "category": "Web Storage",
+    "desc": "Use JSON.stringify and JSON.parse to store complex list collections."
+  },
+  {
+    "id": "js-157",
+    "title": "Store JavaScript Objects in localStorage",
+    "category": "Web Storage",
+    "desc": "Persist structured user profile objects with nested attributes."
+  },
+  {
+    "id": "js-158",
+    "title": "Student Record System using localStorage",
+    "category": "Web Storage",
+    "desc": "Persistent database for student records with table view and search."
+  },
+  {
+    "id": "js-159",
+    "title": "Persistent To-Do List with localStorage",
+    "category": "Web Storage",
+    "desc": "Tasks remain saved after page reloads with completion checkmarks."
+  },
+  {
+    "id": "js-160",
+    "title": "Persistent Sticky Notes Application",
+    "category": "Web Storage",
+    "desc": "Create, color-code, and delete sticky notes stored permanently in browser storage."
+  },
+  {
+    "id": "js-161",
+    "title": "Persistent E-Commerce Shopping Cart",
+    "category": "Web Storage",
+    "desc": "Add products to cart with quantity multipliers, subtotal math, and saved cart state."
+  },
+  {
+    "id": "js-162",
+    "title": "Dark / Light Theme Switcher with localStorage",
+    "category": "Web Storage",
+    "desc": "Toggle between Dark and Light mode themes, saving preference automatically."
+  },
+  {
+    "id": "js-163",
+    "title": "Save Preferred Font Size in localStorage",
+    "category": "Web Storage",
+    "desc": "Store reader font size preference and restore it upon subsequent visits."
+  },
+  {
+    "id": "js-164",
+    "title": "Recently Viewed Items Feature",
+    "category": "Web Storage",
+    "desc": "Track recently browsed products in a persistent history carousel."
+  },
+  {
+    "id": "js-165",
+    "title": "Website Visitor & Page View Counter",
+    "category": "Web Storage",
+    "desc": "Increment and display total visits and session views stored locally."
+  },
+  {
+    "id": "js-166",
+    "title": "localStorage vs sessionStorage Comparison Lab",
+    "category": "Web Storage",
+    "desc": "Side-by-side demonstration of session persistence vs permanent persistence."
+  },
+  {
+    "id": "js-167",
+    "title": "Multi-Step Form with sessionStorage Drafts",
+    "category": "Web Storage",
+    "desc": "Save intermediate form input states so users can navigate back and forth safely."
+  },
+  {
+    "id": "js-168",
+    "title": "Auto-Save Form Draft in localStorage",
+    "category": "Web Storage",
+    "desc": "Debounced auto-save draft feature that protects user text against accidental reloads."
+  },
+  {
+    "id": "js-169",
+    "title": "Restore Form Data from Previous Session",
+    "category": "Web Storage",
+    "desc": "Prompt user to restore unsaved form content with one-click restore button."
+  },
+  {
+    "id": "js-170",
+    "title": "Full CRUD Application using localStorage",
+    "category": "Web Storage",
+    "desc": "Complete Create, Read, Update, and Delete data manager with export/import JSON."
+  },
+  {
+    "id": "js-171",
+    "title": "Interactive Digital Calculator",
+    "category": "Flagship Mini Projects",
+    "desc": "Standard and scientific calculator with clean button grid, history tape, and keyboard support."
+  },
+  {
+    "id": "js-172",
+    "title": "Digital Clock with Seconds & Calendar",
+    "category": "Flagship Mini Projects",
+    "desc": "Sleek LED digital clock with 12/24 hour toggle, day of week, and timezone display."
+  },
+  {
+    "id": "js-173",
+    "title": "Production Stopwatch with Lap Times",
+    "category": "Flagship Mini Projects",
+    "desc": "Precision millisecond stopwatch with split lap logs, fastest/slowest lap highlights."
+  },
+  {
+    "id": "js-174",
+    "title": "Customizable Countdown Timer",
+    "category": "Flagship Mini Projects",
+    "desc": "Timer with presets (Pomodoro, 5m, 15m), progress bar, and alarm notifications."
+  },
+  {
+    "id": "js-175",
+    "title": "Feature-Packed To-Do List Application",
+    "category": "Flagship Mini Projects",
+    "desc": "Filter by All/Active/Completed, search tasks, priority flags, and local storage."
+  },
+  {
+    "id": "js-176",
+    "title": "Live Weather Application with API Mock & Live Feed",
+    "category": "Flagship Mini Projects",
+    "desc": "City search with temperature, humidity, wind velocity, and condition icons."
+  },
+  {
+    "id": "js-177",
+    "title": "Interactive Multi-Question Quiz Application",
+    "category": "Flagship Mini Projects",
+    "desc": "Timed quiz with score calculation, progress bar, answer review, and certificate."
+  },
+  {
+    "id": "js-178",
+    "title": "Number Guessing Game (1 to 100)",
+    "category": "Flagship Mini Projects",
+    "desc": "Hot/Cold hints, attempt counters, difficulty levels, and best score tracking."
+  },
+  {
+    "id": "js-179",
+    "title": "Interactive Tic-Tac-Toe Game (PvP & Smart AI)",
+    "category": "Flagship Mini Projects",
+    "desc": "Two-player turn indicator, unbeatable Minimax AI mode, and score tracker."
+  },
+  {
+    "id": "js-180",
+    "title": "Personal Expense Tracker with Categorization",
+    "category": "Flagship Mini Projects",
+    "desc": "Log income and expenses with category breakdown, balance calculation, and history."
+  },
+  {
+    "id": "js-181",
+    "title": "Student Marks & CGPA Grade Calculator",
+    "category": "Flagship Mini Projects",
+    "desc": "Input course credits and grades to compute semester SGPA and cumulative CGPA."
+  },
+  {
+    "id": "js-182",
+    "title": "E-Commerce Shopping Cart System",
+    "category": "Flagship Mini Projects",
+    "desc": "Browse product catalog, add to cart, update quantities, apply coupon codes, and checkout."
+  },
+  {
+    "id": "js-183",
+    "title": "Notes Application with Rich Search & Tags",
+    "category": "Flagship Mini Projects",
+    "desc": "Create, edit, pin, color, tag, and search markdown notes with localStorage."
+  },
+  {
+    "id": "js-184",
+    "title": "Cryptographically Secure Password Generator",
+    "category": "Flagship Mini Projects",
+    "desc": "Generate custom passwords with length slider, symbols, numbers, and copy button."
+  },
+  {
+    "id": "js-185",
+    "title": "Body Mass Index (BMI) Health Calculator",
+    "category": "Flagship Mini Projects",
+    "desc": "Calculate BMI from weight/height with interactive colored gauge and health advice."
+  },
+  {
+    "id": "js-186",
+    "title": "Live Currency Converter with Exchange Rates",
+    "category": "Flagship Mini Projects",
+    "desc": "Convert amounts between USD, EUR, GBP, INR, JPY with live mock rate tables."
+  },
+  {
+    "id": "js-187",
+    "title": "Interactive Developer Portfolio Website",
+    "category": "Flagship Mini Projects",
+    "desc": "Personal portfolio with hero section, skills matrix, interactive project gallery, and contact form."
+  }
+]

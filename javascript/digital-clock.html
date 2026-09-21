@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="digital-calculator.html" class="nav-btn">⬅ Prev</a>
+        <a href="stopwatch.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Digital Clock</h1>
+            <p class="card-subtitle">Live real-time digital clock displaying hours, minutes, seconds, AM/PM, and current calendar date with setInterval().</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Mini Projects
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 440px; margin: 0 auto; background: #0f172a; border: 2px solid #38bdf8; border-radius: 12px; padding: 24px; text-align: center; color: #f8fafc; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);">
+        <div style="font-size: 13px; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">System Live Clock</div>
+        <div id="clockTime" style="font-size: 42px; font-family: monospace; font-weight: bold; color: #38bdf8; letter-spacing: 2px;">00:00:00 AM</div>
+        <div id="clockDate" style="font-size: 14px; color: #cbd5e1; margin-top: 8px;">Monday, 21 September 2026</div>
+        <div style="margin-top: 16px; display: flex; justify-content: center; gap: 8px;">
+          <button onclick="toggle12Hour()" style="padding: 6px 14px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8; border-radius: 6px; font-size: 12px; cursor: pointer;">Toggle 12/24H Format</button>
+        </div>
+        <script>
+          let is12Hour = true;
+          function toggle12Hour() { is12Hour = !is12Hour; updateClock(); }
+          function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let mins = String(now.getMinutes()).padStart(2, '0');
+            let secs = String(now.getSeconds()).padStart(2, '0');
+            let ampm = '';
+            if (is12Hour) {
+              ampm = hours >= 12 ? ' PM' : ' AM';
+              hours = hours % 12 || 12;
+            }
+            document.getElementById('clockTime').innerText = String(hours).padStart(2, '0') + ':' + mins + ':' + secs + ampm;
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('clockDate').innerText = now.toLocaleDateString('en-US', options);
+          }
+          setInterval(updateClock, 1000);
+          updateClock();
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: digital-clock.html</span>
+              <button class="copy-btn" data-target="code_js-clock">Copy Code</button>
+            </div>
+            <pre id="code_js-clock"><code>&lt;div style=&quot;max-width: 440px; margin: 0 auto; background: #0f172a; border: 2px solid #38bdf8; border-radius: 12px; padding: 24px; text-align: center; color: #f8fafc; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);&quot;&gt;
+        &lt;div style=&quot;font-size: 13px; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;&quot;&gt;System Live Clock&lt;/div&gt;
+        &lt;div id=&quot;clockTime&quot; style=&quot;font-size: 42px; font-family: monospace; font-weight: bold; color: #38bdf8; letter-spacing: 2px;&quot;&gt;00:00:00 AM&lt;/div&gt;
+        &lt;div id=&quot;clockDate&quot; style=&quot;font-size: 14px; color: #cbd5e1; margin-top: 8px;&quot;&gt;Monday, 21 September 2026&lt;/div&gt;
+        &lt;div style=&quot;margin-top: 16px; display: flex; justify-content: center; gap: 8px;&quot;&gt;
+          &lt;button onclick=&quot;toggle12Hour()&quot; style=&quot;padding: 6px 14px; background: #1e293b; color: #38bdf8; border: 1px solid #38bdf8; border-radius: 6px; font-size: 12px; cursor: pointer;&quot;&gt;Toggle 12/24H Format&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          let is12Hour = true;
+          function toggle12Hour() { is12Hour = !is12Hour; updateClock(); }
+          function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let mins = String(now.getMinutes()).padStart(2, &#039;0&#039;);
+            let secs = String(now.getSeconds()).padStart(2, &#039;0&#039;);
+            let ampm = &#039;&#039;;
+            if (is12Hour) {
+              ampm = hours &gt;= 12 ? &#039; PM&#039; : &#039; AM&#039;;
+              hours = hours % 12 || 12;
+            }
+            document.getElementById(&#039;clockTime&#039;).innerText = String(hours).padStart(2, &#039;0&#039;) + &#039;:&#039; + mins + &#039;:&#039; + secs + ampm;
+            const options = { weekday: &#039;long&#039;, year: &#039;numeric&#039;, month: &#039;long&#039;, day: &#039;numeric&#039; };
+            document.getElementById(&#039;clockDate&#039;).innerText = now.toLocaleDateString(&#039;en-US&#039;, options);
+          }
+          setInterval(updateClock, 1000);
+          updateClock();
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

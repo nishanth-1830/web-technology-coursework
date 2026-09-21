@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime, Palindrome &amp; Armstrong Checker - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="js-factorial-fibonacci.html" class="nav-btn">⬅ Prev</a>
+        
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Prime, Palindrome &amp; Armstrong Checker</h1>
+            <p class="card-subtitle">Evaluates whether an input integer is a Prime number, Palindrome number, or an Armstrong number with algorithmic step details.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Core Algorithms &amp; Logic
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;">
+        <h3 style="color: #0f172a; margin-bottom: 16px;">Number Property Analyzer</h3>
+        <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+          <input type="number" id="numPropInput" value="153" style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
+          <button onclick="analyzeNumber()" style="padding: 10px 20px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Analyze</button>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div id="propPrime" style="padding: 10px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0;">Prime Status: Checking...</div>
+          <div id="propPalin" style="padding: 10px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0;">Palindrome Status: Checking...</div>
+          <div id="propArm" style="padding: 10px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0;">Armstrong Status: Checking...</div>
+        </div>
+        <script>
+          function isPrime(n) {
+            if (n <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(n); i++) { if (n % i === 0) return false; }
+            return true;
+          }
+          function isPalin(n) {
+            const str = String(n);
+            return str === str.split('').reverse().join('');
+          }
+          function isArm(n) {
+            const digits = String(n).split('');
+            const p = digits.length;
+            const sum = digits.reduce((acc, d) => acc + Math.pow(parseInt(d), p), 0);
+            return sum === n;
+          }
+          function analyzeNumber() {
+            const n = parseInt(document.getElementById('numPropInput').value) || 0;
+            const prime = isPrime(n);
+            const palin = isPalin(n);
+            const arm = isArm(n);
+            document.getElementById('propPrime').innerHTML = '<strong>Prime Check:</strong> ' + (prime ? '<span style="color:#16a34a">✓ YES, Prime Number</span>' : '<span style="color:#dc2626">✗ Not a Prime Number</span>');
+            document.getElementById('propPalin').innerHTML = '<strong>Palindrome Check:</strong> ' + (palin ? '<span style="color:#16a34a">✓ YES, Reads same forward/back</span>' : '<span style="color:#dc2626">✗ Not a Palindrome</span>');
+            document.getElementById('propArm').innerHTML = '<strong>Armstrong Check:</strong> ' + (arm ? '<span style="color:#16a34a">✓ YES, Sum of digit powers equals ' + n + '</span>' : '<span style="color:#dc2626">✗ Not an Armstrong number</span>');
+          }
+          analyzeNumber();
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: js-prime-palindrome-armstrong.html</span>
+              <button class="copy-btn" data-target="code_js-algo-prime">Copy Code</button>
+            </div>
+            <pre id="code_js-algo-prime"><code>&lt;div style=&quot;max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 16px;&quot;&gt;Number Property Analyzer&lt;/h3&gt;
+        &lt;div style=&quot;display: flex; gap: 8px; margin-bottom: 16px;&quot;&gt;
+          &lt;input type=&quot;number&quot; id=&quot;numPropInput&quot; value=&quot;153&quot; style=&quot;flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+          &lt;button onclick=&quot;analyzeNumber()&quot; style=&quot;padding: 10px 20px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Analyze&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;display: flex; flex-direction: column; gap: 10px;&quot;&gt;
+          &lt;div id=&quot;propPrime&quot; style=&quot;padding: 10px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0;&quot;&gt;Prime Status: Checking...&lt;/div&gt;
+          &lt;div id=&quot;propPalin&quot; style=&quot;padding: 10px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0;&quot;&gt;Palindrome Status: Checking...&lt;/div&gt;
+          &lt;div id=&quot;propArm&quot; style=&quot;padding: 10px; border-radius: 6px; background: #f8fafc; border: 1px solid #e2e8f0;&quot;&gt;Armstrong Status: Checking...&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          function isPrime(n) {
+            if (n &lt;= 1) return false;
+            for (let i = 2; i &lt;= Math.sqrt(n); i++) { if (n % i === 0) return false; }
+            return true;
+          }
+          function isPalin(n) {
+            const str = String(n);
+            return str === str.split(&#039;&#039;).reverse().join(&#039;&#039;);
+          }
+          function isArm(n) {
+            const digits = String(n).split(&#039;&#039;);
+            const p = digits.length;
+            const sum = digits.reduce((acc, d) =&gt; acc + Math.pow(parseInt(d), p), 0);
+            return sum === n;
+          }
+          function analyzeNumber() {
+            const n = parseInt(document.getElementById(&#039;numPropInput&#039;).value) || 0;
+            const prime = isPrime(n);
+            const palin = isPalin(n);
+            const arm = isArm(n);
+            document.getElementById(&#039;propPrime&#039;).innerHTML = &#039;&lt;strong&gt;Prime Check:&lt;/strong&gt; &#039; + (prime ? &#039;&lt;span style=&quot;color:#16a34a&quot;&gt;✓ YES, Prime Number&lt;/span&gt;&#039; : &#039;&lt;span style=&quot;color:#dc2626&quot;&gt;✗ Not a Prime Number&lt;/span&gt;&#039;);
+            document.getElementById(&#039;propPalin&#039;).innerHTML = &#039;&lt;strong&gt;Palindrome Check:&lt;/strong&gt; &#039; + (palin ? &#039;&lt;span style=&quot;color:#16a34a&quot;&gt;✓ YES, Reads same forward/back&lt;/span&gt;&#039; : &#039;&lt;span style=&quot;color:#dc2626&quot;&gt;✗ Not a Palindrome&lt;/span&gt;&#039;);
+            document.getElementById(&#039;propArm&#039;).innerHTML = &#039;&lt;strong&gt;Armstrong Check:&lt;/strong&gt; &#039; + (arm ? &#039;&lt;span style=&quot;color:#16a34a&quot;&gt;✓ YES, Sum of digit powers equals &#039; + n + &#039;&lt;/span&gt;&#039; : &#039;&lt;span style=&quot;color:#dc2626&quot;&gt;✗ Not an Armstrong number&lt;/span&gt;&#039;);
+          }
+          analyzeNumber();
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

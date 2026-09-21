@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arithmetic Operations &amp; Largest of Three Numbers - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="storage-local-crud.html" class="nav-btn">⬅ Prev</a>
+        <a href="js-factorial-fibonacci.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Arithmetic Operations &amp; Largest of Three Numbers</h1>
+            <p class="card-subtitle">Evaluates addition, subtraction, multiplication, division, modulus, and computes the mathematical maximum among 3 inputs.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Core Algorithms &amp; Logic
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;">
+        <h3 style="color: #0f172a; margin-bottom: 16px;">Largest of Three Numbers & Arithmetic</h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px;">
+          <div><label style="font-size: 12px; color: #64748b;">Number A</label><input type="number" id="numA" value="45" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;"></div>
+          <div><label style="font-size: 12px; color: #64748b;">Number B</label><input type="number" id="numB" value="89" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;"></div>
+          <div><label style="font-size: 12px; color: #64748b;">Number C</label><input type="number" id="numC" value="23" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;"></div>
+        </div>
+        <button onclick="runArithmetic()" style="width: 100%; padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 16px;">Evaluate Values</button>
+        <div id="arithResult" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px; font-size: 14px; line-height: 1.8;">
+          <div>Sum (A + B + C): <strong id="resSum">157</strong></div>
+          <div>Product (A × B × C): <strong id="resProd">92,115</strong></div>
+          <div>Average: <strong id="resAvg">52.33</strong></div>
+          <div style="color: #16a34a; font-weight: bold; font-size: 16px; margin-top: 6px;">Largest Number: <span id="resLargest">89 (Number B)</span></div>
+        </div>
+        <script>
+          function runArithmetic() {
+            const a = parseFloat(document.getElementById('numA').value) || 0;
+            const b = parseFloat(document.getElementById('numB').value) || 0;
+            const c = parseFloat(document.getElementById('numC').value) || 0;
+            const sum = a + b + c;
+            const prod = a * b * c;
+            const avg = sum / 3;
+            const largest = Math.max(a, b, c);
+            document.getElementById('resSum').innerText = sum;
+            document.getElementById('resProd').innerText = prod.toLocaleString();
+            document.getElementById('resAvg').innerText = avg.toFixed(2);
+            document.getElementById('resLargest').innerText = largest;
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: js-arithmetic-largest.html</span>
+              <button class="copy-btn" data-target="code_js-algo-arithmetic">Copy Code</button>
+            </div>
+            <pre id="code_js-algo-arithmetic"><code>&lt;div style=&quot;max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 16px;&quot;&gt;Largest of Three Numbers &amp; Arithmetic&lt;/h3&gt;
+        &lt;div style=&quot;display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px;&quot;&gt;
+          &lt;div&gt;&lt;label style=&quot;font-size: 12px; color: #64748b;&quot;&gt;Number A&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;numA&quot; value=&quot;45&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;label style=&quot;font-size: 12px; color: #64748b;&quot;&gt;Number B&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;numB&quot; value=&quot;89&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;label style=&quot;font-size: 12px; color: #64748b;&quot;&gt;Number C&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;numC&quot; value=&quot;23&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button onclick=&quot;runArithmetic()&quot; style=&quot;width: 100%; padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 16px;&quot;&gt;Evaluate Values&lt;/button&gt;
+        &lt;div id=&quot;arithResult&quot; style=&quot;background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px; font-size: 14px; line-height: 1.8;&quot;&gt;
+          &lt;div&gt;Sum (A + B + C): &lt;strong id=&quot;resSum&quot;&gt;157&lt;/strong&gt;&lt;/div&gt;
+          &lt;div&gt;Product (A × B × C): &lt;strong id=&quot;resProd&quot;&gt;92,115&lt;/strong&gt;&lt;/div&gt;
+          &lt;div&gt;Average: &lt;strong id=&quot;resAvg&quot;&gt;52.33&lt;/strong&gt;&lt;/div&gt;
+          &lt;div style=&quot;color: #16a34a; font-weight: bold; font-size: 16px; margin-top: 6px;&quot;&gt;Largest Number: &lt;span id=&quot;resLargest&quot;&gt;89 (Number B)&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          function runArithmetic() {
+            const a = parseFloat(document.getElementById(&#039;numA&#039;).value) || 0;
+            const b = parseFloat(document.getElementById(&#039;numB&#039;).value) || 0;
+            const c = parseFloat(document.getElementById(&#039;numC&#039;).value) || 0;
+            const sum = a + b + c;
+            const prod = a * b * c;
+            const avg = sum / 3;
+            const largest = Math.max(a, b, c);
+            document.getElementById(&#039;resSum&#039;).innerText = sum;
+            document.getElementById(&#039;resProd&#039;).innerText = prod.toLocaleString();
+            document.getElementById(&#039;resAvg&#039;).innerText = avg.toFixed(2);
+            document.getElementById(&#039;resLargest&#039;).innerText = largest;
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

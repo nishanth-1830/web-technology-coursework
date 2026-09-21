@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form with Complete Validation - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="events-keyboard.html" class="nav-btn">⬅ Prev</a>
+        <a href="browser-navigator-screen.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Registration Form with Complete Validation</h1>
+            <p class="card-subtitle">Validates name (alphabetic only), email (regex pattern), mobile (10 digits), password complexity, and shows inline errors without reload.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Forms &amp; Validation
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 520px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;">
+        <h3 style="color: #0f172a; margin-bottom: 6px;">Student Registration with Validation</h3>
+        <p style="font-size: 13px; color: #64748b; margin-bottom: 16px;">All fields validated using JavaScript regex and DOM manipulation.</p>
+        <form id="valForm" onsubmit="validateRegForm(event)" novalidate style="display: flex; flex-direction: column; gap: 12px;">
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 2px;">Name (Alphabets Only) *</label>
+            <input type="text" id="vName" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+            <span id="errName" style="color: #dc2626; font-size: 12px; display: none;"></span>
+          </div>
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 2px;">Email Address *</label>
+            <input type="email" id="vEmail" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+            <span id="errEmail" style="color: #dc2626; font-size: 12px; display: none;"></span>
+          </div>
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 2px;">Phone Number (10 Digits) *</label>
+            <input type="tel" id="vPhone" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+            <span id="errPhone" style="color: #dc2626; font-size: 12px; display: none;"></span>
+          </div>
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: bold; margin-bottom: 2px;">Password (Min 8 chars, 1 number) *</label>
+            <input type="password" id="vPass" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+            <span id="errPass" style="color: #dc2626; font-size: 12px; display: none;"></span>
+          </div>
+          <button type="submit" style="padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 6px;">Validate & Submit</button>
+        </form>
+        <div id="valSuccess" style="display: none; margin-top: 14px; padding: 12px; background: #dcfce7; color: #166534; border: 1px solid #86efac; border-radius: 6px; text-align: center; font-weight: bold;">
+          ✓ Registration validated and accepted successfully!
+        </div>
+        <script>
+          function validateRegForm(e) {
+            e.preventDefault();
+            let isValid = true;
+            const name = document.getElementById('vName').value.trim();
+            const email = document.getElementById('vEmail').value.trim();
+            const phone = document.getElementById('vPhone').value.trim();
+            const pass = document.getElementById('vPass').value;
+
+            // Name
+            const errName = document.getElementById('errName');
+            if (!/^[A-Za-z\s]+$/.test(name) || name.length < 3) {
+              errName.innerText = 'Please enter a valid name (letters only, min 3 chars)';
+              errName.style.display = 'block';
+              isValid = false;
+            } else { errName.style.display = 'none'; }
+
+            // Email
+            const errEmail = document.getElementById('errEmail');
+            if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+              errEmail.innerText = 'Please enter a valid email format';
+              errEmail.style.display = 'block';
+              isValid = false;
+            } else { errEmail.style.display = 'none'; }
+
+            // Phone
+            const errPhone = document.getElementById('errPhone');
+            if (!/^[0-9]{10}$/.test(phone)) {
+              errPhone.innerText = 'Mobile number must be exactly 10 digits';
+              errPhone.style.display = 'block';
+              isValid = false;
+            } else { errPhone.style.display = 'none'; }
+
+            // Password
+            const errPass = document.getElementById('errPass');
+            if (pass.length < 8 || !/\d/.test(pass)) {
+              errPass.innerText = 'Password must be at least 8 chars with 1 number';
+              errPass.style.display = 'block';
+              isValid = false;
+            } else { errPass.style.display = 'none'; }
+
+            if (isValid) {
+              document.getElementById('valSuccess').style.display = 'block';
+            } else {
+              document.getElementById('valSuccess').style.display = 'none';
+            }
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: form-student-registration.html</span>
+              <button class="copy-btn" data-target="code_js-form-validation">Copy Code</button>
+            </div>
+            <pre id="code_js-form-validation"><code>&lt;div style=&quot;max-width: 520px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 6px;&quot;&gt;Student Registration with Validation&lt;/h3&gt;
+        &lt;p style=&quot;font-size: 13px; color: #64748b; margin-bottom: 16px;&quot;&gt;All fields validated using JavaScript regex and DOM manipulation.&lt;/p&gt;
+        &lt;form id=&quot;valForm&quot; onsubmit=&quot;validateRegForm(event)&quot; novalidate style=&quot;display: flex; flex-direction: column; gap: 12px;&quot;&gt;
+          &lt;div&gt;
+            &lt;label style=&quot;display: block; font-size: 13px; font-weight: bold; margin-bottom: 2px;&quot;&gt;Name (Alphabets Only) *&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;vName&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+            &lt;span id=&quot;errName&quot; style=&quot;color: #dc2626; font-size: 12px; display: none;&quot;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label style=&quot;display: block; font-size: 13px; font-weight: bold; margin-bottom: 2px;&quot;&gt;Email Address *&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;vEmail&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+            &lt;span id=&quot;errEmail&quot; style=&quot;color: #dc2626; font-size: 12px; display: none;&quot;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label style=&quot;display: block; font-size: 13px; font-weight: bold; margin-bottom: 2px;&quot;&gt;Phone Number (10 Digits) *&lt;/label&gt;
+            &lt;input type=&quot;tel&quot; id=&quot;vPhone&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+            &lt;span id=&quot;errPhone&quot; style=&quot;color: #dc2626; font-size: 12px; display: none;&quot;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;label style=&quot;display: block; font-size: 13px; font-weight: bold; margin-bottom: 2px;&quot;&gt;Password (Min 8 chars, 1 number) *&lt;/label&gt;
+            &lt;input type=&quot;password&quot; id=&quot;vPass&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+            &lt;span id=&quot;errPass&quot; style=&quot;color: #dc2626; font-size: 12px; display: none;&quot;&gt;&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;button type=&quot;submit&quot; style=&quot;padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 6px;&quot;&gt;Validate &amp; Submit&lt;/button&gt;
+        &lt;/form&gt;
+        &lt;div id=&quot;valSuccess&quot; style=&quot;display: none; margin-top: 14px; padding: 12px; background: #dcfce7; color: #166534; border: 1px solid #86efac; border-radius: 6px; text-align: center; font-weight: bold;&quot;&gt;
+          ✓ Registration validated and accepted successfully!
+        &lt;/div&gt;
+        &lt;script&gt;
+          function validateRegForm(e) {
+            e.preventDefault();
+            let isValid = true;
+            const name = document.getElementById(&#039;vName&#039;).value.trim();
+            const email = document.getElementById(&#039;vEmail&#039;).value.trim();
+            const phone = document.getElementById(&#039;vPhone&#039;).value.trim();
+            const pass = document.getElementById(&#039;vPass&#039;).value;
+
+            // Name
+            const errName = document.getElementById(&#039;errName&#039;);
+            if (!/^[A-Za-z\s]+$/.test(name) || name.length &lt; 3) {
+              errName.innerText = &#039;Please enter a valid name (letters only, min 3 chars)&#039;;
+              errName.style.display = &#039;block&#039;;
+              isValid = false;
+            } else { errName.style.display = &#039;none&#039;; }
+
+            // Email
+            const errEmail = document.getElementById(&#039;errEmail&#039;);
+            if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+              errEmail.innerText = &#039;Please enter a valid email format&#039;;
+              errEmail.style.display = &#039;block&#039;;
+              isValid = false;
+            } else { errEmail.style.display = &#039;none&#039;; }
+
+            // Phone
+            const errPhone = document.getElementById(&#039;errPhone&#039;);
+            if (!/^[0-9]{10}$/.test(phone)) {
+              errPhone.innerText = &#039;Mobile number must be exactly 10 digits&#039;;
+              errPhone.style.display = &#039;block&#039;;
+              isValid = false;
+            } else { errPhone.style.display = &#039;none&#039;; }
+
+            // Password
+            const errPass = document.getElementById(&#039;errPass&#039;);
+            if (pass.length &lt; 8 || !/\d/.test(pass)) {
+              errPass.innerText = &#039;Password must be at least 8 chars with 1 number&#039;;
+              errPass.style.display = &#039;block&#039;;
+              isValid = false;
+            } else { errPass.style.display = &#039;none&#039;; }
+
+            if (isValid) {
+              document.getElementById(&#039;valSuccess&#039;).style.display = &#039;block&#039;;
+            } else {
+              document.getElementById(&#039;valSuccess&#039;).style.display = &#039;none&#039;;
+            }
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js Backend Lab - Complete Syllabus (40 Programs)</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <style>
+    .cat-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid #cbd5e1; background: #fff; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; color: #475569; }
+    .cat-btn.active, .cat-btn:hover { background: #16a34a; color: #fff; border-color: #16a34a; }
+    .prog-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; }
+    .prog-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.06); border-color: #86efac; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links"><a href="../index.html" class="nav-btn primary">🏠 Home Dashboard</a></div>
+      <div class="student-badge"><span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span><span>• Sec: 06</span></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card" style="margin-bottom: 24px;">
+      <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h1 class="card-title">Node.js & Express.js Backend Lab (40 Programs)</h1>
+          <p class="card-subtitle">Server-side programming with Node.js built-ins (fs, path, http), Express framework, routing, custom middleware, cookie/session management, JWT authentication, and RESTful API engineering.</p>
+        </div>
+        <div style="background: #f0fdf4; padding: 8px 16px; border-radius: 24px; font-size: 14px; font-weight: bold; color: #16a34a; border: 1px solid #bbf7d0;">Total Programs: 40</div>
+      </div>
+
+      <div style="margin-top: 16px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <input type="text" id="progSearch" oninput="filterPrograms()" placeholder="🔍 Search Node.js programs..." style="padding: 10px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; width: 100%; max-width: 420px; outline: none;">
+        <div style="font-size: 13px; color: #64748b;">Showing <strong id="visibleCount" style="color: #0f172a;">40</strong> of 40 experiments</div>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;" id="catFilterContainer">
+        <button class="cat-btn active" onclick="setCategory('ALL')">All Categories (40)</button>
+        <button class="cat-btn" onclick="setCategory('Architecture & Fundamentals')">Architecture & Fundamentals (10)</button><button class="cat-btn" onclick="setCategory('Express Framework')">Express Framework (5)</button><button class="cat-btn" onclick="setCategory('Routing')">Routing (3)</button><button class="cat-btn" onclick="setCategory('Middleware & Security')">Middleware & Security (5)</button><button class="cat-btn" onclick="setCategory('Sessions & Cookies')">Sessions & Cookies (3)</button><button class="cat-btn" onclick="setCategory('Database & CRUD')">Database & CRUD (4)</button><button class="cat-btn" onclick="setCategory('Authentication & Security')">Authentication & Security (4)</button><button class="cat-btn" onclick="setCategory('REST APIs')">REST APIs (6)</button>
+      </div>
+    </div>
+
+    <div id="progGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;">
+      
+        <a href="nodejs-01.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="client-server architecture with node.js" data-desc="client-server request-response lifecycle with http verbs and mime types." data-num="1">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#1</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Client-Server Architecture with Node.js</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Client-Server request-response lifecycle with HTTP verbs and MIME types.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-02.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="basic http server using http module" data-desc="http.createserver() handling req.url, req.method, and res.writehead." data-num="2">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#2</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Basic HTTP Server using http module</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">http.createServer() handling req.url, req.method, and res.writeHead.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-03.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="request-response cycle demonstration" data-desc="inspecting headers, payloads, status codes, and streaming responses." data-num="3">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#3</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Request-Response Cycle Demonstration</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Inspecting headers, payloads, status codes, and streaming responses.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-04.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="built-in modules (fs, path, os, events)" data-desc="using node.js standard library core modules without external dependencies." data-num="4">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#4</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Built-in Modules (fs, path, os, events)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Using Node.js standard library core modules without external dependencies.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-05.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="file system (fs) operations" data-desc="readfile, writefile, appendfile, unlink, and directory traversal." data-num="5">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#5</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">File System (fs) Operations</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">readFile, writeFile, appendFile, unlink, and directory traversal.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-06.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="path module (path.join, path.resolve)" data-desc="cross-platform filesystem path normalization and extensions." data-num="6">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#6</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Path Module (path.join, path.resolve)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Cross-platform filesystem path normalization and extensions.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-07.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="custom modules (commonjs & es modules)" data-desc="module.exports vs export / import syntax patterns." data-num="7">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#7</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Custom Modules (CommonJS & ES Modules)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">module.exports vs export / import syntax patterns.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-08.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="npm package management & package.json" data-desc="dependencies, devdependencies, scripts, and semantic versioning." data-num="8">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#8</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">NPM Package Management & package.json</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Dependencies, devDependencies, scripts, and semantic versioning.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-09.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="asynchronous node.js: callbacks, promises, async/await" data-desc="event loop concurrency, non-blocking i/o, and async error handling." data-num="9">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#9</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Asynchronous Node.js: Callbacks, Promises, Async/Await</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Event loop concurrency, non-blocking I/O, and async error handling.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-10.html" class="prog-card" data-cat="Architecture & Fundamentals" data-title="global error handling & process listeners" data-desc="uncaughtexception, unhandledrejection, and graceful shutdown." data-num="10">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#10</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Architecture & Fundamentals</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Global Error Handling & Process Listeners</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">uncaughtException, unhandledRejection, and graceful shutdown.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-11.html" class="prog-card" data-cat="Express Framework" data-title="basic express.js application" data-desc="express(), app.listen(), and routing boilerplate." data-num="11">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#11</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Express Framework</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Basic Express.js Application</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">express(), app.listen(), and routing boilerplate.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-12.html" class="prog-card" data-cat="Express Framework" data-title="handle get and post requests" data-desc="url parsing, req.query, and req.body with express.json()." data-num="12">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#12</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Express Framework</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Handle GET and POST Requests</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">URL parsing, req.query, and req.body with express.json().</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-13.html" class="prog-card" data-cat="Express Framework" data-title="static file serving with express.static" data-desc="serving html, css, images, and client bundles from public folder." data-num="13">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#13</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Express Framework</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Static File Serving with express.static</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Serving HTML, CSS, images, and client bundles from public folder.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-14.html" class="prog-card" data-cat="Express Framework" data-title="html and json api responses" data-desc="res.send(), res.json(), res.sendfile(), and status chaining." data-num="14">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#14</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Express Framework</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">HTML and JSON API Responses</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">res.send(), res.json(), res.sendFile(), and status chaining.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-15.html" class="prog-card" data-cat="Express Framework" data-title="modular express project architecture" data-desc="separation into routes/, controllers/, models/, and middleware/." data-num="15">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#15</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Express Framework</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Modular Express Project Architecture</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Separation into routes/, controllers/, models/, and middleware/.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-16.html" class="prog-card" data-cat="Routing" data-title="route parameters and query strings" data-desc="extracting req.params (e.g. /users/:id) and req.query." data-num="16">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#16</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Routing</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Route Parameters and Query Strings</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Extracting req.params (e.g. /users/:id) and req.query.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-17.html" class="prog-card" data-cat="Routing" data-title="modular routing with express router" data-desc="express.router() mounted on /api/v1/students and /api/v1/products." data-num="17">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#17</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Routing</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Modular Routing with Express Router</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">express.Router() mounted on /api/v1/students and /api/v1/products.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-18.html" class="prog-card" data-cat="Routing" data-title="404 not found & fallback route handler" data-desc="catch-all 404 middleware returning standardized json error envelopes." data-num="18">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#18</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Routing</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">404 Not Found & Fallback Route Handler</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Catch-all 404 middleware returning standardized JSON error envelopes.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-19.html" class="prog-card" data-cat="Middleware & Security" data-title="custom middleware implementation" data-desc="writing (req, res, next) functions to inspect and augment requests." data-num="19">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#19</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Middleware & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Custom Middleware Implementation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Writing (req, res, next) functions to inspect and augment requests.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-20.html" class="prog-card" data-cat="Middleware & Security" data-title="logging middleware (morgan clone)" data-desc="http request logging with timestamps, status, latency, and client ip." data-num="20">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#20</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Middleware & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Logging Middleware (Morgan clone)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">HTTP request logging with timestamps, status, latency, and client IP.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-21.html" class="prog-card" data-cat="Middleware & Security" data-title="request validation middleware" data-desc="validating incoming json schemas and returning 422 unprocessable entity." data-num="21">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#21</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Middleware & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Request Validation Middleware</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Validating incoming JSON schemas and returning 422 Unprocessable Entity.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-22.html" class="prog-card" data-cat="Middleware & Security" data-title="authentication middleware & token guard" data-desc="inspecting authorization: bearer token headers before route dispatch." data-num="22">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#22</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Middleware & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Authentication Middleware & Token Guard</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Inspecting Authorization: Bearer token headers before route dispatch.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-23.html" class="prog-card" data-cat="Middleware & Security" data-title="centralized error-handling middleware" data-desc="four-argument (err, req, res, next) centralized error boundary." data-num="23">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#23</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Middleware & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Centralized Error-Handling Middleware</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Four-argument (err, req, res, next) centralized error boundary.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-24.html" class="prog-card" data-cat="Sessions & Cookies" data-title="cookie management in express" data-desc="setting httponly, secure, samesite cookies and clearing cookies." data-num="24">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#24</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Sessions & Cookies</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Cookie Management in Express</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Setting HttpOnly, Secure, SameSite cookies and clearing cookies.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-25.html" class="prog-card" data-cat="Sessions & Cookies" data-title="session management in express" data-desc="session store, session ids, user persistence across requests." data-num="25">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#25</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Sessions & Cookies</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Session Management in Express</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Session store, session IDs, user persistence across requests.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-26.html" class="prog-card" data-cat="Sessions & Cookies" data-title="protected routes with session auth" data-desc="redirecting unauthenticated requests to login view." data-num="26">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#26</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Sessions & Cookies</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Protected Routes with Session Auth</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Redirecting unauthenticated requests to login view.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-27.html" class="prog-card" data-cat="Database & CRUD" data-title="database connectivity in node.js" data-desc="connection pool setup with retry logic and health check ping." data-num="27">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#27</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Database Connectivity in Node.js</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Connection pool setup with retry logic and health check ping.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-28.html" class="prog-card" data-cat="Database & CRUD" data-title="student management crud with database" data-desc="create, read, update, and delete endpoints for student records." data-num="28">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#28</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Student Management CRUD with Database</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Create, Read, Update, and Delete endpoints for student records.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-29.html" class="prog-card" data-cat="Database & CRUD" data-title="product catalog management crud" data-desc="e-commerce inventory api with filtering, sorting, and pagination." data-num="29">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#29</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Product Catalog Management CRUD</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">E-Commerce inventory API with filtering, sorting, and pagination.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-30.html" class="prog-card" data-cat="Database & CRUD" data-title="user profile management api" data-desc="user entity lifecycle with field updates and audit timestamps." data-num="30">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#30</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Database & CRUD</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">User Profile Management API</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">User entity lifecycle with field updates and audit timestamps.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-31.html" class="prog-card" data-cat="Authentication & Security" data-title="user registration with password hashing" data-desc="salt generation and bcrypt hashing before database storage." data-num="31">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#31</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">User Registration with Password Hashing</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Salt generation and bcrypt hashing before database storage.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-32.html" class="prog-card" data-cat="Authentication & Security" data-title="user login & password verification" data-desc="comparing plaintext credentials against hashed database records." data-num="32">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#32</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">User Login & Password Verification</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Comparing plaintext credentials against hashed database records.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-33.html" class="prog-card" data-cat="Authentication & Security" data-title="jwt (json web token) authentication" data-desc="signing, verifying, and decoding hmac-sha256 jwt tokens." data-num="33">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#33</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">JWT (JSON Web Token) Authentication</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Signing, verifying, and decoding HMAC-SHA256 JWT tokens.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-34.html" class="prog-card" data-cat="Authentication & Security" data-title="role-based access control (rbac)" data-desc="restricting admin, manager, and user endpoints via role middleware." data-num="34">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#34</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Authentication & Security</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Role-Based Access Control (RBAC)</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Restricting Admin, Manager, and User endpoints via role middleware.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-35.html" class="prog-card" data-cat="REST APIs" data-title="restful api design & http status codes" data-desc="rest conventions (200, 201, 204, 400, 401, 403, 404, 500)." data-num="35">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#35</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">REST APIs</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">RESTful API Design & HTTP Status Codes</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">REST conventions (200, 201, 204, 400, 401, 403, 404, 500).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-36.html" class="prog-card" data-cat="REST APIs" data-title="get rest api with filtering & pagination" data-desc="cursor and page-based pagination with limit and offset query params." data-num="36">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#36</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">REST APIs</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">GET REST API with Filtering & Pagination</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Cursor and page-based pagination with limit and offset query params.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-37.html" class="prog-card" data-cat="REST APIs" data-title="post rest api with payload validation" data-desc="creating resources and returning 201 created with location header." data-num="37">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#37</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">REST APIs</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">POST REST API with Payload Validation</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Creating resources and returning 201 Created with Location header.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-38.html" class="prog-card" data-cat="REST APIs" data-title="put and patch rest apis" data-desc="full entity replacement (put) vs partial attribute update (patch)." data-num="38">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#38</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">REST APIs</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">PUT and PATCH REST APIs</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Full entity replacement (PUT) vs partial attribute update (PATCH).</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-39.html" class="prog-card" data-cat="REST APIs" data-title="delete rest api with soft deletion" data-desc="removing entities and supporting deleted_at soft deletion flags." data-num="39">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#39</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">REST APIs</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">DELETE REST API with Soft Deletion</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Removing entities and supporting deleted_at soft deletion flags.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+        <a href="nodejs-40.html" class="prog-card" data-cat="REST APIs" data-title="complete production student rest api" data-desc="full-stack api suite with validation, database persistence, and documentation." data-num="40">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <span style="font-size: 12px; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 10px; font-family: monospace; font-weight: bold;">#40</span>
+              <span style="font-size: 11px; background: #f0fdf4; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-weight: 600;">REST APIs</span>
+            </div>
+            <h3 style="font-size: 16px; color: #0f172a; margin: 0 0 6px 0; line-height: 1.4;">Complete Production Student REST API</h3>
+            <p style="font-size: 13px; color: #64748b; margin: 0 0 12px 0; line-height: 1.5;">Full-stack API suite with validation, database persistence, and documentation.</p>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600;">
+            <span>✓ API Route Active</span>
+            <span style="color: #16a34a;">Open Node Lab →</span>
+          </div>
+        </a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Web Technology Laboratory • Department of Computer Science & Engineering</p>
+    <p>Student: <strong>k. nishanth reddy</strong> | Reg No: <strong>250200439</strong> | Section: <strong>06</strong></p>
+  </footer>
+
+  <script>
+    let activeCat = 'ALL';
+    function setCategory(cat) {
+      activeCat = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (cat === 'ALL' && btn.innerText.startsWith('All')) btn.classList.add('active');
+        else if (btn.innerText.startsWith(cat)) btn.classList.add('active');
+        else btn.classList.remove('active');
+      });
+      filterPrograms();
+    }
+    function filterPrograms() {
+      const q = document.getElementById('progSearch').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.prog-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        const title = card.getAttribute('data-title');
+        const desc = card.getAttribute('data-desc');
+        const num = card.getAttribute('data-num');
+        const matchesCat = activeCat === 'ALL' || cat === activeCat;
+        const matchesQuery = !q || title.includes(q) || desc.includes(q) || num === q;
+        if (matchesCat && matchesQuery) { card.style.display = 'flex'; visible++; }
+        else { card.style.display = 'none'; }
+      });
+      document.getElementById('visibleCount').innerText = visible;
+    }
+  </script>
+</body>
+</html>

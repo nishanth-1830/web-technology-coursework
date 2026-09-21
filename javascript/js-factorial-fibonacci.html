@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorial &amp; Fibonacci Series Generator - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="js-arithmetic-largest.html" class="nav-btn">⬅ Prev</a>
+        <a href="js-prime-palindrome-armstrong.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Factorial &amp; Fibonacci Series Generator</h1>
+            <p class="card-subtitle">Computes the mathematical factorial (n!) and generates the iterative Fibonacci sequence up to n terms.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Core Algorithms &amp; Logic
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;">
+        <h3 style="color: #0f172a; margin-bottom: 16px;">Factorial & Fibonacci Generator</h3>
+        <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+          <input type="number" id="factInput" value="7" min="1" max="25" style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;">
+          <button onclick="computeFactFibo()" style="padding: 10px 20px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Calculate</button>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; font-size: 14px;">
+          <div style="margin-bottom: 8px;">Factorial (<span id="fN">7</span>!): <strong id="fRes" style="color: #16a34a; font-size: 18px;">5040</strong></div>
+          <div>Fibonacci Sequence (<span id="fibN">7</span> terms):</div>
+          <div id="fibList" style="margin-top: 6px; font-family: monospace; background: #ffffff; padding: 8px; border-radius: 4px; border: 1px solid #e2e8f0; color: #2563eb;">0, 1, 1, 2, 3, 5, 8</div>
+        </div>
+        <script>
+          function computeFactFibo() {
+            const n = parseInt(document.getElementById('factInput').value) || 1;
+            let fact = 1;
+            for (let i = 2; i <= n; i++) fact *= i;
+            let fib = [0, 1];
+            for (let i = 2; i < n; i++) fib.push(fib[i-1] + fib[i-2]);
+            if (n === 1) fib = [0];
+            document.getElementById('fN').innerText = n;
+            document.getElementById('fRes').innerText = fact.toLocaleString();
+            document.getElementById('fibN').innerText = n;
+            document.getElementById('fibList').innerText = fib.join(', ');
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: js-factorial-fibonacci.html</span>
+              <button class="copy-btn" data-target="code_js-algo-factorial">Copy Code</button>
+            </div>
+            <pre id="code_js-algo-factorial"><code>&lt;div style=&quot;max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 16px;&quot;&gt;Factorial &amp; Fibonacci Generator&lt;/h3&gt;
+        &lt;div style=&quot;display: flex; gap: 8px; margin-bottom: 16px;&quot;&gt;
+          &lt;input type=&quot;number&quot; id=&quot;factInput&quot; value=&quot;7&quot; min=&quot;1&quot; max=&quot;25&quot; style=&quot;flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+          &lt;button onclick=&quot;computeFactFibo()&quot; style=&quot;padding: 10px 20px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Calculate&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; font-size: 14px;&quot;&gt;
+          &lt;div style=&quot;margin-bottom: 8px;&quot;&gt;Factorial (&lt;span id=&quot;fN&quot;&gt;7&lt;/span&gt;!): &lt;strong id=&quot;fRes&quot; style=&quot;color: #16a34a; font-size: 18px;&quot;&gt;5040&lt;/strong&gt;&lt;/div&gt;
+          &lt;div&gt;Fibonacci Sequence (&lt;span id=&quot;fibN&quot;&gt;7&lt;/span&gt; terms):&lt;/div&gt;
+          &lt;div id=&quot;fibList&quot; style=&quot;margin-top: 6px; font-family: monospace; background: #ffffff; padding: 8px; border-radius: 4px; border: 1px solid #e2e8f0; color: #2563eb;&quot;&gt;0, 1, 1, 2, 3, 5, 8&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          function computeFactFibo() {
+            const n = parseInt(document.getElementById(&#039;factInput&#039;).value) || 1;
+            let fact = 1;
+            for (let i = 2; i &lt;= n; i++) fact *= i;
+            let fib = [0, 1];
+            for (let i = 2; i &lt; n; i++) fib.push(fib[i-1] + fib[i-2]);
+            if (n === 1) fib = [0];
+            document.getElementById(&#039;fN&#039;).innerText = n;
+            document.getElementById(&#039;fRes&#039;).innerText = fact.toLocaleString();
+            document.getElementById(&#039;fibN&#039;).innerText = n;
+            document.getElementById(&#039;fibList&#039;).innerText = fib.join(&#039;, &#039;);
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

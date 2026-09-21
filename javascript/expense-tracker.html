@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Expense Tracker - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="tic-tac-toe.html" class="nav-btn">⬅ Prev</a>
+        <a href="student-grade-calculator.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Simple Expense Tracker</h1>
+            <p class="card-subtitle">Tracks transactions with category tag, amount, income vs expense balance tally, and transaction log.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Mini Projects
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <h3 style="color: #0f172a; margin-bottom: 16px;">Student Expense Tracker</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; text-align: center;">
+          <div style="background: #ecfdf5; border: 1px solid #a7f3d0; padding: 12px; border-radius: 8px;">
+            <div style="font-size: 12px; color: #065f46;">Total Income</div>
+            <div id="expIncomeTotal" style="font-size: 20px; font-weight: bold; color: #16a34a;">$0.00</div>
+          </div>
+          <div style="background: #fef2f2; border: 1px solid #fecaca; padding: 12px; border-radius: 8px;">
+            <div style="font-size: 12px; color: #991b1b;">Total Expenses</div>
+            <div id="expExpenseTotal" style="font-size: 20px; font-weight: bold; color: #dc2626;">$0.00</div>
+          </div>
+        </div>
+        <form onsubmit="addTransaction(event)" style="display: flex; gap: 8px; margin-bottom: 16px;">
+          <input type="text" id="expDesc" placeholder="Description (e.g. Books)" required style="flex: 2; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+          <input type="number" id="expAmount" placeholder="Amount" step="0.01" required style="flex: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+          <select id="expType" style="flex: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;">
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+          <button type="submit" style="padding: 8px 16px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Add</button>
+        </form>
+        <ul id="expList" style="list-style: none; padding: 0; max-height: 200px; overflow-y: auto;"></ul>
+        <script>
+          let transactions = [
+            { desc: "Monthly Allowance", amount: 500, type: "income" },
+            { desc: "Lab Record Book", amount: 45, type: "expense" }
+          ];
+          function updateExpUI() {
+            let income = 0, expense = 0;
+            const list = document.getElementById('expList');
+            list.innerHTML = '';
+            transactions.forEach((item, index) => {
+              if (item.type === 'income') income += item.amount;
+              else expense += item.amount;
+              const li = document.createElement('li');
+              li.style.cssText = 'display: flex; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px;';
+              li.innerHTML = '<span>' + item.desc + '</span><strong style="color: ' + (item.type === 'income' ? '#16a34a' : '#dc2626') + '">' + (item.type === 'income' ? '+' : '-') + '$' + item.amount.toFixed(2) + '</strong>';
+              list.appendChild(li);
+            });
+            document.getElementById('expIncomeTotal').innerText = '$' + income.toFixed(2);
+            document.getElementById('expExpenseTotal').innerText = '$' + expense.toFixed(2);
+          }
+          function addTransaction(e) {
+            e.preventDefault();
+            const desc = document.getElementById('expDesc').value;
+            const amount = parseFloat(document.getElementById('expAmount').value);
+            const type = document.getElementById('expType').value;
+            transactions.push({ desc, amount, type });
+            document.getElementById('expDesc').value = '';
+            document.getElementById('expAmount').value = '';
+            updateExpUI();
+          }
+          updateExpUI();
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: expense-tracker.html</span>
+              <button class="copy-btn" data-target="code_js-expense">Copy Code</button>
+            </div>
+            <pre id="code_js-expense"><code>&lt;div style=&quot;max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 16px;&quot;&gt;Student Expense Tracker&lt;/h3&gt;
+        &lt;div style=&quot;display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; text-align: center;&quot;&gt;
+          &lt;div style=&quot;background: #ecfdf5; border: 1px solid #a7f3d0; padding: 12px; border-radius: 8px;&quot;&gt;
+            &lt;div style=&quot;font-size: 12px; color: #065f46;&quot;&gt;Total Income&lt;/div&gt;
+            &lt;div id=&quot;expIncomeTotal&quot; style=&quot;font-size: 20px; font-weight: bold; color: #16a34a;&quot;&gt;$0.00&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div style=&quot;background: #fef2f2; border: 1px solid #fecaca; padding: 12px; border-radius: 8px;&quot;&gt;
+            &lt;div style=&quot;font-size: 12px; color: #991b1b;&quot;&gt;Total Expenses&lt;/div&gt;
+            &lt;div id=&quot;expExpenseTotal&quot; style=&quot;font-size: 20px; font-weight: bold; color: #dc2626;&quot;&gt;$0.00&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;form onsubmit=&quot;addTransaction(event)&quot; style=&quot;display: flex; gap: 8px; margin-bottom: 16px;&quot;&gt;
+          &lt;input type=&quot;text&quot; id=&quot;expDesc&quot; placeholder=&quot;Description (e.g. Books)&quot; required style=&quot;flex: 2; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+          &lt;input type=&quot;number&quot; id=&quot;expAmount&quot; placeholder=&quot;Amount&quot; step=&quot;0.01&quot; required style=&quot;flex: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+          &lt;select id=&quot;expType&quot; style=&quot;flex: 1; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;
+            &lt;option value=&quot;expense&quot;&gt;Expense&lt;/option&gt;
+            &lt;option value=&quot;income&quot;&gt;Income&lt;/option&gt;
+          &lt;/select&gt;
+          &lt;button type=&quot;submit&quot; style=&quot;padding: 8px 16px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Add&lt;/button&gt;
+        &lt;/form&gt;
+        &lt;ul id=&quot;expList&quot; style=&quot;list-style: none; padding: 0; max-height: 200px; overflow-y: auto;&quot;&gt;&lt;/ul&gt;
+        &lt;script&gt;
+          let transactions = [
+            { desc: &quot;Monthly Allowance&quot;, amount: 500, type: &quot;income&quot; },
+            { desc: &quot;Lab Record Book&quot;, amount: 45, type: &quot;expense&quot; }
+          ];
+          function updateExpUI() {
+            let income = 0, expense = 0;
+            const list = document.getElementById(&#039;expList&#039;);
+            list.innerHTML = &#039;&#039;;
+            transactions.forEach((item, index) =&gt; {
+              if (item.type === &#039;income&#039;) income += item.amount;
+              else expense += item.amount;
+              const li = document.createElement(&#039;li&#039;);
+              li.style.cssText = &#039;display: flex; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid #f1f5f9; font-size: 14px;&#039;;
+              li.innerHTML = &#039;&lt;span&gt;&#039; + item.desc + &#039;&lt;/span&gt;&lt;strong style=&quot;color: &#039; + (item.type === &#039;income&#039; ? &#039;#16a34a&#039; : &#039;#dc2626&#039;) + &#039;&quot;&gt;&#039; + (item.type === &#039;income&#039; ? &#039;+&#039; : &#039;-&#039;) + &#039;$&#039; + item.amount.toFixed(2) + &#039;&lt;/strong&gt;&#039;;
+              list.appendChild(li);
+            });
+            document.getElementById(&#039;expIncomeTotal&#039;).innerText = &#039;$&#039; + income.toFixed(2);
+            document.getElementById(&#039;expExpenseTotal&#039;).innerText = &#039;$&#039; + expense.toFixed(2);
+          }
+          function addTransaction(e) {
+            e.preventDefault();
+            const desc = document.getElementById(&#039;expDesc&#039;).value;
+            const amount = parseFloat(document.getElementById(&#039;expAmount&#039;).value);
+            const type = document.getElementById(&#039;expType&#039;).value;
+            transactions.push({ desc, amount, type });
+            document.getElementById(&#039;expDesc&#039;).value = &#039;&#039;;
+            document.getElementById(&#039;expAmount&#039;).value = &#039;&#039;;
+            updateExpUI();
+          }
+          updateExpUI();
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

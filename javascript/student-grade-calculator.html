@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Marks &amp; Grade Calculator - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="expense-tracker.html" class="nav-btn">⬅ Prev</a>
+        <a href="password-generator.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Student Marks &amp; Grade Calculator</h1>
+            <p class="card-subtitle">Computes total marks, percentage, and assigns letter grades (O, A+, A, B, C, F) based on user subject scores.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Mini Projects
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 480px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <h3 style="color: #0f172a; margin-bottom: 16px;">Semester Grade Calculator</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <div><label style="font-size: 13px; color: #475569;">Web Technology</label><input type="number" id="m1" value="92" min="0" max="100" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;"></div>
+          <div><label style="font-size: 13px; color: #475569;">Database Management</label><input type="number" id="m2" value="88" min="0" max="100" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;"></div>
+          <div><label style="font-size: 13px; color: #475569;">Operating Systems</label><input type="number" id="m3" value="85" min="0" max="100" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;"></div>
+          <div><label style="font-size: 13px; color: #475569;">Computer Networks</label><input type="number" id="m4" value="90" min="0" max="100" style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;"></div>
+        </div>
+        <button onclick="calculateGrade()" style="width: 100%; padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 16px;">Calculate Results</button>
+        <div id="gradeResult" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; text-align: center;">
+          <div style="font-size: 14px; color: #64748b;">Total Score: <strong id="resTotal" style="color: #0f172a;">355 / 400</strong></div>
+          <div style="font-size: 14px; color: #64748b; margin: 4px 0;">Percentage: <strong id="resPct" style="color: #0f172a;">88.75%</strong></div>
+          <div style="font-size: 24px; font-weight: bold; color: #16a34a; margin-top: 8px;" id="resGrade">Grade: A+ (Outstanding)</div>
+        </div>
+        <script>
+          function calculateGrade() {
+            const v1 = parseFloat(document.getElementById('m1').value) || 0;
+            const v2 = parseFloat(document.getElementById('m2').value) || 0;
+            const v3 = parseFloat(document.getElementById('m3').value) || 0;
+            const v4 = parseFloat(document.getElementById('m4').value) || 0;
+            const total = v1 + v2 + v3 + v4;
+            const pct = (total / 400) * 100;
+            let grade = 'F (Fail)', color = '#dc2626';
+            if (pct >= 90) { grade = 'O (Outstanding)'; color = '#16a34a'; }
+            else if (pct >= 80) { grade = 'A+ (Excellent)'; color = '#2563eb'; }
+            else if (pct >= 70) { grade = 'A (Very Good)'; color = '#0284c7'; }
+            else if (pct >= 60) { grade = 'B (Good)'; color = '#d97706'; }
+            else if (pct >= 50) { grade = 'C (Pass)'; color = '#ca8a04'; }
+            document.getElementById('resTotal').innerText = total + ' / 400';
+            document.getElementById('resPct').innerText = pct.toFixed(2) + '%';
+            const gradeEl = document.getElementById('resGrade');
+            gradeEl.innerText = 'Grade: ' + grade;
+            gradeEl.style.color = color;
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: student-grade-calculator.html</span>
+              <button class="copy-btn" data-target="code_js-grade">Copy Code</button>
+            </div>
+            <pre id="code_js-grade"><code>&lt;div style=&quot;max-width: 480px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 16px;&quot;&gt;Semester Grade Calculator&lt;/h3&gt;
+        &lt;div style=&quot;display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;&quot;&gt;
+          &lt;div&gt;&lt;label style=&quot;font-size: 13px; color: #475569;&quot;&gt;Web Technology&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;m1&quot; value=&quot;92&quot; min=&quot;0&quot; max=&quot;100&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;label style=&quot;font-size: 13px; color: #475569;&quot;&gt;Database Management&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;m2&quot; value=&quot;88&quot; min=&quot;0&quot; max=&quot;100&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;label style=&quot;font-size: 13px; color: #475569;&quot;&gt;Operating Systems&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;m3&quot; value=&quot;85&quot; min=&quot;0&quot; max=&quot;100&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;&lt;/div&gt;
+          &lt;div&gt;&lt;label style=&quot;font-size: 13px; color: #475569;&quot;&gt;Computer Networks&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;m4&quot; value=&quot;90&quot; min=&quot;0&quot; max=&quot;100&quot; style=&quot;width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px;&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;button onclick=&quot;calculateGrade()&quot; style=&quot;width: 100%; padding: 10px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 16px;&quot;&gt;Calculate Results&lt;/button&gt;
+        &lt;div id=&quot;gradeResult&quot; style=&quot;background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; text-align: center;&quot;&gt;
+          &lt;div style=&quot;font-size: 14px; color: #64748b;&quot;&gt;Total Score: &lt;strong id=&quot;resTotal&quot; style=&quot;color: #0f172a;&quot;&gt;355 / 400&lt;/strong&gt;&lt;/div&gt;
+          &lt;div style=&quot;font-size: 14px; color: #64748b; margin: 4px 0;&quot;&gt;Percentage: &lt;strong id=&quot;resPct&quot; style=&quot;color: #0f172a;&quot;&gt;88.75%&lt;/strong&gt;&lt;/div&gt;
+          &lt;div style=&quot;font-size: 24px; font-weight: bold; color: #16a34a; margin-top: 8px;&quot; id=&quot;resGrade&quot;&gt;Grade: A+ (Outstanding)&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          function calculateGrade() {
+            const v1 = parseFloat(document.getElementById(&#039;m1&#039;).value) || 0;
+            const v2 = parseFloat(document.getElementById(&#039;m2&#039;).value) || 0;
+            const v3 = parseFloat(document.getElementById(&#039;m3&#039;).value) || 0;
+            const v4 = parseFloat(document.getElementById(&#039;m4&#039;).value) || 0;
+            const total = v1 + v2 + v3 + v4;
+            const pct = (total / 400) * 100;
+            let grade = &#039;F (Fail)&#039;, color = &#039;#dc2626&#039;;
+            if (pct &gt;= 90) { grade = &#039;O (Outstanding)&#039;; color = &#039;#16a34a&#039;; }
+            else if (pct &gt;= 80) { grade = &#039;A+ (Excellent)&#039;; color = &#039;#2563eb&#039;; }
+            else if (pct &gt;= 70) { grade = &#039;A (Very Good)&#039;; color = &#039;#0284c7&#039;; }
+            else if (pct &gt;= 60) { grade = &#039;B (Good)&#039;; color = &#039;#d97706&#039;; }
+            else if (pct &gt;= 50) { grade = &#039;C (Pass)&#039;; color = &#039;#ca8a04&#039;; }
+            document.getElementById(&#039;resTotal&#039;).innerText = total + &#039; / 400&#039;;
+            document.getElementById(&#039;resPct&#039;).innerText = pct.toFixed(2) + &#039;%&#039;;
+            const gradeEl = document.getElementById(&#039;resGrade&#039;);
+            gradeEl.innerText = &#039;Grade: &#039; + grade;
+            gradeEl.style.color = color;
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

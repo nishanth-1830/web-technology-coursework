@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Web Tech Quiz Application - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="weather-app.html" class="nav-btn">⬅ Prev</a>
+        <a href="number-guessing-game.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Interactive Web Tech Quiz Application</h1>
+            <p class="card-subtitle">Multiple choice quiz application with question navigation, instant answer feedback, timer, score tally, and restart feature.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Mini Projects
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="color: #0f172a; margin: 0;">Web Tech Quiz</h3>
+          <span id="quizScoreBadge" style="background: #eff6ff; color: #2563eb; padding: 4px 10px; border-radius: 12px; font-size: 13px; font-weight: bold;">Score: 0 / 4</span>
+        </div>
+        <div id="quizQuestionBox">
+          <p id="quizQuestionText" style="font-size: 16px; font-weight: 500; color: #1e293b; margin-bottom: 16px;"></p>
+          <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;"></div>
+        </div>
+        <div id="quizResultBox" style="display: none; text-align: center; padding: 20px 0;">
+          <h2 style="color: #16a34a; margin-bottom: 8px;">Quiz Completed! 🎉</h2>
+          <p id="quizFinalScore" style="font-size: 18px; color: #334155; margin-bottom: 16px;"></p>
+          <button onclick="restartQuiz()" style="padding: 10px 24px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Restart Quiz</button>
+        </div>
+        <script>
+          const questions = [
+            { q: "1. Which HTML element is used for the largest heading?", options: ["<h6>", "<head>", "<h1>", "<heading>"], correct: 2 },
+            { q: "2. Which CSS property controls text size?", options: ["font-style", "text-size", "font-size", "font-weight"], correct: 2 },
+            { q: "3. How do you declare a constant variable in JavaScript ES6?", options: ["var", "let", "const", "immutable"], correct: 2 },
+            { q: "4. Which method converts a JSON string into a JavaScript object?", options: ["JSON.stringify()", "JSON.parse()", "JSON.toObject()", "JSON.decode()"], correct: 1 }
+          ];
+          let qIndex = 0, score = 0;
+          function renderQuestion() {
+            if (qIndex >= questions.length) {
+              document.getElementById('quizQuestionBox').style.display = 'none';
+              document.getElementById('quizResultBox').style.display = 'block';
+              document.getElementById('quizFinalScore').innerText = 'You scored ' + score + ' out of ' + questions.length + '! (' + Math.round((score/questions.length)*100) + '%)';
+              return;
+            }
+            const q = questions[qIndex];
+            document.getElementById('quizQuestionText').innerText = q.q;
+            const optDiv = document.getElementById('quizOptions');
+            optDiv.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+              const btn = document.createElement('button');
+              btn.innerText = opt;
+              btn.style.cssText = 'padding: 12px; text-align: left; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; cursor: pointer; transition: background 0.2s;';
+              btn.onclick = () => checkAnswer(idx);
+              optDiv.appendChild(btn);
+            });
+            document.getElementById('quizScoreBadge').innerText = 'Question ' + (qIndex + 1) + ' of ' + questions.length;
+          }
+          function checkAnswer(selectedIdx) {
+            const q = questions[qIndex];
+            if (selectedIdx === q.correct) score++;
+            qIndex++;
+            renderQuestion();
+          }
+          function restartQuiz() {
+            qIndex = 0; score = 0;
+            document.getElementById('quizQuestionBox').style.display = 'block';
+            document.getElementById('quizResultBox').style.display = 'none';
+            renderQuestion();
+          }
+          renderQuestion();
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: quiz-app.html</span>
+              <button class="copy-btn" data-target="code_js-quiz">Copy Code</button>
+            </div>
+            <pre id="code_js-quiz"><code>&lt;div style=&quot;max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);&quot;&gt;
+        &lt;div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;&quot;&gt;
+          &lt;h3 style=&quot;color: #0f172a; margin: 0;&quot;&gt;Web Tech Quiz&lt;/h3&gt;
+          &lt;span id=&quot;quizScoreBadge&quot; style=&quot;background: #eff6ff; color: #2563eb; padding: 4px 10px; border-radius: 12px; font-size: 13px; font-weight: bold;&quot;&gt;Score: 0 / 4&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;quizQuestionBox&quot;&gt;
+          &lt;p id=&quot;quizQuestionText&quot; style=&quot;font-size: 16px; font-weight: 500; color: #1e293b; margin-bottom: 16px;&quot;&gt;&lt;/p&gt;
+          &lt;div id=&quot;quizOptions&quot; style=&quot;display: flex; flex-direction: column; gap: 10px;&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id=&quot;quizResultBox&quot; style=&quot;display: none; text-align: center; padding: 20px 0;&quot;&gt;
+          &lt;h2 style=&quot;color: #16a34a; margin-bottom: 8px;&quot;&gt;Quiz Completed! 🎉&lt;/h2&gt;
+          &lt;p id=&quot;quizFinalScore&quot; style=&quot;font-size: 18px; color: #334155; margin-bottom: 16px;&quot;&gt;&lt;/p&gt;
+          &lt;button onclick=&quot;restartQuiz()&quot; style=&quot;padding: 10px 24px; background: #2563eb; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Restart Quiz&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          const questions = [
+            { q: &quot;1. Which HTML element is used for the largest heading?&quot;, options: [&quot;&lt;h6&gt;&quot;, &quot;&lt;head&gt;&quot;, &quot;&lt;h1&gt;&quot;, &quot;&lt;heading&gt;&quot;], correct: 2 },
+            { q: &quot;2. Which CSS property controls text size?&quot;, options: [&quot;font-style&quot;, &quot;text-size&quot;, &quot;font-size&quot;, &quot;font-weight&quot;], correct: 2 },
+            { q: &quot;3. How do you declare a constant variable in JavaScript ES6?&quot;, options: [&quot;var&quot;, &quot;let&quot;, &quot;const&quot;, &quot;immutable&quot;], correct: 2 },
+            { q: &quot;4. Which method converts a JSON string into a JavaScript object?&quot;, options: [&quot;JSON.stringify()&quot;, &quot;JSON.parse()&quot;, &quot;JSON.toObject()&quot;, &quot;JSON.decode()&quot;], correct: 1 }
+          ];
+          let qIndex = 0, score = 0;
+          function renderQuestion() {
+            if (qIndex &gt;= questions.length) {
+              document.getElementById(&#039;quizQuestionBox&#039;).style.display = &#039;none&#039;;
+              document.getElementById(&#039;quizResultBox&#039;).style.display = &#039;block&#039;;
+              document.getElementById(&#039;quizFinalScore&#039;).innerText = &#039;You scored &#039; + score + &#039; out of &#039; + questions.length + &#039;! (&#039; + Math.round((score/questions.length)*100) + &#039;%)&#039;;
+              return;
+            }
+            const q = questions[qIndex];
+            document.getElementById(&#039;quizQuestionText&#039;).innerText = q.q;
+            const optDiv = document.getElementById(&#039;quizOptions&#039;);
+            optDiv.innerHTML = &#039;&#039;;
+            q.options.forEach((opt, idx) =&gt; {
+              const btn = document.createElement(&#039;button&#039;);
+              btn.innerText = opt;
+              btn.style.cssText = &#039;padding: 12px; text-align: left; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; cursor: pointer; transition: background 0.2s;&#039;;
+              btn.onclick = () =&gt; checkAnswer(idx);
+              optDiv.appendChild(btn);
+            });
+            document.getElementById(&#039;quizScoreBadge&#039;).innerText = &#039;Question &#039; + (qIndex + 1) + &#039; of &#039; + questions.length;
+          }
+          function checkAnswer(selectedIdx) {
+            const q = questions[qIndex];
+            if (selectedIdx === q.correct) score++;
+            qIndex++;
+            renderQuestion();
+          }
+          function restartQuiz() {
+            qIndex = 0; score = 0;
+            document.getElementById(&#039;quizQuestionBox&#039;).style.display = &#039;block&#039;;
+            document.getElementById(&#039;quizResultBox&#039;).style.display = &#039;none&#039;;
+            renderQuestion();
+          }
+          renderQuestion();
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

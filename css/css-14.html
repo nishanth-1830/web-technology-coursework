@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered SaaS Assistant &amp; Command Palette Interface - CSS Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 CSS Programs</a>
+        <a href="css-13.html" class="nav-btn">⬅ Prev</a>
+        <a href="css-15.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">AI-Powered SaaS Assistant &amp; Command Palette Interface</h1>
+            <p class="card-subtitle">Modern AI prompt interface featuring suggestion chips, prompt input bar, response cards, and keyboard shortcut command palette.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Modern SaaS &amp; Analytics UI
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <h3 style="color: #1e293b; margin-bottom: 12px;">AI Assistant & Prompt Workspace</h3>
+        
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span onclick="setPrompt('Analyze CSS Grid vs Flexbox performance')" style="background: #eff6ff; color: #2563eb; font-size: 12px; padding: 4px 10px; border-radius: 14px; cursor: pointer; border: 1px solid #bfdbfe;">✨ Analyze Grid vs Flexbox</span>
+            <span onclick="setPrompt('Generate HTML5 accessible form snippet')" style="background: #eff6ff; color: #2563eb; font-size: 12px; padding: 4px 10px; border-radius: 14px; cursor: pointer; border: 1px solid #bfdbfe;">✨ Accessible Form snippet</span>
+            <span onclick="setPrompt('Explain CSS specificity hierarchy')" style="background: #eff6ff; color: #2563eb; font-size: 12px; padding: 4px 10px; border-radius: 14px; cursor: pointer; border: 1px solid #bfdbfe;">✨ CSS Specificity</span>
+          </div>
+
+          <div style="display: flex; gap: 10px;">
+            <input type="text" id="aiInput" placeholder="Ask AI Assistant about HTML, CSS or JS..." style="flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;">
+            <button onclick="simulateAIResponse()" style="background: #2563eb; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; cursor: pointer;">Ask AI</button>
+          </div>
+        </div>
+
+        <div id="aiResponseCard" style="display: none; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px;">
+          <div style="display: flex; align-items: center; gap: 8px; color: #166534; font-weight: bold; margin-bottom: 6px;">
+            <span>🤖 AI Copilot Analysis:</span>
+          </div>
+          <p id="aiResponseText" style="font-size: 13px; color: #14532d;"></p>
+        </div>
+
+        <script>
+          function setPrompt(text) {
+            document.getElementById('aiInput').value = text;
+          }
+          function simulateAIResponse() {
+            const val = document.getElementById('aiInput').value;
+            if (!val) return;
+            const resCard = document.getElementById('aiResponseCard');
+            const resText = document.getElementById('aiResponseText');
+            resCard.style.display = 'block';
+            resText.innerText = 'Query evaluated: "' + val + '". In standard Web Technology curriculum (Section 06), CSS Grid handles two-dimensional macro layouts, while Flexbox governs one-dimensional content alignment.';
+          }
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: css-14.html</span>
+              <button class="copy-btn" data-target="code_css-14">Copy Code</button>
+            </div>
+            <pre id="code_css-14"><code>&lt;div style=&quot;font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;&quot;&gt;
+        &lt;h3 style=&quot;color: #1e293b; margin-bottom: 12px;&quot;&gt;AI Assistant &amp; Prompt Workspace&lt;/h3&gt;
+        
+        &lt;div style=&quot;background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-bottom: 16px;&quot;&gt;
+          &lt;div style=&quot;display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;&quot;&gt;
+            &lt;span onclick=&quot;setPrompt(&#039;Analyze CSS Grid vs Flexbox performance&#039;)&quot; style=&quot;background: #eff6ff; color: #2563eb; font-size: 12px; padding: 4px 10px; border-radius: 14px; cursor: pointer; border: 1px solid #bfdbfe;&quot;&gt;✨ Analyze Grid vs Flexbox&lt;/span&gt;
+            &lt;span onclick=&quot;setPrompt(&#039;Generate HTML5 accessible form snippet&#039;)&quot; style=&quot;background: #eff6ff; color: #2563eb; font-size: 12px; padding: 4px 10px; border-radius: 14px; cursor: pointer; border: 1px solid #bfdbfe;&quot;&gt;✨ Accessible Form snippet&lt;/span&gt;
+            &lt;span onclick=&quot;setPrompt(&#039;Explain CSS specificity hierarchy&#039;)&quot; style=&quot;background: #eff6ff; color: #2563eb; font-size: 12px; padding: 4px 10px; border-radius: 14px; cursor: pointer; border: 1px solid #bfdbfe;&quot;&gt;✨ CSS Specificity&lt;/span&gt;
+          &lt;/div&gt;
+
+          &lt;div style=&quot;display: flex; gap: 10px;&quot;&gt;
+            &lt;input type=&quot;text&quot; id=&quot;aiInput&quot; placeholder=&quot;Ask AI Assistant about HTML, CSS or JS...&quot; style=&quot;flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;&quot;&gt;
+            &lt;button onclick=&quot;simulateAIResponse()&quot; style=&quot;background: #2563eb; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Ask AI&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id=&quot;aiResponseCard&quot; style=&quot;display: none; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px;&quot;&gt;
+          &lt;div style=&quot;display: flex; align-items: center; gap: 8px; color: #166534; font-weight: bold; margin-bottom: 6px;&quot;&gt;
+            &lt;span&gt;🤖 AI Copilot Analysis:&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;p id=&quot;aiResponseText&quot; style=&quot;font-size: 13px; color: #14532d;&quot;&gt;&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;script&gt;
+          function setPrompt(text) {
+            document.getElementById(&#039;aiInput&#039;).value = text;
+          }
+          function simulateAIResponse() {
+            const val = document.getElementById(&#039;aiInput&#039;).value;
+            if (!val) return;
+            const resCard = document.getElementById(&#039;aiResponseCard&#039;);
+            const resText = document.getElementById(&#039;aiResponseText&#039;);
+            resCard.style.display = &#039;block&#039;;
+            resText.innerText = &#039;Query evaluated: &quot;&#039; + val + &#039;&quot;. In standard Web Technology curriculum (Section 06), CSS Grid handles two-dimensional macro layouts, while Flexbox governs one-dimensional content alignment.&#039;;
+          }
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">CSS Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

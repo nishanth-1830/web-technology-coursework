@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive To-Do List Application - JavaScript Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 JavaScript Programs</a>
+        <a href="countdown-timer.html" class="nav-btn">⬅ Prev</a>
+        <a href="weather-app.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Interactive To-Do List Application</h1>
+            <p class="card-subtitle">Feature-rich To-Do list with task creation, checkbox completion, deletion, item count, and localStorage persistence.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            Mini Projects
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <h3 style="color: #0f172a; margin-bottom: 16px;">Task Organizer (localStorage)</h3>
+        <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+          <input type="text" id="todoInput" placeholder="Add a new academic assignment..." style="flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;">
+          <button onclick="addTodo()" style="background: #2563eb; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; cursor: pointer;">Add</button>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 13px; color: #64748b;">
+          <span id="todoStats">0 tasks remaining</span>
+          <button onclick="clearCompletedTodos()" style="background: none; border: none; color: #ef4444; cursor: pointer; text-decoration: underline;">Clear Completed</button>
+        </div>
+        <ul id="todoList" style="list-style: none; padding: 0; max-height: 280px; overflow-y: auto;"></ul>
+        <script>
+          let todos = JSON.parse(localStorage.getItem('wt_todos') || '[{"id":1,"text":"Submit Web Tech Assignment 01","done":false},{"id":2,"text":"Review CSS Grid & Flexbox","done":true}]');
+          function saveTodos() {
+            localStorage.setItem('wt_todos', JSON.stringify(todos));
+            renderTodos();
+          }
+          function renderTodos() {
+            const list = document.getElementById('todoList');
+            list.innerHTML = '';
+            let remaining = 0;
+            todos.forEach(t => {
+              if (!t.done) remaining++;
+              const li = document.createElement('li');
+              li.style.cssText = 'display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid #f1f5f9; background: ' + (t.done ? '#f8fafc' : '#ffffff');
+              li.innerHTML = '<div style="display: flex; align-items: center; gap: 10px;"><input type="checkbox" ' + (t.done ? 'checked' : '') + ' onchange="toggleTodo(' + t.id + ')" style="cursor:pointer;"><span style="' + (t.done ? 'text-decoration: line-through; color: #94a3b8;' : 'color: #1e293b;') + '">' + t.text + '</span></div><button onclick="deleteTodo(' + t.id + ')" style="background:none; border:none; color:#ef4444; font-size:16px; cursor:pointer;">✕</button>';
+              list.appendChild(li);
+            });
+            document.getElementById('todoStats').innerText = remaining + ' of ' + todos.length + ' tasks remaining';
+          }
+          function addTodo() {
+            const inp = document.getElementById('todoInput');
+            const txt = inp.value.trim();
+            if (!txt) return;
+            todos.push({ id: Date.now(), text: txt, done: false });
+            inp.value = '';
+            saveTodos();
+          }
+          function toggleTodo(id) {
+            const t = todos.find(item => item.id === id);
+            if (t) t.done = !t.done;
+            saveTodos();
+          }
+          function deleteTodo(id) {
+            todos = todos.filter(item => item.id !== id);
+            saveTodos();
+          }
+          function clearCompletedTodos() {
+            todos = todos.filter(item => !item.done);
+            saveTodos();
+          }
+          renderTodos();
+        </script>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: todo-list.html</span>
+              <button class="copy-btn" data-target="code_js-todo">Copy Code</button>
+            </div>
+            <pre id="code_js-todo"><code>&lt;div style=&quot;max-width: 500px; margin: 0 auto; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);&quot;&gt;
+        &lt;h3 style=&quot;color: #0f172a; margin-bottom: 16px;&quot;&gt;Task Organizer (localStorage)&lt;/h3&gt;
+        &lt;div style=&quot;display: flex; gap: 8px; margin-bottom: 16px;&quot;&gt;
+          &lt;input type=&quot;text&quot; id=&quot;todoInput&quot; placeholder=&quot;Add a new academic assignment...&quot; style=&quot;flex: 1; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px;&quot;&gt;
+          &lt;button onclick=&quot;addTodo()&quot; style=&quot;background: #2563eb; color: #fff; border: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; cursor: pointer;&quot;&gt;Add&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 13px; color: #64748b;&quot;&gt;
+          &lt;span id=&quot;todoStats&quot;&gt;0 tasks remaining&lt;/span&gt;
+          &lt;button onclick=&quot;clearCompletedTodos()&quot; style=&quot;background: none; border: none; color: #ef4444; cursor: pointer; text-decoration: underline;&quot;&gt;Clear Completed&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;ul id=&quot;todoList&quot; style=&quot;list-style: none; padding: 0; max-height: 280px; overflow-y: auto;&quot;&gt;&lt;/ul&gt;
+        &lt;script&gt;
+          let todos = JSON.parse(localStorage.getItem(&#039;wt_todos&#039;) || &#039;[{&quot;id&quot;:1,&quot;text&quot;:&quot;Submit Web Tech Assignment 01&quot;,&quot;done&quot;:false},{&quot;id&quot;:2,&quot;text&quot;:&quot;Review CSS Grid &amp; Flexbox&quot;,&quot;done&quot;:true}]&#039;);
+          function saveTodos() {
+            localStorage.setItem(&#039;wt_todos&#039;, JSON.stringify(todos));
+            renderTodos();
+          }
+          function renderTodos() {
+            const list = document.getElementById(&#039;todoList&#039;);
+            list.innerHTML = &#039;&#039;;
+            let remaining = 0;
+            todos.forEach(t =&gt; {
+              if (!t.done) remaining++;
+              const li = document.createElement(&#039;li&#039;);
+              li.style.cssText = &#039;display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; border-bottom: 1px solid #f1f5f9; background: &#039; + (t.done ? &#039;#f8fafc&#039; : &#039;#ffffff&#039;);
+              li.innerHTML = &#039;&lt;div style=&quot;display: flex; align-items: center; gap: 10px;&quot;&gt;&lt;input type=&quot;checkbox&quot; &#039; + (t.done ? &#039;checked&#039; : &#039;&#039;) + &#039; onchange=&quot;toggleTodo(&#039; + t.id + &#039;)&quot; style=&quot;cursor:pointer;&quot;&gt;&lt;span style=&quot;&#039; + (t.done ? &#039;text-decoration: line-through; color: #94a3b8;&#039; : &#039;color: #1e293b;&#039;) + &#039;&quot;&gt;&#039; + t.text + &#039;&lt;/span&gt;&lt;/div&gt;&lt;button onclick=&quot;deleteTodo(&#039; + t.id + &#039;)&quot; style=&quot;background:none; border:none; color:#ef4444; font-size:16px; cursor:pointer;&quot;&gt;✕&lt;/button&gt;&#039;;
+              list.appendChild(li);
+            });
+            document.getElementById(&#039;todoStats&#039;).innerText = remaining + &#039; of &#039; + todos.length + &#039; tasks remaining&#039;;
+          }
+          function addTodo() {
+            const inp = document.getElementById(&#039;todoInput&#039;);
+            const txt = inp.value.trim();
+            if (!txt) return;
+            todos.push({ id: Date.now(), text: txt, done: false });
+            inp.value = &#039;&#039;;
+            saveTodos();
+          }
+          function toggleTodo(id) {
+            const t = todos.find(item =&gt; item.id === id);
+            if (t) t.done = !t.done;
+            saveTodos();
+          }
+          function deleteTodo(id) {
+            todos = todos.filter(item =&gt; item.id !== id);
+            saveTodos();
+          }
+          function clearCompletedTodos() {
+            todos = todos.filter(item =&gt; !item.done);
+            saveTodos();
+          }
+          renderTodos();
+        &lt;/script&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">JavaScript Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>

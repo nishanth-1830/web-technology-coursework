@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tables with Rows, Columns &amp; Merged Cells - HTML Programs</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+  <!-- Global Sticky Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-bar">
+      <div class="nav-links">
+        <a href="../index.html" class="nav-btn">🏠 Home</a>
+        <a href="index.html" class="nav-btn">📚 HTML Programs</a>
+        <a href="html-02.html" class="nav-btn">⬅ Prev</a>
+        <a href="html-04.html" class="nav-btn">Next ➡</a>
+      </div>
+      <div class="student-badge">
+        <span>👨‍🎓 <strong>k. nishanth reddy</strong> (250200439)</span>
+        <span>• Sec: 06</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <h1 class="card-title">Tables with Rows, Columns &amp; Merged Cells</h1>
+            <p class="card-subtitle">Creates an HTML table demonstrating rows (&lt;tr&gt;), header cells (&lt;th&gt;), data cells (&lt;td&gt;), borders, and cell merging using colspan and rowspan.</p>
+          </div>
+          <span style="background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: bold; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe;">
+            HTML Fundamentals
+          </span>
+        </div>
+      </div>
+
+      <!-- Working Implementation & Interactive Demonstration -->
+      <section>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h2 style="font-size: 16px; color: #334155; font-weight: 600;">Working Demonstration / Output</h2>
+          <span style="font-size: 12px; color: #16a34a; font-weight: 500;">● Live Execution</span>
+        </div>
+
+        <div class="demo-area">
+          
+      <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
+        <h2 style="color: #1e293b; margin-bottom: 16px;">Student Examination Grade Sheet</h2>
+        
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+            <thead>
+              <tr style="background: #2563eb; color: #ffffff;">
+                <th rowspan="2" style="border: 1px solid #cbd5e1; padding: 10px;">Roll No</th>
+                <th rowspan="2" style="border: 1px solid #cbd5e1; padding: 10px;">Student Name</th>
+                <th colspan="3" style="border: 1px solid #cbd5e1; padding: 10px; text-align: center;">Internal Marks (Colspan = 3)</th>
+                <th rowspan="2" style="border: 1px solid #cbd5e1; padding: 10px; text-align: center;">Total</th>
+                <th rowspan="2" style="border: 1px solid #cbd5e1; padding: 10px; text-align: center;">Status</th>
+              </tr>
+              <tr style="background: #3b82f6; color: #ffffff;">
+                <th style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Test 1</th>
+                <th style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Test 2</th>
+                <th style="border: 1px solid #cbd5e1; padding: 8px; text-align: center;">Assignment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: #ffffff;">
+                <td style="border: 1px solid #e2e8f0; padding: 10px; font-weight: bold;">250200439</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px;">k. nishanth reddy</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">25</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">24</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">25</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center; font-weight: bold; color: #16a34a;">74/75</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Distinction</span></td>
+              </tr>
+              <tr style="background: #f8fafc;">
+                <td style="border: 1px solid #e2e8f0; padding: 10px; font-weight: bold;">250200440</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px;">Rahul Sharma</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">21</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">22</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">23</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center; font-weight: bold;">66/75</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;"><span style="background: #dbeafe; color: #1e40af; padding: 4px 8px; border-radius: 12px; font-size: 12px;">First Class</span></td>
+              </tr>
+              <tr style="background: #ffffff;">
+                <td rowspan="2" style="border: 1px solid #e2e8f0; padding: 10px; font-weight: bold; vertical-align: middle; text-align: center; background: #f1f5f9;">Lab Group A<br>(Rowspan=2)</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px;">Priya Patel</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">23</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">23</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">24</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center; font-weight: bold;">70/75</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 12px; font-size: 12px;">Distinction</span></td>
+              </tr>
+              <tr style="background: #f8fafc;">
+                <td style="border: 1px solid #e2e8f0; padding: 10px;">Amit Verma</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">20</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">19</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;">21</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center; font-weight: bold;">60/75</td>
+                <td style="border: 1px solid #e2e8f0; padding: 10px; text-align: center;"><span style="background: #dbeafe; color: #1e40af; padding: 4px 8px; border-radius: 12px; font-size: 12px;">First Class</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+        </div>
+      </section>
+
+      <!-- Source Code Inspection Accordion -->
+      <section style="margin-top: 24px;">
+        <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <summary style="cursor: pointer; font-weight: 600; color: #2563eb; outline: none; user-select: none;">
+            🔍 View Source Code (HTML, CSS & JS)
+          </summary>
+          <div class="code-viewer" style="margin-top: 12px;">
+            <div class="code-header">
+              <span>Source File: html-03.html</span>
+              <button class="copy-btn" data-target="code_html-03">Copy Code</button>
+            </div>
+            <pre id="code_html-03"><code>&lt;div style=&quot;font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;&quot;&gt;
+        &lt;h2 style=&quot;color: #1e293b; margin-bottom: 16px;&quot;&gt;Student Examination Grade Sheet&lt;/h2&gt;
+        
+        &lt;div style=&quot;overflow-x: auto;&quot;&gt;
+          &lt;table style=&quot;width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;&quot;&gt;
+            &lt;thead&gt;
+              &lt;tr style=&quot;background: #2563eb; color: #ffffff;&quot;&gt;
+                &lt;th rowspan=&quot;2&quot; style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Roll No&lt;/th&gt;
+                &lt;th rowspan=&quot;2&quot; style=&quot;border: 1px solid #cbd5e1; padding: 10px;&quot;&gt;Student Name&lt;/th&gt;
+                &lt;th colspan=&quot;3&quot; style=&quot;border: 1px solid #cbd5e1; padding: 10px; text-align: center;&quot;&gt;Internal Marks (Colspan = 3)&lt;/th&gt;
+                &lt;th rowspan=&quot;2&quot; style=&quot;border: 1px solid #cbd5e1; padding: 10px; text-align: center;&quot;&gt;Total&lt;/th&gt;
+                &lt;th rowspan=&quot;2&quot; style=&quot;border: 1px solid #cbd5e1; padding: 10px; text-align: center;&quot;&gt;Status&lt;/th&gt;
+              &lt;/tr&gt;
+              &lt;tr style=&quot;background: #3b82f6; color: #ffffff;&quot;&gt;
+                &lt;th style=&quot;border: 1px solid #cbd5e1; padding: 8px; text-align: center;&quot;&gt;Test 1&lt;/th&gt;
+                &lt;th style=&quot;border: 1px solid #cbd5e1; padding: 8px; text-align: center;&quot;&gt;Test 2&lt;/th&gt;
+                &lt;th style=&quot;border: 1px solid #cbd5e1; padding: 8px; text-align: center;&quot;&gt;Assignment&lt;/th&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              &lt;tr style=&quot;background: #ffffff;&quot;&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; font-weight: bold;&quot;&gt;250200439&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px;&quot;&gt;k. nishanth reddy&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;25&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;24&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;25&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center; font-weight: bold; color: #16a34a;&quot;&gt;74/75&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;&lt;span style=&quot;background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 12px; font-size: 12px;&quot;&gt;Distinction&lt;/span&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr style=&quot;background: #f8fafc;&quot;&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; font-weight: bold;&quot;&gt;250200440&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px;&quot;&gt;Rahul Sharma&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;21&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;22&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;23&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center; font-weight: bold;&quot;&gt;66/75&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;&lt;span style=&quot;background: #dbeafe; color: #1e40af; padding: 4px 8px; border-radius: 12px; font-size: 12px;&quot;&gt;First Class&lt;/span&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr style=&quot;background: #ffffff;&quot;&gt;
+                &lt;td rowspan=&quot;2&quot; style=&quot;border: 1px solid #e2e8f0; padding: 10px; font-weight: bold; vertical-align: middle; text-align: center; background: #f1f5f9;&quot;&gt;Lab Group A&lt;br&gt;(Rowspan=2)&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px;&quot;&gt;Priya Patel&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;23&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;23&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;24&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center; font-weight: bold;&quot;&gt;70/75&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;&lt;span style=&quot;background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 12px; font-size: 12px;&quot;&gt;Distinction&lt;/span&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr style=&quot;background: #f8fafc;&quot;&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px;&quot;&gt;Amit Verma&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;20&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;19&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;21&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center; font-weight: bold;&quot;&gt;60/75&lt;/td&gt;
+                &lt;td style=&quot;border: 1px solid #e2e8f0; padding: 10px; text-align: center;&quot;&gt;&lt;span style=&quot;background: #dbeafe; color: #1e40af; padding: 4px 8px; border-radius: 12px; font-size: 12px;&quot;&gt;First Class&lt;/span&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;</code></pre>
+          </div>
+        </details>
+      </section>
+
+      <!-- Bottom Navigation Footer as required by assignment specification -->
+      <footer style="margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; gap: 10px;">
+          <a href="../index.html" class="nav-btn primary">Home</a>
+          <a href="index.html" class="nav-btn">HTML Programs</a>
+        </div>
+        <div style="font-size: 13px; color: #64748b;">
+          Subject: <strong>web technology</strong> | Assignment: <strong>01</strong>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Department of Computer Science & Engineering • Practical Lab Portal</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #94a3b8;">Student: k. nishanth reddy | Register Number: 250200439 | Section: 06</p>
+  </footer>
+
+  <script type="module" src="../assets/js/common.js"></script>
+</body>
+</html>
